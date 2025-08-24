@@ -9,31 +9,18 @@ export function About() {
           {/* Left Column - Mission Text */}
           <div className="space-y-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-5 h-5 text-accent" />
-                <span className="text-accent font-mono text-sm uppercase tracking-wider">Our Mission</span>
-              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                AI-powered record label pioneering the future of sound
+                An AI-powered collective pioneering the future of music and community.
               </h2>
             </div>
 
             <div className="space-y-6 text-white/70 leading-relaxed">
               <p>
-                At TENSORTUNES, we believe that the intersection of artificial intelligence and human creativity
-                represents the next evolutionary step in music production. Our advanced neural networks don't replace
-                human artistry—they amplify it.
+                At TensorTunes, we believe that the intersection of artificial intelligence, human creativity, and blockchain represents the next step in music's evolution. Our advanced neural networks don't replace artistry — they amplify it, generating tracks that resonate globally across genres and cultures.
               </p>
 
               <p>
-                Through cutting-edge machine learning algorithms, we analyze millions of musical patterns, emotional
-                responses, and cultural trends to create compositions that resonate on both intellectual and emotional
-                levels.
-              </p>
-
-              <p>
-                Every track we release is a collaboration between human vision and artificial intelligence, resulting in
-                music that pushes boundaries while maintaining the soul that makes music truly meaningful.
+                Every stream fuels more than just music — it strengthens the TensorTunesToken (TTT) and empowers the community that supports us. Fans are not just listeners; they are contributors to a shared ecosystem where every beat, every play, and every promotion builds value. Together, we create music that pushes boundaries while driving a movement that belongs to everyone.
               </p>
             </div>
 
@@ -79,24 +66,24 @@ export function About() {
                 </div>
 
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">The Algorithm Behind the Art</h3>
+                  <h3 className="text-2xl font-bold text-white">The Numbers Behind the Movement</h3>
 
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-accent mb-2">99.7%</div>
-                      <div className="text-white/60 text-sm">Accuracy Rate</div>
+                      <div className="text-2xl font-bold text-accent mb-2">20%</div>
+                      <div className="text-white/60 text-sm">Streaming revenue reinvested into TTT ecosystem</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-accent mb-2">24/7</div>
-                      <div className="text-white/60 text-sm">AI Composition</div>
+                      <div className="text-white/60 text-sm">AI-powered music creation</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-accent mb-2">∞</div>
-                      <div className="text-white/60 text-sm">Creative Possibilities</div>
+                      <div className="text-white/60 text-sm">Community-driven opportunities & rewards</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-accent mb-2">1ms</div>
-                      <div className="text-white/60 text-sm">Response Time</div>
+                      <div className="text-2xl font-bold text-accent mb-2">1M+</div>
+                      <div className="text-white/60 text-sm">Streams targeted in first growth phase</div>
                     </div>
                   </div>
                 </div>
