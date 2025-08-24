@@ -31,7 +31,7 @@ export function ParticleBackground() {
       color: string
     }> = []
 
-    const colors = ["#00FFE0", "#0b00c4", "#b549ea"]
+    const colors = ["#ffffff", "#f0f0f0", "#d0d0d0", "#a0a0a0", "#808080", "#606060", "#404040"]
 
     // Create particles
     for (let i = 0; i < 50; i++) {
@@ -41,7 +41,7 @@ export function ParticleBackground() {
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.8 + 0.4,
         color: colors[Math.floor(Math.random() * colors.length)],
       })
     }
@@ -80,8 +80,8 @@ export function ParticleBackground() {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = "#00FFE0"
-            ctx.globalAlpha = ((100 - distance) / 100) * 0.1
+            ctx.strokeStyle = "#ffffff"
+            ctx.globalAlpha = ((100 - distance) / 100) * 0.3
             ctx.lineWidth = 1
             ctx.stroke()
           }
