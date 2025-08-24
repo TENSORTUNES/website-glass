@@ -17,23 +17,23 @@ const orbitron = Orbitron({
 })
 
 export const metadata: Metadata = {
-  title: "TensorTunes - AI-Powered Record Label",
+  title: "TENSORTUNES - AI-Powered Record Label",
   description: "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
   keywords: "AI music, record label, artificial intelligence, music production, electronic music",
-  authors: [{ name: "TensorTunes" }],
-  creator: "TensorTunes",
-  publisher: "TensorTunes",
+  authors: [{ name: "TENSORTUNES" }],
+  creator: "TENSORTUNES",
+  publisher: "TENSORTUNES",
   openGraph: {
-    title: "TensorTunes - AI-Powered Record Label",
+    title: "TENSORTUNES - AI-Powered Record Label",
     description: "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
     url: "https://tensortunes.com",
-    siteName: "TensorTunes",
+    siteName: "TENSORTUNES",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TensorTunes - AI-Powered Record Label",
+        alt: "TENSORTUNES - AI-Powered Record Label",
       },
     ],
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TensorTunes - AI-Powered Record Label",
+    title: "TENSORTUNES - AI-Powered Record Label",
     description: "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
     images: ["/og-image.jpg"],
   },
@@ -67,8 +67,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${orbitron.variable} dark`}>
       <body className="antialiased">
-        {children}
-        <CustomCursor />
+        {/* Video Background */}
+        <video
+          className="fixed top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ opacity: 0.5 }}
+        >
+          <source src="/assets/videos/1080p_mainpage_video_loop.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Content with higher z-index */}
+        <div className="relative z-10">
+          {children}
+          <CustomCursor />
+        </div>
       </body>
     </html>
   )

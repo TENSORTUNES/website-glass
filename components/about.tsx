@@ -20,7 +20,7 @@ export function About() {
 
             <div className="space-y-6 text-white/70 leading-relaxed">
               <p>
-                At TensorTunes, we believe that the intersection of artificial intelligence and human creativity
+                At TENSORTUNES, we believe that the intersection of artificial intelligence and human creativity
                 represents the next evolutionary step in music production. Our advanced neural networks don't replace
                 human artistry—they amplify it.
               </p>

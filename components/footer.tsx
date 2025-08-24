@@ -11,9 +11,9 @@ export function Footer() {
               <div className="p-2 glass rounded-xl">
                 <Music className="w-5 h-5 text-accent" />
               </div>
-              <span className="text-lg font-bold font-mono text-white">TensorTunes</span>
+              <span className="text-lg font-bold font-curved-square text-white tracking-wider">TENSORTUNES</span>
             </div>
-            <span className="text-white/40 text-sm">© 2024 TensorTunes. All rights reserved.</span>
+            <span className="text-white/40 text-sm">© 2024 TENSORTUNES. All rights reserved.</span>
           </div>
 
           {/* Social Links */}
