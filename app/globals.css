@@ -3,6 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Curved Square';
+  src: url('/assets/fonts/Curved Square.otf') format('opentype'),
+       url('/assets/fonts/Curved Square.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -45,6 +54,7 @@
   --smashed-pumpkin: #ff6c3d;
   --medium-orchid: #b549ea;
   --font-orbitron: "Orbitron", sans-serif;
+  --font-curved-square: 'Curved Square', sans-serif;
 }
 
 .dark {
@@ -85,6 +95,7 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-curved-square: var(--font-curved-square);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -217,8 +228,12 @@
 
   /* Glassmorphism utilities */
   .glass {
-    @apply backdrop-blur-xl border border-white/10 shadow-lg rounded-2xl;
+    @apply border border-white/10 shadow-lg rounded-2xl;
     background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-500/30;
   }
 
   .glass-hover {
