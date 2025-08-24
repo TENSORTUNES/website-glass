@@ -26,7 +26,7 @@ export default function Home() {
           <Image src={BorderLine} alt="something" />
         </div>
 
-        <div className="flex justify-center items-center bg-black h-lvh ">
+        <div className="flex justify-center items-center bg-black h-lvh min-h-screen">
           <Highlights />
         </div>
 

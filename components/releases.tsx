@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useScrollVisibility } from "@/hooks/use-scroll-visibility";
 import { Play, Calendar, Tag } from "lucide-react";
 import { Spotify } from "react-spotify-embed";
 
@@ -13,17 +16,25 @@ const featuredRelease = {
 };
 
 export function Releases() {
+  const { ref, isVisible } = useScrollVisibility(1);
   return (
     <section id="releases" className="py-12 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Latest Releases
-          </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            Discover our latest AI-generated compositions that are reshaping the
-            music industry one algorithm at a time.
-          </p>
+        <div
+          ref={ref}
+          className={`px-4 transition-opacity duration-1700 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Latest Releases
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              Discover our latest AI-generated compositions that are reshaping
+              the music industry one algorithm at a time.
+            </p>
+          </div>
         </div>
 
         <div className="max-w-2xl mx-auto">
