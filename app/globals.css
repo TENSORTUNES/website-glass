@@ -146,6 +146,12 @@
     cursor: none;
   }
 
+  /* Hide default cursor on all interactive elements */
+  a, button, input, textarea, select, [role="button"], [type="submit"], [type="button"],
+  [type="reset"], .cursor-pointer {
+    cursor: none !important;
+  }
+
   /* Custom TT cursor */
   .custom-cursor {
     position: fixed;

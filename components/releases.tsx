@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Play, Calendar, Tag } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Play, Calendar, Tag } from "lucide-react";
+import { Spotify } from "react-spotify-embed";
 
 const featuredRelease = {
   id: 1,
@@ -9,16 +10,19 @@ const featuredRelease = {
   genre: ["AI Music"],
   cover: "/placeholder.svg",
   spotifyId: "1gtoJ8uEsPWAIXO9ocHsSJ",
-}
+};
 
 export function Releases() {
   return (
-    <section id="releases" className="py-20 px-4">
+    <section id="releases" className="py-12 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Latest Releases</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Latest Releases
+          </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            Discover our latest AI-generated compositions that are reshaping the music industry one algorithm at a time.
+            Discover our latest AI-generated compositions that are reshaping the
+            music industry one algorithm at a time.
           </p>
         </div>
 
@@ -36,9 +40,14 @@ export function Releases() {
                 className="rounded-xl"
               />
             </div>
-
-
           </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Spotify
+            width={700}
+            link="https://open.spotify.com/track/1gtoJ8uEsPWAIXO9ocHsSJ?si=34186e67a4134100"
+          />{" "}
         </div>
 
         <div className="text-center mt-12">
@@ -52,5 +61,5 @@ export function Releases() {
         </div>
       </div>
     </section>
-  )
+  );
 }

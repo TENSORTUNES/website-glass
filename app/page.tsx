@@ -8,6 +8,8 @@ import { Newsletter } from "@/components/newsletter";
 import { Footer } from "@/components/footer";
 import { ParticleBackground } from "@/components/particle-background";
 import BorderLine from "../public/borderLine.png";
+
+import BorderLineUpsideDown from "../public/borderLineUpsideDown.png";
 import Image from "next/image";
 
 export default function Home() {
@@ -26,6 +28,10 @@ export default function Home() {
 
         <div className="flex justify-center items-center bg-black h-lvh ">
           <Highlights />
+        </div>
+
+        <div>
+          <Image src={BorderLineUpsideDown} alt="something" />
         </div>
         <Releases />
 
