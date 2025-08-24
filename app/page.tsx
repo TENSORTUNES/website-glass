@@ -1,12 +1,14 @@
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Highlights } from "@/components/highlights"
-import { Releases } from "@/components/releases"
-import { About } from "@/components/about"
-import { Contact } from "@/components/contact"
-import { Newsletter } from "@/components/newsletter"
-import { Footer } from "@/components/footer"
-import { ParticleBackground } from "@/components/particle-background"
+import { Navbar } from "@/components/navbar";
+import { Hero } from "@/components/hero";
+import { Highlights } from "@/components/highlights";
+import { Releases } from "@/components/releases";
+import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
+import { Newsletter } from "@/components/newsletter";
+import { Footer } from "@/components/footer";
+import { ParticleBackground } from "@/components/particle-background";
+import BorderLine from "../public/borderLine.png";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -16,16 +18,25 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="space-y-32">
+      <div className="">
         <Hero />
-        <Highlights />
+        <div>
+          <Image src={BorderLine} alt="something" />
+        </div>
+
+        <div className="flex justify-center items-center bg-black h-lvh ">
+          <Highlights />
+        </div>
         <Releases />
+
         <About />
+
         <Contact />
+
         <Newsletter />
       </div>
 
       <Footer />
     </main>
-  )
+  );
 }
