@@ -3,23 +3,23 @@ import { Brain, Globe, Users, Zap } from "lucide-react"
 const highlights = [
   {
     icon: Brain,
-    title: "AI-Driven Production",
-    description: "Advanced neural networks compose and produce tracks that resonate with global audiences.",
+    title: "AI-Driven Music",
+    description: "Our AI creates unique tracks across genres, fueling the TensorTunes movement with fresh sounds for a global audience.",
   },
   {
     icon: Globe,
-    title: "Global Distribution",
-    description: "Instant worldwide release across all major streaming platforms and digital stores.",
+    title: "Ecosystem Growth",
+    description: "Every stream contributes to strengthening the TensorTunesToken (TTT) through reinvestment and community initiatives.",
   },
   {
     icon: Users,
-    title: "Creative Community",
-    description: "Collaborative ecosystem where human creativity meets artificial intelligence.",
+    title: "Community Powered",
+    description: "Fans are more than listeners — they're active contributors, helping promote, share, and expand the movement.",
   },
   {
     icon: Zap,
     title: "Commercial Ready",
-    description: "Professional-grade masters ready for radio, streaming, and commercial licensing.",
+    description: "All tracks are professional-grade, ready for streaming, radio, and brand partnerships that drive value back into the ecosystem.",
   },
 ]
 
@@ -28,10 +28,9 @@ export function Highlights() {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The Future of Music Production</h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            Combining cutting-edge AI technology with human creativity to produce the next generation of musical
-            experiences.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stream the Music, Fuel the Token.</h2>
+          <p className="text-white/60 max-w-3xl mx-auto leading-relaxed">
+            At TensorTunes, every stream matters. The music we create with AI doesn't just entertain — it powers our entire ecosystem. A portion of streaming revenue is reinvested into the TensorTunesToken (TTT) through community initiatives, buybacks, and sustainability measures. This means that as our music reaches more listeners, the TTT ecosystem becomes stronger, creating new opportunities, rewards, and experiences for our community. With TensorTunes, fans are more than listeners — they are active contributors to the future of music.
           </p>
         </div>
 
