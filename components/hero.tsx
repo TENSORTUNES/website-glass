@@ -25,6 +25,7 @@ export function Hero() {
 
 
           {/* Stats */}
+          {/*
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
             <div className="glass p-6 text-center glass-hover">
               <div className="text-3xl font-bold text-accent mb-2">50M+</div>
@@ -39,6 +40,7 @@ export function Hero() {
               <div className="text-white/60">Chart Toppers</div>
             </div>
           </div>
+          */}
         </div>
       </div>
     </section>
