@@ -43,7 +43,7 @@ export function Contact() {
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">Get In Touch</h2>
           <p className="text-white/60 max-w-2xl mx-auto">
             Ready to collaborate or have questions about our AI music production? We'd love to hear from you.
           </p>

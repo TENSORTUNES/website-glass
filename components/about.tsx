@@ -9,7 +9,7 @@ export function About() {
           {/* Left Column - Mission Text */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
                 An AI-powered collective pioneering the future of music and community.
               </h2>
             </div>
@@ -17,10 +17,6 @@ export function About() {
             <div className="space-y-6 text-white/70 leading-relaxed">
               <p>
                 At TensorTunes, we believe that the intersection of artificial intelligence, human creativity, and blockchain represents the next step in music's evolution. Our advanced neural networks don't replace artistry — they amplify it, generating tracks that resonate globally across genres and cultures.
-              </p>
-
-              <p>
-                Every stream fuels more than just music — it strengthens the TensorTunesToken (TTT) and empowers the community that supports us. Fans are not just listeners; they are contributors to a shared ecosystem where every beat, every play, and every promotion builds value. Together, we create music that pushes boundaries while driving a movement that belongs to everyone.
               </p>
             </div>
 

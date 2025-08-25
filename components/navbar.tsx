@@ -40,6 +40,12 @@ export function Navbar() {
               Home
             </button>
             <button
+              onClick={() => scrollToSection("community")}
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Community
+            </button>
+            <button
               onClick={() => scrollToSection("releases")}
               className="text-white/80 hover:text-white transition-colors"
             >
@@ -84,6 +90,12 @@ export function Navbar() {
                 className="text-white/80 hover:text-white transition-colors text-left"
               >
                 Home
+              </button>
+              <button
+                onClick={() => scrollToSection("community")}
+                className="text-white/80 hover:text-white transition-colors text-left"
+              >
+                Community
               </button>
               <button
                 onClick={() => scrollToSection("releases")}

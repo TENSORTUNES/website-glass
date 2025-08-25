@@ -16,7 +16,7 @@ export function Releases() {
     <section id="releases" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Latest Releases</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-4">Latest Releases</h2>
           <p className="text-white/60 max-w-2xl mx-auto">
             Discover our latest AI-generated compositions that are reshaping the music industry one algorithm at a time.
           </p>

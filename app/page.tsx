@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { Highlights } from "@/components/highlights"
 import { Releases } from "@/components/releases"
 import { About } from "@/components/about"
+import { Community } from "@/components/community"
 import { Contact } from "@/components/contact"
 import { Newsletter } from "@/components/newsletter"
 import { Footer } from "@/components/footer"
@@ -18,7 +18,7 @@ export default function Home() {
 
       <div className="space-y-32">
         <Hero />
-        <Highlights />
+        <Community />
         <Releases />
         <About />
         <Contact />

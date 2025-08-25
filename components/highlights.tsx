@@ -28,10 +28,7 @@ export function Highlights() {
     <section className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stream the Music, Fuel the Token.</h2>
-          <p className="text-white/60 max-w-3xl mx-auto leading-relaxed">
-            At TensorTunes, every stream matters. The music we create with AI doesn't just entertain — it powers our entire ecosystem. A portion of streaming revenue is reinvested into the TensorTunesToken (TTT) through community initiatives, buybacks, and sustainability measures. This means that as our music reaches more listeners, the TTT ecosystem becomes stronger, creating new opportunities, rewards, and experiences for our community. With TensorTunes, fans are more than listeners — they are active contributors to the future of music.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Key Highlights</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
