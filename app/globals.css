@@ -12,6 +12,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'A4SPEED';
+  src: url('/assets/fonts/A4SPEED-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -55,6 +63,7 @@
   --medium-orchid: #b549ea;
   --font-orbitron: "Orbitron", sans-serif;
   --font-curved-square: 'Curved Square', sans-serif;
+  --font-a4speed: 'A4SPEED', sans-serif;
 }
 
 .dark {

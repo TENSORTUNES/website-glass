@@ -8,7 +8,7 @@ export function Hero() {
         <div className="mx-auto">
           {/* Main Headline */}
           <div className="">
-            <h1 className="mt-70 mb-50 text-6xl md:text-8xl lg:text-9xl font-bold font-curved-square bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight tracking-wider">
+            <h1 className="mt-70 mb-50 text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight tracking-wider" style={{ fontFamily: 'A4SPEED, sans-serif' }}>
               TENSORTUNES
             </h1>
 

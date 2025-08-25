@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Orbitron } from "next/font/google"
 import "./globals.css"
 import CustomCursor from "@/components/custom-cursor"
+import { DynamicBackground } from "@/components/dynamic-background"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,18 +68,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${orbitron.variable} dark`}>
       <body className="antialiased">
-        {/* Video Background */}
-        <video
-          className="fixed top-0 left-0 w-full h-full object-cover z-0"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ opacity: 0.5 }}
-        >
-          <source src="/assets/videos/1080p_mainpage_video_loop.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* Dynamic Video Background */}
+        <DynamicBackground />
         
         {/* Content with higher z-index */}
         <div className="relative z-10">
