@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Cpu, Music, Sparkles } from "lucide-react"
 
+//checken 2
+
 export function About() {
   return (
     <section id="about" className="py-20 px-4">

@@ -3,28 +3,29 @@ import { Play, Sparkles, ChevronDown } from "lucide-react"
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 pt-20">
-      <div className="container mx-auto text-center">
-        <div className="mx-auto">
-          {/* Main Headline */}
-          <div className="">
-            <h1 className="mt-70 mb-50 text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight tracking-wider" style={{ fontFamily: 'A4SPEED, sans-serif' }}>
-              TENSORTUNES
-            </h1>
+    <section id="hero" className="relative min-h-screen flex justify-center px-4">
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Where algorithms meet symphony
-            </h2>
-          </div>
+      <div className="flex flex-col justify-center text-center content-center align-center">
 
-          {/* Description */}
-          <p className="text-lg text-white/60 max-w-3xl mx-auto leading-relaxed mt-2">
+        <h1 className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight" style={{ fontFamily: 'A4SPEED, sans-serif' }}>
+          TENSORTUNES
+        </h1>
+
+        <div className="flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-12">
+
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            Where algorithms meet symphony
+          </h2>
+
+          <p className="text-lg text-white/60">
             Pioneering the future of music through artificial intelligence and community-powered growth. We create, produce, and distribute tracks that push the boundaries of what's possible when technology, culture, and creativity come together.
           </p>
+        </div>
 
+      </div>
 
-          {/* Stats */}
-          {/*
+      {/* Stats */}
+      {/*
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
             <div className="glass p-6 text-center glass-hover">
               <div className="text-3xl font-bold text-accent mb-2">50M+</div>
@@ -40,8 +41,7 @@ export function Hero() {
             </div>
           </div>
           */}
-        </div>
-      </div>
+
     </section>
   )
 }

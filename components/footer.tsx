@@ -13,7 +13,7 @@ export function Footer() {
               </div>
               <span className="text-lg font-bold font-curved-square text-white tracking-wider">TENSORTUNES</span>
             </div>
-            <span className="text-white/40 text-sm">© 2024 TENSORTUNES. All rights reserved.</span>
+            <span className="text-white/40 text-sm">© 2025 TENSORTUNES. All rights reserved.</span>
           </div>
 
           {/* Social Links */}

@@ -25,7 +25,7 @@ export function DynamicBackground() {
         if (highestRatio > 0.3 && mostVisibleSection) {
           switch (mostVisibleSection) {
             case "hero":
-              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4")
+              setCurrentVideo("/assets/videos/contact_v.mp4")
               break
             case "community":
               setCurrentVideo("/assets/videos/bv_1.mp4")
@@ -37,10 +37,10 @@ export function DynamicBackground() {
               setCurrentVideo("/assets/videos/bv_3.mp4")
               break
             case "contact":
-              setCurrentVideo("/assets/videos/contact_v.mp4")
+              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4")
               break
             default:
-              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4")
+              setCurrentVideo("/assets/videos/contact_v.mp4")
           }
         }
       },

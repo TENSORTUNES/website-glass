@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'Curved Square';
   src: url('/assets/fonts/Curved Square.otf') format('opentype'),
-       url('/assets/fonts/Curved Square.ttf') format('truetype');
+    url('/assets/fonts/Curved Square.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -184,11 +184,13 @@
   }
 
   @keyframes cursor-pulse {
+
     0%,
     100% {
       opacity: 0.8;
       transform: scale(1);
     }
+
     50% {
       opacity: 1;
       transform: scale(1.1);
@@ -225,10 +227,12 @@
       transform: rotate(0deg) scale(1);
       opacity: 0.3;
     }
+
     50% {
       transform: rotate(180deg) scale(1.1);
       opacity: 0.2;
     }
+
     100% {
       transform: rotate(360deg) scale(1);
       opacity: 0.3;
@@ -240,7 +244,7 @@
     @apply border border-white/10 shadow-lg rounded-2xl;
     background: rgba(255, 255, 255, 0.05);
   }
-  
+
   .glass-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-500/30;
   }
@@ -279,15 +283,23 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  .glass-blur-fx {
+    backdrop-filter: blur(10px) !important;
+  }
+
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0px) rotate(0deg);
       opacity: 0.5;
     }
+
     50% {
       transform: translateY(-20px) rotate(180deg);
       opacity: 1;
     }
   }
+
+
 }
