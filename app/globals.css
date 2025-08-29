@@ -242,7 +242,15 @@
   /* Glassmorphism utilities */
   .glass {
     @apply border border-white/10 shadow-lg rounded-2xl;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(150, 150, 150, 0.3);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    /* Add these to prevent color bleeding from layered backgrounds */
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    /* Increase separation from background */
+    position: relative;
+    z-index: 1;
   }
 
   .glass-hover {
