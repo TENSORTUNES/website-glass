@@ -1,27 +1,49 @@
-import { Button } from "@/components/ui/button"
-import { Play, Sparkles, ChevronDown } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Play, Sparkles, ChevronDown } from "lucide-react";
+import { Oswald, Saira } from "next/font/google";
+
+const oswald = Oswald({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const saira = Saira({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex justify-center px-4">
-
+    <section
+      id="hero"
+      className="relative min-h-screen flex justify-center px-4"
+    >
       <div className="flex flex-col justify-center text-center content-center align-center">
-
-        <h1 className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight" style={{ fontFamily: 'A4SPEED, sans-serif' }}>
+        <h1
+          className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight"
+          style={{ fontFamily: "A4SPEED, sans-serif" }}
+        >
           TENSORTUNES
         </h1>
 
-        <div className="flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-12">
-
+        <div
+          className={`flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-24 ${oswald.className}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Where algorithms meet symphony
+            Where algorithms meet symphony..
           </h2>
 
           <p className="text-lg text-white/60">
-            Pioneering the future of music through artificial intelligence and community-powered growth. We create, produce, and distribute tracks that push the boundaries of what's possible when technology, culture, and creativity come together.
+            Pioneering the future of music through artificial intelligence and
+            community-powered growth. We create, produce, and distribute tracks
+            that push the boundaries of what's possible when technology,
+            culture, and creativity come together.
           </p>
         </div>
-
       </div>
 
       {/* Stats */}
@@ -41,7 +63,6 @@ export function Hero() {
             </div>
           </div>
           */}
-
     </section>
-  )
+  );
 }

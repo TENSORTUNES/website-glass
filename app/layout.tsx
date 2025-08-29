@@ -4,6 +4,7 @@ import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import { DynamicBackground } from "@/components/dynamic-background";
+import ScrollComponent from "@/components/scroll-to-bottom";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body className="antialiased">
         {/* Dynamic Video Background */}
         <DynamicBackground />
+        <ScrollComponent />
 
         {/* Content with higher z-index */}
         <div className="z-999">
