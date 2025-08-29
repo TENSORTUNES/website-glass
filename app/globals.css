@@ -299,6 +299,10 @@
     backdrop-filter: blur(10px) !important;
   }
 
+  .smooth-scroll-collapse {
+    transition: 1s;
+  }
+
   @keyframes float {
 
     0%,

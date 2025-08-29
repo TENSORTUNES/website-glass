@@ -20,7 +20,7 @@ export function Community() {
   return (
     <section id="community" className={`${oswald.className} py-20 px-4`}>
       <div className="container mx-auto">
-        <div className="glass text-center mb-16 p-10">
+        <div className="glass backdrop-blur backdrop-saturate-300 text-center mb-16 p-10">
           <h2 className="text-left text-3xl md:text-4xl font-bold text-white mb-4">
             Stream the Music, Fuel the Token.
           </h2>
@@ -38,7 +38,7 @@ export function Community() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="glass p-6 rounded-2xl text-center">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
             <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Music className="w-6 h-6 text-accent" />
             </div>
@@ -51,7 +51,7 @@ export function Community() {
             </p>
           </div>
 
-          <div className="glass p-6 rounded-2xl text-center">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
             <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="w-6 h-6 text-primary" />
             </div>
@@ -64,7 +64,7 @@ export function Community() {
             </p>
           </div>
 
-          <div className="glass p-6 rounded-2xl text-center">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
             <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-6 h-6 text-accent" />
             </div>
@@ -77,7 +77,7 @@ export function Community() {
             </p>
           </div>
 
-          <div className="glass p-6 rounded-2xl text-center">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
             <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-6 h-6 text-primary" />
             </div>
