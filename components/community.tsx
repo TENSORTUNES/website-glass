@@ -24,7 +24,7 @@ export function Community() {
           <h2 className="text-left text-3xl md:text-4xl font-bold text-white mb-4">
             Stream the Music, Fuel the Token.
           </h2>
-          <p className="text-left text-xl text-white /70 max-w-3xl leading-relaxed">
+          <p className="text-left text-xl text-white/80 max-w-3xl leading-relaxed">
             At TensorTunes, every stream matters. The music we create with AI
             doesn't just entertain, it powers our entire ecosystem. A portion of
             streaming revenue is reinvested into the TensorTunesToken (TTT)
@@ -37,7 +37,7 @@ export function Community() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
             <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Music className="w-6 h-6 text-accent" />
