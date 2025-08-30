@@ -324,4 +324,32 @@
   }
 
 
+
+/* one icon:
+   0%   -> off-screen right
+   33%  -> center (fast ease-out)
+   100% -> off-screen left (smooth drift)
+*/
+@keyframes tt-icon-queue {
+  0% {
+    left: 110%;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.96);
+    animation-timing-function: cubic-bezier(.16,1,.3,1); /* shoot in */
+  }
+  33% {
+    left: 50%;
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    animation-timing-function: cubic-bezier(.20,1,.3,1);              /* drift */
+  }
+  100% {
+    left: -10%;
+    opacity: 0.9;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+
+
 }

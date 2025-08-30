@@ -33,7 +33,7 @@ export function Hero() {
         <div
           className={`flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-24 ${oswald.className}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="md:text-4xl sm:text-base font-bold text-white">
             Where algorithms meet symphony..
           </h2>
 

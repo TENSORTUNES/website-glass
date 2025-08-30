@@ -5,6 +5,7 @@ import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import { DynamicBackground } from "@/components/dynamic-background";
 import ScrollComponent from "@/components/scroll-to-bottom";
+import LoadingOverlay from "@/components/loading-overlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,6 +74,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${orbitron.variable} dark`}>
       <body className="antialiased">
+        {/* Loading Overlay - Black to View Transition */}
+        <LoadingOverlay />
+
         {/* Dynamic Video Background */}
         <DynamicBackground />
         <ScrollComponent />
