@@ -5,9 +5,9 @@ import { ChevronDown } from "lucide-react";
 export default function ScrollComponent() {
   const sectionIds = [
     "hero",
-    "community",
-    "releases",
     "about",
+    "releases",
+    "community",
     "contact",
     "newsletter",
   ];
@@ -25,35 +25,72 @@ export default function ScrollComponent() {
   };
 
   return (
-    <button
-      onClick={scrollDown}
-      className="fixed bottom-10 right-10 z-50 group bg-white/80 hover:bg-white text-white rounded-full 
-      transition-all duration-300 ease-in-out shadow-lg"
-      aria-label="Scroll down"
-    >
-      <div className="hidden group-hover:flex flex-col items-center transition-opacity ease-in-out  w-20 px-4 py-10">
-        <span className="text-sm font-medium text-stone-950">s</span>
-        <span className="text-sm font-medium text-stone-950">c</span>
-        <span className="text-sm font-medium text-stone-950">r</span>
-        <span className="text-sm font-medium text-stone-950">o</span>
-        <span className="text-sm font-medium text-stone-950">l</span>
-        <span className="text-sm font-medium text-stone-950">l</span>
-        <br />
-        <span className="text-sm font-medium text-stone-950">d</span>
-        <span className="text-sm font-medium text-stone-950">o</span>
-        <span className="text-sm font-medium text-stone-950">w</span>
-        <span className="text-sm font-medium text-stone-950">n</span>
-        <br />
-        <ChevronDown
-          size={30}
-          color="black"
-          className="flex items-center justify-center"
+    <div className="fixed bottom-5 right-5 z-50">
+      <button
+        onClick={scrollDown}
+        className="relative group"
+        aria-label="Scroll down"
+      >
+        {/* The background container that grows smoothly */}
+        <div
+          className="absolute  bottom-0 bg-white/40 right-0 backdrop-blur backdrop-saturate-300 hover:backdrop-blur hover:backdrop-saturate-300 rounded-full shadow-lg
+          transition-all duration-500 ease-in-out
+          w-10 h-10 group-hover:h-[260px]"
         />
-      </div>
 
-      <div className="flex items-center justify-center w-20 h-20 transition-opacity ease-in-out group-hover:hidden">
-        <ChevronDown size={30} className="" color="black" />
-      </div>
-    </button>
+        {/* Extended content - text and arrow */}
+        <div
+          className="absolute bottom-0 right-0 flex flex-col items-center justify-center w-10 px-4 py-4
+          opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out
+          pointer-events-none"
+        >
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-100">
+            s
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-125">
+            c
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-150">
+            r
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-175">
+            o
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-200">
+            l
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-225">
+            l
+          </span>
+          <br />
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-250">
+            d
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-275">
+            o
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-300">
+            w
+          </span>
+          <span className="text-xs font-medium text-stone-950 transition-all duration-500 delay-325">
+            n
+          </span>
+          <br />
+          <ChevronDown
+            size={20}
+            color="black"
+            className="flex items-center justify-center transition-all duration-500 delay-350"
+          />
+        </div>
+
+        {/* Default state - small circular button with arrow */}
+        <div
+          className="relative flex items-center justify-center w-10 h-10
+          opacity-100 group-hover:opacity-0 transition-all duration-300 ease-in-out"
+        >
+          <ChevronDown size={20} className="" color="black" />
+        </div>
+      </button>
+    </div>
   );
 }
