@@ -13,62 +13,62 @@ import {
 const ICONS = [Headphones, SquareActivity, MicVocal, Bot, GitGraph, Braces];
 
 type Props = {
-  size?: number; // px
-  color?: string; // CSS color
-  durationMs?: number; // total time for one icon (right -> center -> left)
+  size?: number;
+  color?: string;
+  durationMs?: number;
   startDelayMs?: number;
 };
 
 export default function IconQueue({
-  size = 44,
+  size = 20,
   color = "var(--neon-cyan)",
-  durationMs = 2600,
-  startDelayMs = 100,
+  durationMs = 3000,
+  startDelayMs = 500,
 }: Props) {
-  const [idx, setIdx] = useState(0);
-  const [k, setK] = useState(0); // force re-run of CSS animation
+  const [idx, setIdx] = useState(2); // Start with MicVocal to avoid duplicates
+  const [animationKey, setAnimationKey] = useState(0);
   const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // kick off after optional delay
-    const t = window.setTimeout(() => {
-      setK((v) => v + 1);
+    // Start the first animation
+    const startTimer = setTimeout(() => {
+      setAnimationKey(1);
     }, startDelayMs);
-    return () => clearTimeout(t);
+
+    return () => clearTimeout(startTimer);
   }, [startDelayMs]);
 
   useEffect(() => {
-    if (k === 0) return;
-    // after this icon finishes, advance to next
+    if (animationKey === 0) return;
+
+    // Set timer for next icon
     timerRef.current = window.setTimeout(() => {
       setIdx((i) => (i + 1) % ICONS.length);
-      setK((v) => v + 1); // retrigger animation
+      setAnimationKey((k) => k + 1);
     }, durationMs);
 
     return () => {
       if (timerRef.current) window.clearTimeout(timerRef.current);
     };
-  }, [k, durationMs]);
+  }, [animationKey, durationMs]);
 
   const Icon = ICONS[idx];
 
   return (
     <div className="relative w-full h-16 overflow-hidden">
-      <Icon
-        key={k} // re-mounts to restart CSS animation
-        className="absolute top-1/2 -translate-y-1/2 drop-shadow-[0_0_10px_var(--neon-cyan)] pointer-events-none"
-        style={{
-          // initial = off-screen right (prevents flash)
-          left: "110%",
-          opacity: 0,
-          transform: "translateY(-50%) scale(0.96)",
-          // name duration timing delay iteration fill-mode
-          animation: `tt-icon-queue ${durationMs}ms linear 0ms 1 both`,
-          willChange: "left, transform, opacity",
-          color,
-          fontSize: `${size}px`,
-        }}
-      />
+      {animationKey > 0 && (
+        <Icon
+          key={animationKey}
+          size={size}
+          className="absolute top-1/2 -translate-y-1/2 drop-shadow-[0_0_5px_var(--neon-cyan)] pointer-events-none"
+          style={{
+            left: "100%",
+            color,
+            animation: `smooth-slide ${durationMs}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`,
+            willChange: "left, transform",
+          }}
+        />
+      )}
     </div>
   );
 }

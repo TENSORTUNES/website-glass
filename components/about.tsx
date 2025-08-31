@@ -1,90 +1,149 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Cpu, Music, Sparkles } from "lucide-react"
+"use client"
+
+import { Cpu, Music, Sparkles, Brain, Headphones, Zap, Globe, Users, Mic } from "lucide-react"
 
 //checken 2
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="mt-80 py-20 px-4">
+      <style jsx>{`
+        @keyframes iconPulse {
+          0%, 70%, 100% {
+            transform: scale(1);
+          }
+          35% {
+            transform: scale(1.2);
+          }
+        }
+        
+        @keyframes statGlow {
+          0%, 100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transform: scale(1);
+          }
+          50% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+          }
+        }
+        
+        .icon-animate {
+          animation: iconPulse 3s ease-in-out infinite;
+        }
+        
+        .stat-glow {
+          animation: statGlow 2s ease-in-out infinite;
+        }
+        
+        .icon-animate:nth-child(1) { animation-delay: 0s; }
+        .icon-animate:nth-child(2) { animation-delay: 0.2s; }
+        .icon-animate:nth-child(3) { animation-delay: 0.4s; }
+        .icon-animate:nth-child(4) { animation-delay: 0.6s; }
+        .icon-animate:nth-child(5) { animation-delay: 0.8s; }
+        .icon-animate:nth-child(6) { animation-delay: 1s; }
+        .icon-animate:nth-child(7) { animation-delay: 1.2s; }
+        .icon-animate:nth-child(8) { animation-delay: 1.4s; }
+        .icon-animate:nth-child(9) { animation-delay: 1.6s; }
+      `}</style>
+      <div className="container mx-auto mt-5 max-w-7xl">
+        {/* Main Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            An AI-powered collective pioneering the future of music and community.
+          </h2>
+        </div>
+
+        {/* Icons Section - Full Width */}
+        <div className="mb-16 flex items-center justify-center">
+          <div className="flex items-center justify-center gap-6 w-full max-w-none px-4">
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Brain className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Music className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Cpu className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Headphones className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Sparkles className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Zap className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Globe className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Users className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Mic className="w-10 h-10 text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch">
           {/* Left Column - Mission Text */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
-                An AI-powered collective pioneering the future of music and community.
-              </h2>
-            </div>
+          <div className="space-y-8 xl:space-y-12">
+            
+            <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">Where AI Meets Artistry</h3>
+                
+                <p className="text-white/70 text-sm leading-relaxed text-left">
+                  At TensorTunes, we believe that the intersection of artificial intelligence, human creativity, and blockchain represents the next step in music's evolution. Our advanced neural networks don't replace artistry — they amplify it, generating tracks that resonate globally across genres and cultures. Every composition is a testament to the harmony between human emotion and machine precision.
+                </p>
+              </div>
 
-            <div className="space-y-6 text-white/70 leading-relaxed">
-              <p>
-                At TensorTunes, we believe that the intersection of artificial intelligence, human creativity, and blockchain represents the next step in music's evolution. Our advanced neural networks don't replace artistry — they amplify it, generating tracks that resonate globally across genres and cultures.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="neon-glow bg-primary hover:bg-primary/90">
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="glass-hover border-white/20 text-white hover:bg-white/10 bg-transparent"
-              >
-                Our Process
-              </Button>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3 mt-8">Economic Innovation</h3>
+                <p className="text-white/70 text-sm leading-relaxed text-left">
+                  Beyond music creation, we're pioneering a new economic model where streaming revenue directly fuels token value through strategic buybacks and community rewards. This creates a sustainable ecosystem where artistic innovation drives financial growth, benefiting creators, listeners, and token holders alike. Our transparent approach ensures every stakeholder participates in the value we create together.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Right Column - Visual Card */}
-          <div className="relative">
-            <div className="glass p-8 md:p-12 text-center">
-              {/* Background Image */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-20">
-                <img
-                  src="/ai-neural-network-visualization-with-music-wavefor.png"
-                  alt="AI Music Visualization"
-                  className="w-full h-full object-cover"
-                />
+          <div className="relative space-y-8 xl:space-y-12">
+
+            <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">United by Sound, Driven by Vision</h3>
+                
+                <p className="text-white/70 text-sm leading-relaxed text-left mb-6">
+                  Our ecosystem thrives on transparency, innovation, and community participation. Every metric represents our commitment to revolutionizing how music creates value for artists and fans alike.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 xl:gap-6 text-center mb-6">
+                  <div>
+                    <div className="text-2xl font-bold text-white mb-2 stat-glow">50%</div>
+                    <div className="text-white/60 text-xs">Revenue reinvested back into (TTT) TensorTunesToken</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white mb-2 stat-glow">24/7</div>
+                    <div className="text-white/60 text-xs">AI-powered music creation using custom build models</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white mb-2 stat-glow">∞</div>
+                    <div className="text-white/60 text-xs">Community-driven opportunities & rewards</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white mb-2 stat-glow">1M+</div>
+                    <div className="text-white/60 text-xs">Streams targeted in first growth phase</div>
+                  </div>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="relative z-10 space-y-8">
-                <div className="flex justify-center gap-8 mb-8">
-                  <div className="glass p-4 rounded-2xl">
-                    <Cpu className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="glass p-4 rounded-2xl">
-                    <Music className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="glass p-4 rounded-2xl">
-                    <Sparkles className="w-8 h-8 text-accent" />
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-white">The Numbers Behind the Movement</h3>
-
-                  <div className="grid grid-cols-2 gap-6 text-center">
-                    <div>
-                      <div className="text-2xl font-bold text-accent mb-2">20%</div>
-                      <div className="text-white/60 text-sm">Streaming revenue reinvested into TTT ecosystem</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-accent mb-2">24/7</div>
-                      <div className="text-white/60 text-sm">AI-powered music creation</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-accent mb-2">∞</div>
-                      <div className="text-white/60 text-sm">Community-driven opportunities & rewards</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-accent mb-2">1M+</div>
-                      <div className="text-white/60 text-sm">Streams targeted in first growth phase</div>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <p className="text-white/70 text-sm leading-relaxed text-left">
+                  Through strategic reinvestment and cutting-edge AI technology, we're building a sustainable music ecosystem where every stream contributes to long-term value creation for our entire community.
+                </p>
               </div>
             </div>
           </div>

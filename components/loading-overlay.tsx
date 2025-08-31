@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import IconQueue from "./sliding-icons-no-overlap";
+import FloatingBgIcons from "./floating-bg-icons";
 
 export default function LoadingOverlay() {
   const [mounted, setMounted] = useState(true);
@@ -11,11 +12,11 @@ export default function LoadingOverlay() {
     // Minimum show time for UX (adjust as you like)
     const minTimer = setTimeout(() => {
       setHiding(true); // start fading after min time
-    }, 5000);
+    }, 10000);
 
     const onLoad = () => {
       // When the page finishes loading, trigger fade (but keep min show)
-      setHiding(true);
+      // Don't set hiding to true immediately - let the 5-second timer handle it
     };
 
     if (typeof window !== "undefined") {
@@ -47,12 +48,18 @@ export default function LoadingOverlay() {
         hiding ? "opacity-0 pointer-events-none" : "opacity-100",
       ].join(" ")}
     >
-      <div className="flex items-center align-center content-center justify-center h-full">
+      {/* Floating background icons */}
+      <FloatingBgIcons />
+      
+      <div className="flex items-center align-center content-center justify-center h-full relative z-10">
         <div className="text-center align-center content-center">
           <div className="w-16 h-16 border-4 border-[var(--neon-cyan)] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <h1
             className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight"
-            style={{ fontFamily: "A4SPEED, sans-serif" }}
+            style={{
+              fontFamily: "A4SPEED, sans-serif",
+              animation: "heartbeat 1.5s ease-in-out infinite"
+            }}
           >
             TENSORTUNES
           </h1>
@@ -61,7 +68,7 @@ export default function LoadingOverlay() {
           </p>
 
           <div className="mt-6">
-            <IconQueue durationMs={2000} />
+            <IconQueue durationMs={2000} startDelayMs={1000} />
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ export function Hero() {
       <div className="flex flex-col justify-center text-center content-center align-center">
         <h1
           className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight"
-          style={{ fontFamily: "A4SPEED, sans-serif" }}
+          style={{ fontFamily: "A4SPEED" }}
         >
           TENSORTUNES
         </h1>
@@ -34,7 +34,7 @@ export function Hero() {
           className={`flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-24 ${oswald.className}`}
         >
           <h2 className="md:text-4xl sm:text-base font-bold text-white">
-            Where algorithms meet symphony..
+            Where algorithms meet symphony...
           </h2>
 
           <p className="text-lg text-white/60">

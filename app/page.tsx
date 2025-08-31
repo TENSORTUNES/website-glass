@@ -18,9 +18,9 @@ export default function Home() {
 
       <div className="space-y-32">
         <Hero />
-        <Community />
-        <Releases />
         <About />
+        <Releases />
+        <Community />
         <Contact />
         <Newsletter />
       </div>
