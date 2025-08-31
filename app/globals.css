@@ -20,6 +20,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: '3DLet';
+  src: url('/assets/fonts/3dlet.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -230,17 +238,17 @@
 
   @keyframes aurora {
     0% {
-      transform: rotate(0deg) scale(1);
+      transform: scale(1);
       opacity: 0.3;
     }
 
     50% {
-      transform: rotate(10deg) scale(1.1);
+      transform: scale(1.1);
       opacity: 0.2;
     }
 
     100% {
-      transform: rotate(15deg) scale(1);
+      transform: scale(1);
       opacity: 0.3;
     }
   }
@@ -350,6 +358,154 @@
   }
 }
 
+/* Heartbeat animation for loading screen */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 
+/* Smooth slide animation for icons */
+@keyframes smooth-slide {
+  0% {
+    left: 120%;
+    transform: translateY(-50%) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    left: 50%;
+    transform: translateY(-50%) scale(1.4);
+  }
+  85% {
+    transform: translateY(-50%) scale(0.8);
+  }
+  100% {
+    left: -40%;
+    transform: translateY(-50%) scale(0.6);
+    opacity: 0.7;
+  }
+}
+
+/* Floating background icons animation */
+@keyframes float-down {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* Floating background icons with trail animation */
+@keyframes float-down-trail {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.15;
+  }
+  15% {
+    opacity: 0.25;
+  }
+  85% {
+    opacity: 0.25;
+  }
+  95% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* Vertical line sweep animation for navbar */
+@keyframes navbar-line-sweep {
+  0% {
+    left: -2px;
+    opacity: 1;
+  }
+  20% {
+    left: 100%;
+    opacity: 1;
+  }
+  20.1%, 100% {
+    left: -2px;
+    opacity: 0;
+  }
+}
+
+.navbar-glow {
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-glow::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -2px;
+  width: 2px;
+  height: 60%;
+  background: #00ffe0;
+  box-shadow:
+    0 0 5px #00ffe0,
+    0 0 10px #00ffe080,
+    0 0 20px #00ffe060,
+    0 0 30px #00ffe040,
+    0 0 40px #00ffe020;
+  animation: navbar-line-sweep 15s ease-in-out infinite;
+}
+
+/* Letter scaling animation when line passes */
+@keyframes navbar-letter-scale {
+  0%, 18%, 22%, 100% {
+    transform: scale(1);
+  }
+  2% {
+    transform: scale(1.15);
+  }
+}
+
+.navbar-letter {
+  animation: navbar-letter-scale 15s ease-in-out infinite;
+  transition: transform 0.1s ease;
+}
+
+/* Color shifting animations for floating cursors */
+@keyframes color-shift-0 {
+  0% { filter: hue-rotate(0deg) saturate(1.2); }
+  50% { filter: hue-rotate(60deg) saturate(1.5); }
+  100% { filter: hue-rotate(120deg) saturate(1.2); }
+}
+
+@keyframes color-shift-1 {
+  0% { filter: hue-rotate(120deg) saturate(1.3); }
+  50% { filter: hue-rotate(240deg) saturate(1.6); }
+  100% { filter: hue-rotate(360deg) saturate(1.3); }
+}
+
+@keyframes color-shift-2 {
+  0% { filter: hue-rotate(240deg) saturate(1.1); }
+  50% { filter: hue-rotate(300deg) saturate(1.4); }
+  100% { filter: hue-rotate(480deg) saturate(1.1); }
+}
 
 }

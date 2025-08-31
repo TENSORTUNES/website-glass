@@ -19,74 +19,77 @@ const saira = Saira({
 export function Community() {
   return (
     <section id="community" className={`${oswald.className} mt-80 py-20 px-4`}>
-      <div className="container mx-auto">
-        <div className="glass backdrop-blur backdrop-saturate-300 text-center mb-16 p-10">
-          <h2 className="text-left text-3xl md:text-4xl font-bold text-white mb-4">
+      <div className="container mx-auto mt-5">
+        {/* Hero Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
             Stream the Music, Fuel the Token.
           </h2>
-          <p className="text-left text-xl text-white/80 max-w-3xl leading-relaxed">
-            At TensorTunes, every stream matters. The music we create with AI
-            doesn't just entertain, it powers our entire ecosystem. A portion of
-            streaming revenue is reinvested into the TensorTunesToken (TTT)
-            through community initiatives, buybacks, and sustainability
-            measures. This means that as our music reaches more listeners, the
-            TTT ecosystem becomes stronger, creating new opportunities, rewards,
-            and experiences for our community. With TensorTunes, fans are more
-            than listeners — they are active contributors to the future of
-            music.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
-            <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Music className="w-6 h-6 text-accent" />
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Music className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
               AI-Driven Music
             </h3>
-            <p className="text-white/60 leading-relaxed">
-              Our AI creates unique tracks across genres, fueling the
-              TensorTunes movement with fresh sounds for a global audience.
+            <p className="text-white/70 leading-relaxed">
+              Our advanced neural networks generate unique tracks across multiple genres 24/7,
+              creating a constantly evolving catalog of fresh sounds. Each track is professionally
+              produced and ready for streaming platforms, radio play, and commercial use. The AI
+              learns from global music trends while maintaining the distinctive TensorTunes sound
+              that resonates with audiences worldwide.
             </p>
           </div>
 
           <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <TrendingUp className="w-6 h-6 text-primary" />
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <TrendingUp className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
               Ecosystem Growth
             </h3>
-            <p className="text-white/60 leading-relaxed">
-              Every stream contributes to strengthening the TensorTunesToken
-              (TTT) through reinvestment and community initiatives.
+            <p className="text-white/70 leading-relaxed">
+              Every stream directly powers our token ecosystem. A significant portion of streaming
+              revenue flows back into the TensorTunesToken (TTT) through strategic buybacks,
+              community rewards, and ecosystem development initiatives. This creates a sustainable
+              cycle where musical success translates into stronger token value and more opportunities
+              for our community members to benefit from the platform's growth.
             </p>
           </div>
 
           <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
-            <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-6 h-6 text-accent" />
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
               Community Powered
             </h3>
-            <p className="text-white/60 leading-relaxed">
-              Fans are more than listeners — they're active contributors,
-              helping promote, share, and expand the movement.
+            <p className="text-white/70 leading-relaxed">
+              Our community is the heartbeat of TensorTunes. Fans become active stakeholders
+              who help promote, share, and expand our musical movement across social platforms
+              and streaming services. Community members earn rewards for engagement, receive
+              exclusive access to new releases, and participate in governance decisions that
+              shape the future direction of both our music and token ecosystem.
             </p>
           </div>
 
           <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center">
-            <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="w-6 h-6 text-primary" />
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Heart className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
               Commercial Ready
             </h3>
-            <p className="text-white/60 leading-relaxed">
-              All tracks are professional-grade, ready for streaming, radio, and
-              brand partnerships that drive value back into the ecosystem.
+            <p className="text-white/70 leading-relaxed">
+              Every TensorTunes track meets professional industry standards for streaming,
+              radio broadcast, and commercial licensing. We actively pursue brand partnerships,
+              sync licensing opportunities, and playlist placements that generate significant
+              revenue streams. All commercial success feeds directly back into the TTT ecosystem
+              through buybacks and community rewards, ensuring our growth benefits every stakeholder.
             </p>
           </div>
         </div>

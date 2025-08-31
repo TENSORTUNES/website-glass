@@ -31,8 +31,25 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold font-curved-square text-white tracking-wider">
-            TENSORTUNES
+          <span
+            className="text-base font-bold text-white tracking-wider navbar-glow"
+            style={{
+              fontFamily: "A4SPEED",
+              position: "relative"
+            }}
+          >
+            {"TENSORTUNES".split("").map((letter, index) => (
+              <span
+                key={index}
+                className="navbar-letter"
+                style={{
+                  display: "inline-block",
+                  animationDelay: `${index * 0.27}s`
+                }}
+              >
+                {letter}
+              </span>
+            ))}
           </span>
 
           {/* Desktop Navigation */}
@@ -44,10 +61,10 @@ export function Navbar() {
               Home
             </button>
             <button
-              onClick={() => scrollToSection("community")}
+              onClick={() => scrollToSection("about")}
               className="text-white/80 hover:text-white transition-colors"
             >
-              Community
+              About
             </button>
             <button
               onClick={() => scrollToSection("releases")}
@@ -56,10 +73,10 @@ export function Navbar() {
               Releases
             </button>
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("community")}
               className="text-white/80 hover:text-white transition-colors"
             >
-              About
+              Community
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -111,10 +128,10 @@ export function Navbar() {
                 Home
               </button>
               <button
-                onClick={() => scrollToSection("community")}
+                onClick={() => scrollToSection("about")}
                 className="text-white/80 hover:text-white transition-colors text-left"
               >
-                Community
+                About
               </button>
               <button
                 onClick={() => scrollToSection("releases")}
@@ -123,10 +140,10 @@ export function Navbar() {
                 Releases
               </button>
               <button
-                onClick={() => scrollToSection("about")}
+                onClick={() => scrollToSection("community")}
                 className="text-white/80 hover:text-white transition-colors text-left"
               >
-                About
+                Community
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
