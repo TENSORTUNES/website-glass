@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles, ChevronDown } from "lucide-react";
-import { Oswald, Saira } from "next/font/google";
+import { Oswald, Saira, Barriecito, Audiowide } from "next/font/google";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -16,34 +16,70 @@ const saira = Saira({
   variable: "--font-inter",
 });
 
+const audiowide = Audiowide({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
+const barriecito = Barriecito({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex justify-center px-4"
-    >
-      <div className="flex flex-col justify-center text-center content-center align-center">
-        <h1
+    <section id="hero" className="min-h-screen flex px-4">
+      <div className="relative">
+        <h1 className="md:absolute bottom-0 md:ml-20 md:mb-20 flex">
+          <div
+            className={`${barriecito.className} md:absolute md:bottom-20 lg:bottom-30 md:text-5xl lg:text-7xl min-w-max`}
+          >
+            We create.
+          </div>
+          {/* <div
+            className={`${barriecito.className} md:absolute lg:left-76 md:bottom-23 lg:bottom-31 md:text-lg lg:text-3xl min-w-max rotate-x-50 rotate-z-45`}
+          >
+            art
+          </div> */}
+          <div
+            className={`${barriecito.className} lg:text-9xl text-8xl min-w-max`}
+          >
+            We produce.
+          </div>
+          {/* <div
+            className={`${barriecito.className} md:absolute lg:left-150 md:bottom-23 lg:bottom-20 md:text-lg lg:text-3xl min-w-max rotate-x-20 rotate-z-30`}
+          >
+            music
+          </div> */}
+          <div
+            className={`${barriecito.className} md:absolute bottom-2 md:left-122 lg:left-163 md:text-5xl min-w-max`}
+          >
+            We Distribute.
+          </div>
+        </h1>
+        {/* <h1
           className="text-4xl md:text-4xl lg:text-8xl font-bold bg-gradient-to-r from-white/90 via-white/70 to-white/50 bg-clip-text text-transparent leading-tight"
           style={{ fontFamily: "A4SPEED" }}
         >
           TENSORTUNES
-        </h1>
+        </h1> */}
 
-        <div
-          className={`flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-24 ${oswald.className}`}
+        {/* <div
+          className={`flex flex-col justify-center w-3/5 self-center absolute bottom-0 pb-24 `}
         >
-          <h2 className="md:text-4xl sm:text-base font-bold text-white">
-            Where algorithms meet symphony...
+          <h2
+            className={`${oswald.className} md:text-4xl sm:text-base font-bold text-white`}
+          >
+            Where algorithms meet symphony
           </h2>
 
           <p className="text-lg text-white/60">
-            Pioneering the future of music through artificial intelligence and
-            community-powered growth. We create, produce, and distribute tracks
-            that push the boundaries of what's possible when technology,
+            We create. We produce. We distribute. <br />
+            Music that pushes the boundaries of what's possible when technology,
             culture, and creativity come together.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Stats */}

@@ -19,15 +19,16 @@ export default function Home() {
 
       <div className="space-y-32">
         <Hero />
+
+        <About />
+        <Releases />
+        <Community />
         <div className="bg-gray-950 p-8">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-white text-4xl font-bold text-center"></h1>
             <EnhancedTokenChart />
           </div>
         </div>
-        <About />
-        <Releases />
-        <Community />
 
         <Contact />
         <Newsletter />

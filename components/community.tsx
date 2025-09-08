@@ -37,11 +37,12 @@ export function Community() {
               AI-Driven Music
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Our advanced neural networks generate unique tracks across multiple genres 24/7,
-              creating a constantly evolving catalog of fresh sounds. Each track is professionally
-              produced and ready for streaming platforms, radio play, and commercial use. The AI
-              learns from global music trends while maintaining the distinctive TensorTunes sound
-              that resonates with audiences worldwide.
+              Our advanced neural networks generate unique tracks across
+              multiple genres 24/7, creating a constantly evolving catalog of
+              fresh sounds. Each track is professionally produced and ready for
+              streaming platforms, radio play, and commercial use. The AI learns
+              from global music trends while maintaining the distinctive
+              TensorTunes sound that resonates with audiences worldwide.
             </p>
           </div>
 
@@ -53,11 +54,13 @@ export function Community() {
               Ecosystem Growth
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Every stream directly powers our token ecosystem. A significant portion of streaming
-              revenue flows back into the TensorTunesToken (TTT) through strategic buybacks,
-              community rewards, and ecosystem development initiatives. This creates a sustainable
-              cycle where musical success translates into stronger token value and more opportunities
-              for our community members to benefit from the platform's growth.
+              Every stream directly powers our token ecosystem. A significant
+              portion of streaming revenue flows back into the TensorTunesToken
+              (TTT) through strategic buybacks, community rewards, and ecosystem
+              development initiatives. This creates a sustainable cycle where
+              musical success translates into stronger token value and more
+              opportunities for our community members to benefit from the
+              platform's growth.
             </p>
           </div>
 
@@ -69,11 +72,12 @@ export function Community() {
               Community Powered
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Our community is the heartbeat of TensorTunes. Fans become active stakeholders
-              who help promote, share, and expand our musical movement across social platforms
-              and streaming services. Community members earn rewards for engagement, receive
-              exclusive access to new releases, and participate in governance decisions that
-              shape the future direction of both our music and token ecosystem.
+              Our community is the heartbeat of TensorTunes. Fans become active
+              stakeholders who help promote, share, and expand our musical
+              movement across social platforms and streaming services. Community
+              members earn rewards for engagement, receive exclusive access to
+              new releases, and participate in governance decisions that shape
+              the future direction of both our music and token ecosystem.
             </p>
           </div>
 
@@ -85,11 +89,13 @@ export function Community() {
               Commercial Ready
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Every TensorTunes track meets professional industry standards for streaming,
-              radio broadcast, and commercial licensing. We actively pursue brand partnerships,
-              sync licensing opportunities, and playlist placements that generate significant
-              revenue streams. All commercial success feeds directly back into the TTT ecosystem
-              through buybacks and community rewards, ensuring our growth benefits every stakeholder.
+              Every TensorTunes track meets professional industry standards for
+              streaming, radio broadcast, and commercial licensing. We actively
+              pursue brand partnerships, sync licensing opportunities, and
+              playlist placements that generate significant revenue streams. All
+              commercial success feeds directly back into the TTT ecosystem
+              through buybacks and community rewards, ensuring our growth
+              benefits every stakeholder.
             </p>
           </div>
         </div>

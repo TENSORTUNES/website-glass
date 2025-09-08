@@ -1,4 +1,4 @@
-import { Music, Instagram, Mail } from "lucide-react"
+import { Music, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,14 +6,15 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Copyright */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="p-2 glass rounded-xl">
-                <Music className="w-5 h-5 text-accent" />
-              </div>
-              <span className="text-lg font-bold font-curved-square text-white tracking-wider">TENSORTUNES</span>
+          <div className="sm:flex gap-4 items-center">
+            <div className="flex">
+              <span className="text-lg font-bold font-curved-square text-white tracking-wider">
+                TENSORTUNES
+              </span>
             </div>
-            <span className="text-white/40 text-sm">© 2025 TENSORTUNES. All rights reserved.</span>
+            <span className="text-white/40 text-sm">
+              © 2025 TENSORTUNES. All rights reserved.
+            </span>
           </div>
 
           {/* Social Links */}
@@ -47,5 +48,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -3,6 +3,21 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Music, Menu, X } from "lucide-react";
+import { Oswald, Saira } from "next/font/google";
+
+const oswald = Oswald({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const saira = Saira({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,20 +46,14 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <span
-            className="text-base font-bold text-white tracking-wider navbar-glow"
-            style={{
-              fontFamily: "A4SPEED",
-              position: "relative"
-            }}
-          >
+          <span className="text-2xl font-bold font-curved-square  font-bold text-white tracking-wider navbar-glow">
             {"TENSORTUNES".split("").map((letter, index) => (
               <span
                 key={index}
                 className="navbar-letter"
                 style={{
                   display: "inline-block",
-                  animationDelay: `${index * 0.27}s`
+                  animationDelay: `${index * 0.27}s`,
                 }}
               >
                 {letter}
@@ -53,7 +62,9 @@ export function Navbar() {
           </span>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div
+            className={`${saira.className} hidden md:flex items-center gap-8`}
+          >
             <button
               onClick={() => scrollToSection("hero")}
               className="text-white/80 hover:text-white transition-colors"

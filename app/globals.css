@@ -172,7 +172,7 @@
     height: 32px;
     pointer-events: none;
     z-index: 9999;
-    mix-blend-mode: difference;
+    mix-blend-mode: normal;
     transition: all 0.1s ease;
   }
 
