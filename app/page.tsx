@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         <Contact />
-        <Newsletter />
+        {/* <Newsletter /> */}
       </div>
 
       <Footer />

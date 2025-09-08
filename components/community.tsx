@@ -19,7 +19,7 @@ const saira = Saira({
 export function Community() {
   return (
     <section id="community" className={`${oswald.className} mt-80 py-20 px-4`}>
-      <div className="container mx-auto mt-5">
+      <div className="mt-5">
         {/* Hero Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -28,8 +28,8 @@ export function Community() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div className="-skew-x-12 glass backdrop-blur backdrop-saturate-300 p-8 rounded-2xl text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="-skew-x-12 lg:-skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
             <div className="skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Music className="w-6 h-6 text-white" />
             </div>
@@ -46,14 +46,14 @@ export function Community() {
             </p>
           </div>
 
-          <div className="-skew-x-12 glass backdrop-blur backdrop-saturate-300 p-8 rounded-2xl text-center">
-            <div className="skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="skew-x-12 md:-skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
+            <div className="-skew-x-12 md:skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
-            <h3 className="skew-x-12 text-xl font-bold text-white mb-3">
+            <h3 className="-skew-x-12 md:skew-x-12 text-xl font-bold text-white mb-3">
               Ecosystem Growth
             </h3>
-            <p className="skew-x-12 text-white/70 leading-relaxed">
+            <p className="-skew-x-12 md:skew-x-12 text-white/70 leading-relaxed">
               Every stream directly powers our token ecosystem. A significant
               portion of streaming revenue flows back into the TensorTunesToken
               (TTT) through strategic buybacks, community rewards, and ecosystem
@@ -64,14 +64,14 @@ export function Community() {
             </p>
           </div>
 
-          <div className="skew-x-12 glass backdrop-blur backdrop-saturate-300 p-8 rounded-2xl text-center">
-            <div className="-skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="-skew-x-12 md:skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
+            <div className="skew-x-12 md:-skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-6 h-6 text-white" />
             </div>
-            <h3 className="-skew-x-12 text-xl font-bold text-white mb-3">
+            <h3 className="skew-x-12 md:-skew-x-12 text-xl font-bold text-white mb-3">
               Community Powered
             </h3>
-            <p className="-skew-x-12 text-white/70 leading-relaxed">
+            <p className="skew-x-12 md:-skew-x-12 text-white/70 leading-relaxed">
               Our community is the heartbeat of TensorTunes. Fans become active
               stakeholders who help promote, share, and expand our musical
               movement across social platforms and streaming services. Community
@@ -81,7 +81,7 @@ export function Community() {
             </p>
           </div>
 
-          <div className="skew-x-12 glass backdrop-blur backdrop-saturate-300 p-8 rounded-2xl text-center">
+          <div className="skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
             <div className="-skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-6 h-6 text-white" />
             </div>

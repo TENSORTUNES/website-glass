@@ -195,7 +195,7 @@ export function About() {
                       50%
                     </div>
                     <div className="text-white/60 text-xs">
-                      Revenue reinvested back into (TTT) TensorTunesToken
+                      Revenue reinvested back into TensorTunesToken(TTT)
                     </div>
                   </div>
                   <div>
