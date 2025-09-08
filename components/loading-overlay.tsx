@@ -12,7 +12,7 @@ export default function LoadingOverlay() {
     // Minimum show time for UX (adjust as you like)
     const minTimer = setTimeout(() => {
       setHiding(true); // start fading after min time
-    }, 6000);
+    }, 4000);
 
     const onLoad = () => {
       // When the page finishes loading, trigger fade (but keep min show)

@@ -1,62 +1,71 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Instagram, Music, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Instagram, Music, Mail, MapPin, Phone } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
 
     // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
+            Get In Touch
+          </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            Ready to collaborate or have questions about our AI music production? We'd love to hear from you.
+            Ready to collaborate or have questions about our AI music
+            production? We'd love to hear from you.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div className="glass p-8 md:p-12">
-            <h3 className="text-2xl font-semibold text-white mb-8">Send us a message</h3>
+            <h3 className="text-2xl font-semibold text-white mb-8">
+              Send us a message
+            </h3>
 
             {isSubmitted && (
               <div className="mb-6 p-4 glass border-accent/30 rounded-xl">
-                <p className="text-accent text-center">✨ Message sent successfully! We'll get back to you soon.</p>
+                <p className="text-accent text-center">
+                  ✨ Message sent successfully! We'll get back to you soon.
+                </p>
               </div>
             )}
 
@@ -123,7 +132,9 @@ export function Contact() {
           {/* Contact Info & Socials */}
           <div className="space-y-8">
             <div className="glass p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -132,7 +143,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-white/80">Email</div>
-                    <div className="text-white">hello@tensortunes.com</div>
+                    <div className="text-white">info@tensortunes.com</div>
                   </div>
                 </div>
 
@@ -159,7 +170,9 @@ export function Contact() {
             </div>
 
             <div className="glass p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Follow Us</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6">
+                Follow Us
+              </h3>
 
               <div className="flex gap-4">
                 <a
@@ -181,12 +194,13 @@ export function Contact() {
               </div>
 
               <p className="text-white/60 mt-6 leading-relaxed">
-                Stay updated with our latest releases, behind-the-scenes content, and AI music production insights.
+                Stay updated with our latest releases, behind-the-scenes
+                content, and AI music production insights.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
