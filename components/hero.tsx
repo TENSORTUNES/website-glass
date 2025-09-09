@@ -43,7 +43,7 @@ export function Hero() {
             art
           </div> */}
           <div
-            className={`${barriecito.className} absolute xs:left-0 bottom-10 sm:bottom-0 lg:text-9xl md:text-7xl text-8xl min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 bottom-10 sm:bottom-0 lg:text-9xl md:text-7xl text-6xl min-w-max`}
           >
             We produce.
           </div>

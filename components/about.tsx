@@ -93,53 +93,55 @@ export function About() {
           animation-delay: 1.6s;
         }
       `}</style>
-      <div className="container mx-auto mt-5 max-w-7xl">
-        {/* Main Heading */}
-        <div className={`${saira.className} text-center mb-16`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-white lg:mb-8">
-            An AI-powered collective pioneering the future of music and
-            community.
-          </h2>
-        </div>
+      <div className="container mx-auto mt-16 max-w-7xl">
+        <div className="h-screen">
+          {/* Main Heading */}
+          <div className={`${saira.className} text-center mb-16`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-white lg:mb-8">
+              An AI-powered collective pioneering the future of music and
+              community.
+            </h2>
+          </div>
 
-        {/* Icons Section - Full Width */}
-        <div className="md:flex hidden md:mb-14 lg:mb-80 flex items-center justify-center">
-          <div className="flex items-center justify-around w-full max-w-none">
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Brain className="w-5 h-5 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Music className="w-7 h-7 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Cpu className="w-5 h-5 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Headphones className="w-7 h-7 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Zap className="w-7 h-7 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Globe className="w-5 h-5 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Users className="w-7 h-7 text-white" />
-            </div>
-            <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-              <Mic className="w-5 h-5 text-white" />
+          {/* Icons Section - Full Width */}
+          <div className="md:flex hidden md:mb-14 lg:mb-60 flex items-center justify-center">
+            <div className="flex items-center justify-around w-full max-w-none">
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Brain className="w-5 h-5 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Music className="w-7 h-7 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Cpu className="w-5 h-5 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Headphones className="w-7 h-7 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Zap className="w-7 h-7 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Globe className="w-5 h-5 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Users className="w-7 h-7 text-white" />
+              </div>
+              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
+                <Mic className="w-5 h-5 text-white" />
+              </div>
             </div>
           </div>
         </div>
 
         <div
-          className={` grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch`}
+          className={`relative absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch`}
         >
           {/* Left Column - Mission Text */}
-          <div className="lg:origin-top-left lg:-rotate-8">
+          <div className="lg:origin-top-left lg:-rotate-8 lg:absolute top-0 lg:w-1/2">
             <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -175,7 +177,7 @@ export function About() {
           </div>
 
           {/* Right Column - Visual Card */}
-          <div className="relative lg:origin-bottom-left lg:rotate-8">
+          <div className="lg:origin-bottom-left lg:rotate-8 lg:absolute bottom-0 right-0 lg:w-1/2">
             <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
