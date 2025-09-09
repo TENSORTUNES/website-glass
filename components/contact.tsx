@@ -1,62 +1,92 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Instagram, Music, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Music, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import Image from "next/image";
+import X from "../public/assets/X/X.png";
+import Instagram from "../public/assets/instagram/Instagram.png";
+import Spotify from "../public/assets/spotify/Spotify_logo_without_text.svg";
+import Dexscreener from "../public/assets/dexscreener/Dexscreener.jpg";
+import SolanaIcon from "../public/assets/solana/Solana_logo.png";
+import { Oswald, Saira } from "next/font/google";
+
+const oswald = Oswald({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const saira = Saira({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
 
     // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className={`${oswald.className} py-20 px-4`}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
+            Get In Touch
+          </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            Ready to collaborate or have questions about our AI music production? We'd love to hear from you.
+            Ready to collaborate or have questions about our AI music
+            production? We'd love to hear from you.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="glass p-8 md:p-12">
-            <h3 className="text-2xl font-semibold text-white mb-8">Send us a message</h3>
+          <div className="glass backdrop-blur backdrop-saturate-300 p-8 md:p-12">
+            <h3 className="text-2xl font-semibold text-white mb-8">
+              Send us a message
+            </h3>
 
             {isSubmitted && (
-              <div className="mb-6 p-4 glass border-accent/30 rounded-xl">
-                <p className="text-accent text-center">✨ Message sent successfully! We'll get back to you soon.</p>
+              <div className="mb-6 p-4 glass glass backdrop-blur backdrop-saturate-300 border-accent/30 rounded-xl">
+                <p className="text-accent text-center">
+                  Message sent successfully! We'll get back to you soon.
+                </p>
               </div>
             )}
 
@@ -72,7 +102,7 @@ export function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="glass border-white/20 text-white placeholder:text-white/40 focus:border-accent"
+                  className="bg-white/40 text-black border-white/20 placeholder:text-black/80 focus:border-accent resize-none"
                   placeholder="Your name"
                 />
               </div>
@@ -88,7 +118,7 @@ export function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="glass border-white/20 text-white placeholder:text-white/40 focus:border-accent"
+                  className="bg-white/40 text-black border-white/20 placeholder:text-black/80 focus:border-accent resize-none"
                   placeholder="your@email.com"
                 />
               </div>
@@ -104,7 +134,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="glass border-white/20 text-white placeholder:text-white/40 focus:border-accent resize-none"
+                  className="bg-white/40 text-black border-white/20 placeholder:text-black/80 focus:border-accent resize-none"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
@@ -122,23 +152,25 @@ export function Contact() {
 
           {/* Contact Info & Socials */}
           <div className="space-y-8">
-            <div className="glass p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+            <div className="p-8 glass backdrop-blur backdrop-saturate-300">
+              <h3 className="text-2xl font-semibold text-white mb-6">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-xl">
-                    <Mail className="w-5 h-5 text-accent" />
+                  <div className="glass bg-white/40 p-3 rounded-xl">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-white/80">Email</div>
-                    <div className="text-white">hello@tensortunes.com</div>
+                    <div className="text-white">info@tensortunes.com</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-xl">
-                    <Phone className="w-5 h-5 text-accent" />
+                  <div className="glass bg-white/40 p-3 rounded-xl">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-white/80">Phone</div>
@@ -147,8 +179,8 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="glass p-3 rounded-xl">
-                    <MapPin className="w-5 h-5 text-accent" />
+                  <div className="glass bg-white/40 p-3 rounded-xl">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-white/80">Location</div>
@@ -158,35 +190,96 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="glass p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Follow Us</h3>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-8">
+              <h3 className="text-center text-2xl font-semibold text-white mb-6">
+                Follow Us
+              </h3>
 
-              <div className="flex gap-4">
+              <div className="flex justify-around">
                 <a
                   href="https://spotify.com/tensortunes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass p-4 rounded-xl glass-hover group"
+                  className="p-4 group"
                 >
-                  <Music className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+                  <Image
+                    className="rounded-4xl group-hover:scale-110 transition-transform"
+                    width={50}
+                    height={50}
+                    src={Spotify}
+                    alt="Tensor Tunes X account - Love for Music & AI"
+                  />
                 </a>
+
                 <a
                   href="https://instagram.com/tensortunes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass p-4 rounded-xl glass-hover group"
+                  className="p-4 group"
                 >
-                  <Instagram className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
+                  <Image
+                    className="rounded-4xl group-hover:scale-110 transition-transform"
+                    width={50}
+                    height={50}
+                    src={Instagram}
+                    alt="Tensor Tunes X account - Love for Music & AI"
+                  />
+                </a>
+
+                <a
+                  href="https://X.com/tensortunes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 group"
+                >
+                  <Image
+                    className="rounded-4xl group-hover:scale-110 transition-transform"
+                    width={50}
+                    height={50}
+                    src={X}
+                    alt="Tensor Tunes X account - Love for Music & AI"
+                  />
+                </a>
+
+                <a
+                  href="https://dexscreener.com/LinkTotensortunes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 group"
+                >
+                  <Image
+                    className="rounded-4xl group-hover:scale-110 transition-transform"
+                    width={50}
+                    height={50}
+                    src={Dexscreener}
+                    alt="Tensor Tunes X account - Love for Music & AI"
+                  />
+                </a>
+
+                <a
+                  href="https://solscan.com/LinkTotensortunes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 group"
+                >
+                  <Image
+                    className="rounded-4xl group-hover:scale-110 transition-transform"
+                    width={50}
+                    height={50}
+                    src={SolanaIcon}
+                    alt="Tensor Tunes X account - Love for Music & AI"
+                  />
                 </a>
               </div>
 
-              <p className="text-white/60 mt-6 leading-relaxed">
-                Stay updated with our latest releases, behind-the-scenes content, and AI music production insights.
+              <p className="flex justify-center text-white/60 mt-6 leading-relaxed">
+                Stay updated with our latest releases, behind-the-scenes
+                content, and AI music production insights.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,89 +1,91 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react";
 
 export function DynamicBackground() {
-  const [currentVideo, setCurrentVideo] = useState("/assets/videos/1080p_mainpage_video_loop.mp4")
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const [currentVideo, setCurrentVideo] = useState(
+    "/assets/videos/1080p_mainpage_video_loop.mp4"
+  );
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     // Create a new Intersection Observer
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        let mostVisibleSection: string | null = null
-        let highestRatio = 0
+        let mostVisibleSection: string | null = null;
+        let highestRatio = 0;
 
         entries.forEach((entry) => {
           if (entry.intersectionRatio > highestRatio) {
-            highestRatio = entry.intersectionRatio
-            mostVisibleSection = entry.target.id
+            highestRatio = entry.intersectionRatio;
+            mostVisibleSection = entry.target.id;
           }
-        })
+        });
 
         // Debug logging
-        console.log('Intersection Observer:', {
-          mostVisibleSection,
-          highestRatio,
-          entries: entries.map(e => ({ id: e.target.id, ratio: e.intersectionRatio }))
-        })
+        // console.log('Intersection Observer:', {
+        //   mostVisibleSection,
+        //   highestRatio,
+        //   entries: entries.map(e => ({ id: e.target.id, ratio: e.intersectionRatio }))
+        // })
 
         // Only change video if a section is significantly visible - reduced threshold
         if (highestRatio > 0.2 && mostVisibleSection) {
-          console.log('Switching video for section:', mostVisibleSection)
+          // console.log("Switching video for section:", mostVisibleSection);
           switch (mostVisibleSection) {
             case "hero":
-              setCurrentVideo("/assets/videos/contact_v.mp4")
-              break
+              setCurrentVideo("/assets/videos/contact_v.mp4");
+              break;
             case "about":
-              setCurrentVideo("/assets/videos/bv_1.mp4")
-              break
+              setCurrentVideo("/assets/videos/bv_1.mp4");
+              break;
             case "releases":
-              setCurrentVideo("/assets/videos/bv_2.mp4")
-              break
+              setCurrentVideo("/assets/videos/bv_2.mp4");
+              break;
             case "community":
-              setCurrentVideo("/assets/videos/bv_3.mp4")
-              break
+              setCurrentVideo("/assets/videos/bv_3.mp4");
+              break;
             case "contact":
-              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4")
-              break
+              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4");
+              break;
             default:
-              setCurrentVideo("/assets/videos/contact_v.mp4")
+              setCurrentVideo("/assets/videos/contact_v.mp4");
           }
         }
       },
       {
         threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-        rootMargin: "-10% 0px -10% 0px"
+        rootMargin: "-10% 0px -10% 0px",
       }
-    )
+    );
 
     // Observe all sections
     const observeSections = () => {
-      const sections = ["hero", "about", "releases", "community", "contact"]
+      const sections = ["hero", "about", "releases", "community", "contact"];
       sections.forEach((sectionId) => {
-        const section = document.getElementById(sectionId)
+        const section = document.getElementById(sectionId);
         if (section && observerRef.current) {
-          observerRef.current.observe(section)
+          observerRef.current.observe(section);
         }
-      })
-    }
+      });
+    };
 
     // Wait for DOM to be ready
     if (typeof window !== "undefined") {
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", observeSections)
+        document.addEventListener("DOMContentLoaded", observeSections);
       } else {
-        observeSections()
+        observeSections();
       }
     }
 
     return () => {
       if (observerRef.current) {
-        observerRef.current.disconnect()
+        observerRef.current.disconnect();
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <video
@@ -99,5 +101,5 @@ export function DynamicBackground() {
       <source src={currentVideo} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  )
+  );
 }

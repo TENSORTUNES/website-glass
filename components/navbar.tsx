@@ -3,6 +3,23 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Music, Menu, X } from "lucide-react";
+import { Oswald, Saira } from "next/font/google";
+import Image from "next/image";
+import Spotify from "../public/assets/spotify/Spotify_logo_without_text.svg";
+
+const oswald = Oswald({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const saira = Saira({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,20 +48,14 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <span
-            className="text-base font-bold text-white tracking-wider navbar-glow"
-            style={{
-              fontFamily: "A4SPEED",
-              position: "relative"
-            }}
-          >
+          <span className="text-2xl font-bold font-curved-square  font-bold text-white tracking-wider navbar-glow">
             {"TENSORTUNES".split("").map((letter, index) => (
               <span
                 key={index}
                 className="navbar-letter"
                 style={{
                   display: "inline-block",
-                  animationDelay: `${index * 0.27}s`
+                  animationDelay: `${index * 0.27}s`,
                 }}
               >
                 {letter}
@@ -53,7 +64,9 @@ export function Navbar() {
           </span>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div
+            className={`${saira.className} hidden md:flex items-center gap-8`}
+          >
             <button
               onClick={() => scrollToSection("hero")}
               className="text-white/80 hover:text-white transition-colors"
@@ -87,8 +100,12 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="neon-glow bg-green-600 hover:bg-green-700 text-white flex items-center gap-2">
+          <div className="hidden lg:block">
+            <a
+              href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+              target="_blank"
+              className="p-1 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
+            >
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 168 168"
@@ -101,8 +118,17 @@ export function Navbar() {
                 />
               </svg>
               Listen on Spotify
-            </Button>
+            </a>
           </div>
+          {/* <div className="md-max-md:flex hidden">
+            <a href="https://open.spotify.com//tensortunes" target="_blank">
+              <Image
+                src={Spotify}
+                width={30}
+                alt="Spotify Tensor Tunes Music - Innovation with AI"
+              />
+            </a>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
