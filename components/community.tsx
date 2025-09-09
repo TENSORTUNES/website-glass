@@ -19,7 +19,7 @@ const saira = Saira({
 export function Community() {
   return (
     <section id="community" className={`${oswald.className} mt-80 py-20 px-4`}>
-      <div className="mt-5">
+      <div className="mt-5 px-10">
         {/* Hero Heading */}
         <div className="text-center h-screen">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">

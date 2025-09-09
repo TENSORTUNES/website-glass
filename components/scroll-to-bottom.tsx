@@ -25,7 +25,7 @@ export default function ScrollComponent() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-5 right-5 z-50 animate-bounce">
       <button
         onClick={scrollDown}
         className="relative group"

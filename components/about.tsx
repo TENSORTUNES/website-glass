@@ -104,7 +104,7 @@ export function About() {
           </div>
 
           {/* Icons Section - Full Width */}
-          <div className="md:flex hidden md:mb-14 lg:mb-60 flex items-center justify-center">
+          <div className="md:flex hidden md:mb-14 lg:mb-30 flex items-center justify-center">
             <div className="flex items-center justify-around w-full max-w-none">
               <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
                 <Brain className="w-5 h-5 text-white" />
@@ -137,12 +137,62 @@ export function About() {
           </div>
         </div>
 
+        {/* <div className="relative hidden xl:block">
+          <div className="relative lg:origin-top-right lg:rotate-70 lg:-skew-40 lg:absolute lg:left-60 lg:-top-40 lg:w-10 lg:h-10">
+            <div className="glass backdrop-blur backdrop-saturate-400 text-center  min-h-[20px] " />
+          </div>
+
+          <div className="lg:origin-top-right lg:rotate-180 lg:-skew-15 lg:absolute lg:right-100 lg:-top-70 lg:w-20 lg:h-15">
+            <div className="glass backdrop-blur backdrop-saturate-400 p-6 xl:p-8 text-center  min-h-[100px] " />
+          </div>
+
+          <div className="lg:origin-top-left lg:-rotate-30 lg:-skew-40 lg:absolute lg:-left-100 lg:-top-100 lg:w-32 lg:h-24">
+            <div className="glass backdrop-blur backdrop-saturate-400 p-6 xl:p-8 text-center  min-h-[200px]" />
+          </div>
+
+          <div className="lg:origin-top-right lg:rotate-90 lg:-skew-60 lg:absolute lg:-right-70 lg:-top-100 lg:w-32 lg:h-24">
+            <div className="glass backdrop-blur backdrop-saturate-400 p-6 xl:p-8 text-center  min-h-[200px]" />
+          </div>
+        </div> */}
+
+        <div className="relative hidden lg:block pointer-events-none">
+          {/* left mid floating square */}
+          <div className="absolute left-30 -top-150 w-16 h-12 lg:rotate-60 lg:-skew-60">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+
+          {/* right mid floating square */}
+          <div className="absolute right-15 -top-20 w-20 h-16 lg:rotate-80 lg:-skew-50">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+
+          {/* Left bottom floating square */}
+          <div className="hidden xl:block absolute -left-0 top-120 w-24 h-20 lg:rotate-80 lg:-skew-20">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+
+          {/* Right bottom floating square */}
+          <div className="absolute -right-15 top-150 w-28 h-24 lg:-rotate-20 lg:-skew-24">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+
+          {/* left top floating squares */}
+          <div className="absolute -left-12 bottom-20 w-20 h-16 lg:rotate-75 lg:skew-12">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+
+          {/* right top floating squares */}
+          <div className="absolute right-40 bottom-100 w-24 h-18 lg:-rotate-45 lg:skew-6">
+            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
+          </div>
+        </div>
+
         <div
-          className={`relative absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch`}
+          className={`lg:relative lg:absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch h-screen`}
         >
           {/* Left Column - Mission Text */}
-          <div className="lg:origin-top-left lg:-rotate-8 lg:absolute top-0 lg:w-1/2">
-            <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
+          <div className="lg:origin-top-left lg:-left-5 lg:-rotate-8 lg:absolute lg:w-1/2">
+            <div className="glass backdrop-blur backdrop-saturate-300 p-10 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Where AI Meets Artistry
@@ -177,7 +227,7 @@ export function About() {
           </div>
 
           {/* Right Column - Visual Card */}
-          <div className="lg:origin-bottom-left lg:rotate-8 lg:absolute bottom-0 right-0 lg:w-1/2">
+          <div className="lg:origin-bottom-left lg:rotate-8 lg:absolute right-10 lg:w-1/2">
             <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -237,6 +287,24 @@ export function About() {
               </div>
             </div>
           </div>
+
+          {/* <div className="hidden xl:block">
+            <div className="lg:origin-top-right lg:rotate-70 lg:-skew-15 lg:absolute lg:left-60 lg:-top-40 lg:w-10 lg:h-10">
+              <div className="glass backdrop-blur backdrop-saturate-300 text-center  min-h-[20px] " />
+            </div>
+
+            <div className="lg:origin-top-right lg:rotate-180 lg:-skew-15 lg:absolute lg:right-100 lg:-top-70 lg:w-20 lg:h-15">
+              <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center  min-h-[100px] " />
+            </div>
+
+            <div className="lg:origin-top-left lg:-rotate-30 lg:-skew-40 lg:absolute lg:-left-100 lg:-top-100 lg:w-32 lg:h-24">
+              <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center  min-h-[200px]" />
+            </div>
+
+            <div className="lg:origin-top-right lg:rotate-90 lg:-skew-60 lg:absolute lg:-right-100 lg:-top-100 lg:w-32 lg:h-24">
+              <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center  min-h-[200px]" />
+            </div>
+          </div> */}
         </div>
       </div>
     </section>
