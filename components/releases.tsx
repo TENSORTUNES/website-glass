@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, Tag, ArrowRight } from "lucide-react";
 import { Oswald, Saira, Barriecito, Audiowide } from "next/font/google";
+import { SpotifyBall } from "./3d-spotify-ball";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -49,6 +50,8 @@ export function Releases() {
             Latest Releases.
           </h2>
         </div>
+
+        {/* <SpotifyBall /> */}
 
         {/* Combined Content Container */}
         <div className="glass backdrop-blur backdrop-saturate-300 p-8 mb-16 max-w-4xl mx-auto">

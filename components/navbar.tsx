@@ -101,7 +101,11 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button className="neon-glow bg-green-600 hover:bg-green-700 text-white flex items-center gap-2">
+            <a
+              href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+              target="_blank"
+              className="p-1 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
+            >
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 168 168"
@@ -114,7 +118,7 @@ export function Navbar() {
                 />
               </svg>
               Listen on Spotify
-            </Button>
+            </a>
           </div>
           {/* <div className="md-max-md:flex hidden">
             <a href="https://open.spotify.com//tensortunes" target="_blank">

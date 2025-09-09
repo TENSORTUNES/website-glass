@@ -172,7 +172,7 @@ export function About() {
           </div>
 
           {/* Right bottom floating square */}
-          <div className="absolute -right-15 top-150 w-28 h-24 lg:-rotate-20 lg:-skew-24">
+          <div className="absolute right-20 top-150 w-28 h-24 lg:-rotate-20 lg:-skew-24">
             <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
           </div>
 

@@ -9,6 +9,7 @@ import {
   Saira_Stencil_One,
   Bebas_Neue,
 } from "next/font/google";
+import { BigHoveringCube } from "./slowmotion-big-TTT-cube";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -44,6 +45,9 @@ const barriecito = Barriecito({
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex px-4">
+      <div className="hidden lg:block md:absolute top-70 lg:right-90">
+        <BigHoveringCube size="xxl" />
+      </div>
       <div className="absolute bottom-0 sm:ml-10 lg:ml-20 md:mb-20 flex">
         <h1
           className={`${bebasNeu.className} absolute bottom-78 sm:bottom-90 -left-22 rotate-90 text-gray-200 min-w-max text-7xl backdrop-blur backdrop-saturate-400 leading-tight`}
