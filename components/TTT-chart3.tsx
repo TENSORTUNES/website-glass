@@ -151,7 +151,7 @@ const EnhancedTokenChart: FC = () => {
 
   return (
     <div
-      className={`${saira.className}"bg-black bg-gray-950 rounded-lg p-6 border border-cyan-400/20 shadow-xl`}
+      className={`${saira.className}"bg-black bg-gray-950 rounded-lg p-6 py-14 border border-cyan-400/20 shadow-xl`}
     >
       {tokenData && (
         <div className={`${saira.className} mb-6`}>

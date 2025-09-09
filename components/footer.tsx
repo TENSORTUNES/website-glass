@@ -2,7 +2,7 @@ import { Music, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="glass mt-20 border-t border-white/10">
+    <footer className="glass border-t border-white/10">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo & Copyright */}

@@ -43,7 +43,7 @@ export function Hero() {
             art
           </div> */}
           <div
-            className={`${barriecito.className} absolute xs:left-0 sm:bottom-0 lg:text-9xl md:text-7xl text-8xl min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 bottom-10 sm:bottom-0 lg:text-9xl md:text-7xl text-8xl min-w-max`}
           >
             We produce.
           </div>
@@ -53,7 +53,7 @@ export function Hero() {
             music
           </div> */}
           <div
-            className={`${barriecito.className} absolute xs:left-0 sm:bottom-0 md:absolute bottom-1 md:left-92 lg:left-163 md:text-5xl  min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 sm:bottom- md:absolute left-50 bottom-10 md:left-92 md:bottom-1 lg:left-163 md:text-5xl min-w-max`}
           >
             We Distribute.
           </div>
