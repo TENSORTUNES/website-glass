@@ -31,9 +31,9 @@ export function Hero() {
   return (
     <section id="hero" className="min-h-screen flex px-4">
       <div className="relative">
-        <h1 className="md:absolute bottom-0 md:ml-20 md:mb-20 flex">
+        <h1 className="md:absolute bottom-0 sm:ml-10 lg:ml-20 md:mb-20 flex">
           <div
-            className={`${barriecito.className} md:absolute md:bottom-20 lg:bottom-30 md:text-5xl lg:text-7xl min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 sm:bottom-0 md:absolute md:bottom-20 lg:bottom-30 md:text-5xl lg:text-7xl min-w-max`}
           >
             We create.
           </div>
@@ -43,7 +43,7 @@ export function Hero() {
             art
           </div> */}
           <div
-            className={`${barriecito.className} lg:text-9xl text-8xl min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 sm:bottom-0 lg:text-9xl md:text-7xl text-8xl min-w-max`}
           >
             We produce.
           </div>
@@ -53,7 +53,7 @@ export function Hero() {
             music
           </div> */}
           <div
-            className={`${barriecito.className} md:absolute bottom-2 md:left-122 lg:left-163 md:text-5xl min-w-max`}
+            className={`${barriecito.className} absolute xs:left-0 sm:bottom-0 md:absolute bottom-1 md:left-92 lg:left-163 md:text-5xl  min-w-max`}
           >
             We Distribute.
           </div>

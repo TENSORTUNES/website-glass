@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Music, Menu, X } from "lucide-react";
 import { Oswald, Saira } from "next/font/google";
+import Image from "next/image";
+import Spotify from "../public/assets/spotify/Spotify_logo_without_text.svg";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -98,7 +100,7 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button className="neon-glow bg-green-600 hover:bg-green-700 text-white flex items-center gap-2">
               <svg
                 className="w-5 h-5"
@@ -114,6 +116,15 @@ export function Navbar() {
               Listen on Spotify
             </Button>
           </div>
+          {/* <div className="md-max-md:flex hidden">
+            <a href="https://open.spotify.com//tensortunes" target="_blank">
+              <Image
+                src={Spotify}
+                width={30}
+                alt="Spotify Tensor Tunes Music - Innovation with AI"
+              />
+            </a>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

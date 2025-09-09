@@ -21,7 +21,7 @@ export function Community() {
     <section id="community" className={`${oswald.className} mt-80 py-20 px-4`}>
       <div className="mt-5">
         {/* Hero Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center h-screen">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
             Stream the Music, Fuel the Token.
           </h2>
