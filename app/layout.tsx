@@ -73,6 +73,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${orbitron.variable} dark`}>
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body className="antialiased">
         {/* Loading Overlay - Black to View Transition */}
         <LoadingOverlay />

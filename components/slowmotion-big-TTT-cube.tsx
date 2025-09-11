@@ -11,23 +11,23 @@ interface HoveringCubeProps {
 
 export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
   const sizeClasses = {
-    xs: "w-10 h-10",
+    xs: "w-5 h-5",
     sm: "w-16 h-16",
     md: "w-24 h-24",
     lg: "w-32 h-32",
-    xxl: "w-80 h-80",
+    xxl: "w-60 h-60",
   };
   const cubeSide = sizeClasses[size];
   const half =
     size === "xs"
-      ? "20px"
+      ? "10px"
       : size === "sm"
       ? "32px"
       : size === "md"
       ? "48px"
       : size === "lg"
       ? "64px"
-      : "161px";
+      : "121px";
 
   return (
     // 1) Perspective must be on a parent of the transformed element
@@ -55,7 +55,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
@@ -78,7 +78,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
@@ -101,7 +101,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
@@ -124,7 +124,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
@@ -147,7 +147,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
@@ -170,7 +170,7 @@ export function BigHoveringCube({ className, size = "md" }: HoveringCubeProps) {
             src={TTT}
             width={
               size === "xs"
-                ? 20
+                ? 10
                 : size === "sm"
                 ? 30
                 : size === "md" || size === "lg"
