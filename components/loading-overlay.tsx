@@ -18,8 +18,16 @@ interface FallingCoin {
   fallSpeed: number;
 }
 
-function CoinModel({ position, scale, rotation }: { position: [number, number, number], scale: number, rotation: [number, number, number] }) {
-  const { scene } = useGLTF('/assets/3d_objects/tt_token_3d_textured.glb');
+function CoinModel({
+  position,
+  scale,
+  rotation,
+}: {
+  position: [number, number, number];
+  scale: number;
+  rotation: [number, number, number];
+}) {
+  const { scene } = useGLTF("/assets/3d_objects/tt_token_3d_textured.glb");
 
   return (
     <primitive
@@ -49,17 +57,17 @@ function FallingCoins() {
         rotationSpeed: [
           (Math.random() - 0.5) * 8, // Random X rotation speed
           (Math.random() - 0.5) * 8, // Random Y rotation speed
-          (Math.random() - 0.5) * 8  // Random Z rotation speed
+          (Math.random() - 0.5) * 8, // Random Z rotation speed
         ],
         initialRotation: [
           Math.random() * Math.PI * 2, // Random initial X rotation
           Math.random() * Math.PI * 2, // Random initial Y rotation
-          Math.random() * Math.PI * 2  // Random initial Z rotation
+          Math.random() * Math.PI * 2, // Random initial Z rotation
         ],
         tumbleAxis: [
           Math.random() * 2 - 1, // Random tumble axis X
           Math.random() * 2 - 1, // Random tumble axis Y
-          Math.random() * 2 - 1  // Random tumble axis Z
+          Math.random() * 2 - 1, // Random tumble axis Z
         ],
         driftSpeed: (Math.random() - 0.5) * 1.5, // Random horizontal drift (reduced)
         fallSpeed: 0.8 + Math.random() * 0.4, // Random fall speed variation
@@ -73,12 +81,12 @@ function FallingCoins() {
       <Canvas
         camera={{ position: [0, 0, 10], fov: 75 }}
         style={{
-          background: 'transparent',
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
+          background: "transparent",
+          width: "100%",
+          height: "100%",
+          position: "absolute",
           top: 0,
-          left: 0
+          left: 0,
         }}
         gl={{ alpha: true, antialias: true }}
       >
@@ -99,8 +107,14 @@ function FallingCoins() {
 }
 
 function FallingCoin3D({ coin }: { coin: FallingCoin }) {
-  const [position, setPosition] = useState<[number, number, number]>([coin.x, coin.y, 0]);
-  const [rotation, setRotation] = useState<[number, number, number]>(coin.initialRotation);
+  const [position, setPosition] = useState<[number, number, number]>([
+    coin.x,
+    coin.y,
+    0,
+  ]);
+  const [rotation, setRotation] = useState<[number, number, number]>(
+    coin.initialRotation
+  );
 
   useEffect(() => {
     const startTime = Date.now() + coin.delay * 1000;
@@ -113,15 +127,18 @@ function FallingCoin3D({ coin }: { coin: FallingCoin }) {
       if (elapsed > 0) {
         // Continuous falling motion - no resets
         const fallSpeed = 2.0; // Moderate fall speed
-        const y = coin.y - (elapsed * fallSpeed);
+        const y = coin.y - elapsed * fallSpeed;
 
         // Horizontal drift with some randomness but controlled
         const x = coin.x + Math.sin(elapsed * 0.3 + coin.id) * 2; // Gentle drift
 
         // Realistic tumbling rotation
-        const rotX = coin.initialRotation[0] + elapsed * coin.rotationSpeed[0] * 0.3;
-        const rotY = coin.initialRotation[1] + elapsed * coin.rotationSpeed[1] * 0.3;
-        const rotZ = coin.initialRotation[2] + elapsed * coin.rotationSpeed[2] * 0.3;
+        const rotX =
+          coin.initialRotation[0] + elapsed * coin.rotationSpeed[0] * 0.3;
+        const rotY =
+          coin.initialRotation[1] + elapsed * coin.rotationSpeed[1] * 0.3;
+        const rotZ =
+          coin.initialRotation[2] + elapsed * coin.rotationSpeed[2] * 0.3;
 
         // Add some wobble
         const wobbleX = Math.sin(elapsed * 1.5 + coin.id) * 0.1;
@@ -142,14 +159,9 @@ function FallingCoin3D({ coin }: { coin: FallingCoin }) {
   }, [coin]);
 
   return (
-    <CoinModel
-      position={position}
-      scale={coin.size}
-      rotation={rotation}
-    />
+    <CoinModel position={position} scale={coin.size} rotation={rotation} />
   );
 }
-
 
 export default function LoadingOverlay() {
   const [mounted, setMounted] = useState(true);
@@ -159,7 +171,7 @@ export default function LoadingOverlay() {
     // Minimum show time for UX (adjust as you like)
     const minTimer = setTimeout(() => {
       setHiding(true); // start fading after min time
-    }, 14000);
+    }, 5000);
 
     const onLoad = () => {
       // When the page finishes loading, trigger fade (but keep min show)
@@ -195,7 +207,7 @@ export default function LoadingOverlay() {
         "duration-[800ms]", // arbitrary Tailwind value
         hiding ? "opacity-0 pointer-events-none" : "opacity-100",
       ].join(" ")}
-      style={{ cursor: 'none' }}
+      style={{ cursor: "none" }}
     >
       {/* Falling coins */}
       <FallingCoins />
@@ -209,7 +221,9 @@ export default function LoadingOverlay() {
                 src="/assets/images/tt_token.png"
                 alt="TT"
                 className="w-14 h-14 object-contain opacity-80 animate-spin"
-                style={{ filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.5))' }}
+                style={{
+                  filter: "drop-shadow(0 0 4px rgba(255, 255, 255, 0.5))",
+                }}
               />
             </div>
           </div>
@@ -225,7 +239,6 @@ export default function LoadingOverlay() {
           <p className="text-[color:var(--neon-cyan)/0.7]">
             Initializing experience...
           </p>
-
         </div>
       </div>
     </div>
