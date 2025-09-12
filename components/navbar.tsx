@@ -40,10 +40,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out rounded-b-xl ${
         isScrolled
-          ? "glass backdrop-blur backdrop-saturate-300"
-          : "bg-transparent"
+          ? "glass backdrop-blur-md backdrop-saturate-200 rounded-t-none border border-white/20 bg-white/5"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">

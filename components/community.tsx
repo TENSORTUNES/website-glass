@@ -28,9 +28,9 @@ export function Community() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          <div className="-skew-x-12 lg:-skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
-            <div className="skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center transform -skew-x-3 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Music className="w-6 h-6 text-white" />
             </div>
             <h3 className="skew-x-12 text-xl font-bold text-white mb-3">
@@ -46,8 +46,8 @@ export function Community() {
             </p>
           </div>
 
-          <div className="skew-x-12 md:-skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
-            <div className="-skew-x-12 md:skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center transform -skew-x-3 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
             <h3 className="-skew-x-12 md:skew-x-12 text-xl font-bold text-white mb-3">
@@ -64,8 +64,8 @@ export function Community() {
             </p>
           </div>
 
-          <div className="-skew-x-12 md:skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
-            <div className="skew-x-12 md:-skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center transform skew-x-3 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-6 h-6 text-white" />
             </div>
             <h3 className="skew-x-12 md:-skew-x-12 text-xl font-bold text-white mb-3">
@@ -81,8 +81,8 @@ export function Community() {
             </p>
           </div>
 
-          <div className="skew-x-12 glass backdrop-blur backdrop-saturate-300  p-8 lg:p-15 rounded-2xl text-center">
-            <div className="-skew-x-12 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="glass backdrop-blur backdrop-saturate-300 p-6 rounded-2xl text-center transform skew-x-3 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-6 h-6 text-white" />
             </div>
             <h3 className="-skew-x-12 text-xl font-bold text-white mb-3">

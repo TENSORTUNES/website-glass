@@ -5,6 +5,22 @@ import { useEffect, useState } from "react"
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Check if loading overlay is present
+    const checkLoading = () => {
+      const loadingOverlay = document.querySelector('[data-loading-overlay]')
+      setIsLoading(!!loadingOverlay)
+    }
+
+    checkLoading()
+
+    // Check periodically for loading state changes
+    const interval = setInterval(checkLoading, 100)
+
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -35,6 +51,9 @@ export default function CustomCursor() {
       })
     }
   }, [])
+
+  // Don't render custom cursor during loading
+  if (isLoading) return null
 
   return (
     <div

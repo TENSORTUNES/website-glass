@@ -33,106 +33,130 @@ export function About() {
   return (
     <section id="about" className="mt-80 py-20 px-4">
       <style jsx>{`
-        @keyframes iconPulse {
-          0%,
-          70%,
-          100% {
-            transform: scale(1);
-          }
-          35% {
-            transform: scale(1.2);
-          }
-        }
+       @keyframes iconPulse {
+         0%, 70%, 100% {
+           transform: scale(1);
+           box-shadow: 0 0 0 rgba(255, 255, 255, 0.1);
+         }
+         35% {
+           transform: scale(1.2);
+           box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+         }
+       }
 
-        @keyframes statGlow {
-          0%,
-          100% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            transform: scale(1);
-          }
-          50% {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
-              0 0 30px rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
-          }
-        }
+       @keyframes statGlow {
+         0%, 100% {
+           text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+           transform: scale(1);
+           color: white;
+         }
+         50% {
+           text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+           transform: scale(1.03);
+           color: white;
+         }
+       }
 
-        .icon-animate {
-          animation: iconPulse 3s ease-in-out infinite;
-        }
+       @keyframes cardHover {
+         0% {
+           transform: skewX(-3deg) scale(1);
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+         }
+         100% {
+           transform: skewX(-3deg) scale(1.02);
+           box-shadow: 0 20px 60px rgba(0, 255, 224, 0.2), 0 0 100px rgba(0, 255, 224, 0.1);
+         }
+       }
 
-        .stat-glow {
-          animation: statGlow 2s ease-in-out infinite;
-        }
+       @keyframes cardHoverRight {
+         0% {
+           transform: skewX(3deg) scale(1);
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+         }
+         100% {
+           transform: skewX(3deg) scale(1.02);
+           box-shadow: 0 20px 60px rgba(255, 51, 112, 0.2), 0 0 100px rgba(255, 51, 112, 0.1);
+         }
+       }
 
-        .icon-animate:nth-child(1) {
-          animation-delay: 0s;
-        }
-        .icon-animate:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-        .icon-animate:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-        .icon-animate:nth-child(4) {
-          animation-delay: 0.6s;
-        }
-        .icon-animate:nth-child(5) {
-          animation-delay: 0.8s;
-        }
-        .icon-animate:nth-child(6) {
-          animation-delay: 1s;
-        }
-        .icon-animate:nth-child(7) {
-          animation-delay: 1.2s;
-        }
-        .icon-animate:nth-child(8) {
-          animation-delay: 1.4s;
-        }
-        .icon-animate:nth-child(9) {
-          animation-delay: 1.6s;
-        }
-      `}</style>
-      <div className="container mx-auto mt-16 max-w-7xl">
-        <div className="h-screen">
-          {/* Main Heading */}
-          <div className={`${saira.className} text-center mb-16`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white lg:mb-8">
-              An AI-powered collective pioneering the future of music and
-              community.
-            </h2>
-          </div>
+       .icon-animate {
+         animation: iconPulse 3s ease-in-out infinite;
+         transition: all 0.3s ease;
+       }
 
-          {/* Icons Section - Full Width */}
-          <div className="md:flex hidden md:mb-14 lg:mb-30 flex items-center justify-center">
-            <div className="flex items-center justify-around w-full max-w-none">
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Music className="w-7 h-7 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Cpu className="w-5 h-5 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Headphones className="w-7 h-7 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Zap className="w-7 h-7 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Globe className="w-5 h-5 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <div className="glass p-3 rounded-2xl flex items-center justify-center icon-animate">
-                <Mic className="w-5 h-5 text-white" />
-              </div>
+       .icon-animate:hover {
+         transform: scale(1.3);
+         box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+       }
+
+       .stat-glow {
+         animation: statGlow 3s ease-in-out infinite;
+         font-weight: 800;
+       }
+
+       .card-left {
+         transition: all 0.4s ease;
+       }
+
+       .card-left:hover {
+         animation: cardHover 0.4s ease forwards;
+       }
+
+       .card-right {
+         transition: all 0.4s ease;
+       }
+
+       .card-right:hover {
+         animation: cardHoverRight 0.4s ease forwards;
+       }
+
+       .icon-animate:nth-child(1) { animation-delay: 0s; }
+       .icon-animate:nth-child(2) { animation-delay: 0.2s; }
+       .icon-animate:nth-child(3) { animation-delay: 0.4s; }
+       .icon-animate:nth-child(4) { animation-delay: 0.6s; }
+       .icon-animate:nth-child(5) { animation-delay: 0.8s; }
+       .icon-animate:nth-child(6) { animation-delay: 1s; }
+       .icon-animate:nth-child(7) { animation-delay: 1.2s; }
+       .icon-animate:nth-child(8) { animation-delay: 1.4s; }
+       .icon-animate:nth-child(9) { animation-delay: 1.6s; }
+     `}</style>
+      <div className="container mx-auto mt-5 max-w-7xl">
+        {/* Main Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            An AI-powered collective pioneering the future of music and community.
+          </h2>
+        </div>
+
+        {/* Icons Section - Full Width */}
+        <div className="mb-16 flex items-center justify-center">
+          <div className="flex items-center justify-center gap-6 w-full max-w-none px-4">
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Brain className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Music className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Cpu className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Headphones className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Sparkles className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Zap className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Globe className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Users className="w-10 h-10 text-white" />
+            </div>
+            <div className="glass backdrop-blur backdrop-saturate-300 p-3 rounded-2xl flex items-center justify-center icon-animate">
+              <Mic className="w-10 h-10 text-white" />
             </div>
           </div>
         </div>
@@ -191,8 +215,9 @@ export function About() {
           className={`lg:relative lg:absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch h-screen`}
         >
           {/* Left Column - Mission Text */}
-          <div className="lg:origin-top-left lg:-left-5 lg:-rotate-8 lg:absolute lg:w-1/2">
-            <div className="glass backdrop-blur backdrop-saturate-300 p-10 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
+          <div className="space-y-8 xl:space-y-12">
+            
+            <div className="glass backdrop-blur backdrop-saturate-300 px-8 py-6 xl:px-10 xl:py-8 text-center h-[400px] xl:h-[450px] flex flex-col justify-between transform -skew-x-3 card-left">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Where AI Meets Artistry
@@ -227,8 +252,9 @@ export function About() {
           </div>
 
           {/* Right Column - Visual Card */}
-          <div className="lg:origin-bottom-left lg:rotate-8 lg:absolute right-10 lg:w-1/2">
-            <div className="glass backdrop-blur backdrop-saturate-300 p-6 xl:p-8 text-center min-h-[400px] xl:min-h-[450px] flex flex-col justify-between">
+          <div className="relative space-y-8 xl:space-y-12">
+
+            <div className="glass backdrop-blur backdrop-saturate-300 px-8 py-6 xl:px-10 xl:py-8 text-center h-[400px] xl:h-[450px] flex flex-col justify-between transform skew-x-3 card-right">
               <div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   United by Sound, Driven by Vision
