@@ -52,7 +52,7 @@ function FallingCoins() {
         x: (Math.random() - 0.5) * 18, // -9 to 9 (slightly wider for more coins)
         y: 9 + verticalSpacing, // Start closer to visible area
         size: 0.4 + Math.random() * 0.6, // 0.4 to 1.0 scale (slightly smaller range)
-        duration: 8 + Math.random() * 8, // 8-16 seconds
+        duration: 4 + Math.random() * 8, // 8-16 seconds
         delay: i * 0.005, // Near-instant stagger delays
         rotationSpeed: [
           (Math.random() - 0.5) * 8, // Random X rotation speed
@@ -70,7 +70,7 @@ function FallingCoins() {
           Math.random() * 2 - 1, // Random tumble axis Z
         ],
         driftSpeed: (Math.random() - 0.5) * 1.5, // Random horizontal drift (reduced)
-        fallSpeed: 0.8 + Math.random() * 0.4, // Random fall speed variation
+        fallSpeed: 5 + Math.random() * 1, // Random fall speed variation
       });
     }
     setCoins(newCoins);
@@ -126,7 +126,7 @@ function FallingCoin3D({ coin }: { coin: FallingCoin }) {
 
       if (elapsed > 0) {
         // Continuous falling motion - no resets
-        const fallSpeed = 2.0; // Moderate fall speed
+        const fallSpeed = 4.0; // Moderate fall speed
         const y = coin.y - elapsed * fallSpeed;
 
         // Horizontal drift with some randomness but controlled
