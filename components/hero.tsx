@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex px-4">
       <div className="hidden lg:block md:absolute xl:top-70 lg xl:right-40">
-        <BigHoveringCube size="xxl" />
+        {/* <BigHoveringCube size="xxl" /> */}
       </div>
       <div className="absolute bottom-0 sm:ml-10 lg:ml-20 md:mb-20 flex">
         <h1
