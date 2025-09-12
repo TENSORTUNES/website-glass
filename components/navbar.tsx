@@ -40,10 +40,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out rounded-b-xl ${
         isScrolled
-          ? "glass backdrop-blur backdrop-saturate-300"
-          : "bg-transparent"
+          ? "glass backdrop-blur-md backdrop-saturate-200 rounded-t-none border border-white/20 bg-white/5"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -104,7 +104,7 @@ export function Navbar() {
             <a
               href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
               target="_blank"
-              className="p-1 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
+              className="p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
             >
               <svg
                 className="w-5 h-5"
