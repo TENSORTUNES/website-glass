@@ -31,7 +31,7 @@ const saira = Saira({
 
 export function About() {
   return (
-    <section id="about" className="mt-80 py-20 px-4">
+    <section id="about" className="mt-80 mb-20 py-20 px-4">
       <style jsx>{`
         @keyframes iconPulse {
           0%,
@@ -94,7 +94,7 @@ export function About() {
         }
       `}</style>
       <div className="container mx-auto mt-16 max-w-7xl">
-        <div className="h-screen">
+        <div className="h-auto">
           {/* Main Heading */}
           <div className={`${saira.className} text-center mb-16`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white lg:mb-8">
@@ -155,40 +155,30 @@ export function About() {
           </div>
         </div> */}
 
-        <div className="relative hidden lg:block pointer-events-none">
-          {/* left mid floating square */}
-          <div className="absolute left-30 -top-150 w-16 h-12 lg:rotate-60 lg:-skew-60">
-            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
-
-          {/* right mid floating square */}
-          <div className="absolute right-15 -top-20 w-20 h-16 lg:rotate-80 lg:-skew-50">
-            <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
-
+        {/* <div className="relative hidden lg:block pointer-events-none">
           {/* Left bottom floating square */}
-          <div className="hidden xl:block absolute -left-0 top-120 w-24 h-20 lg:rotate-80 lg:-skew-20">
+          {/* <div className="hidden xl:block absolute -left-0 top-120 w-24 h-20 lg:rotate-80 lg:-skew-20">
             <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
+          </div> */}
 
           {/* Right bottom floating square */}
-          <div className="absolute right-20 top-150 w-28 h-24 lg:-rotate-20 lg:-skew-24">
+          {/* <div className="absolute right-20 top-150 w-28 h-24 lg:-rotate-20 lg:-skew-24">
             <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
+          </div> */}
 
           {/* left top floating squares */}
-          <div className="absolute -left-12 bottom-20 w-20 h-16 lg:rotate-75 lg:skew-12">
+          {/* <div className="absolute -left-12 bottom-20 w-20 h-16 lg:rotate-75 lg:skew-12">
             <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
+          </div> */}
 
           {/* right top floating squares */}
-          <div className="absolute right-40 bottom-100 w-24 h-18 lg:-rotate-45 lg:skew-6">
+          {/* <div className="absolute right-40 bottom-100 w-24 h-18 lg:-rotate-45 lg:skew-6">
             <div className="glass backdrop-blur backdrop-saturate-400 w-full h-full rounded-lg" />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         <div
-          className={`lg:relative lg:absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch h-screen`}
+          className={`lg:relative lg:absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch`}
         >
           {/* Left Column - Mission Text */}
           <div className="lg:origin-top-left lg:-left-5 lg:-rotate-8 lg:absolute lg:w-1/2">

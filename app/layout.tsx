@@ -5,6 +5,7 @@ import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import { DynamicBackground } from "@/components/dynamic-background";
 import LoadingOverlay from "@/components/loading-overlay";
+// import PersistentFallingCoins from "@/components/persistent-falling-coins";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,11 +77,18 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className="antialiased">
-        {/* Loading Overlay - Black to View Transition */}
+        {/* Loading Overlay */}
         <LoadingOverlay />
 
         {/* Dynamic Video Background */}
         <DynamicBackground />
+
+        {/* Aurora background effect (from CSS) will be here */}
+
+        {/* Persistent Falling Coins - Disabled */}
+        {/* <div className="fixed inset-0" style={{ zIndex: -1, pointerEvents: 'none', opacity: 0.5 }}>
+          <PersistentFallingCoins />
+        </div> */}
 
         {/* Content with higher z-index */}
         <div className="z-999">

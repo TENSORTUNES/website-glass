@@ -40,12 +40,13 @@ const featuredRelease = {
 
 export function Releases() {
   return (
-    <section id="releases" className="mt-80 py-20 px-4">
-      <div className="container mx-auto mt-5">
+    <section id="releases" className="mt-150 pb-32 py-20 px-4">
+      <div className="container mx-auto mt-20
+      ">
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2
-            className={`${audiowide.className} text-4xl md:text-5xl font-bold text-white mb-8`}
+            className={`${saira.className} text-4xl md:text-5xl font-bold text-white mb-8`}
           >
             Latest Releases.
           </h2>
