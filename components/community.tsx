@@ -2,8 +2,11 @@ import { Users, Music, TrendingUp, Heart, Zap } from "lucide-react";
 
 export function Community() {
   return (
-    <section id="community" className="font-['Saira'] font-light mt-80 py-20 px-4">
-      <div className="mt-5 px-10 mb-16">
+    <section
+      id="community"
+      className="font-['Saira'] font-light mt-80 py-20 px-4"
+    >
+      <div className="mt-5  mb-16">
         {/* Hero Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -95,11 +98,15 @@ export function Community() {
                   Join Our Discord Community
                 </h3>
                 <p className="text-white/70 leading-relaxed text-base lg:text-lg">
-                  Whether you're a music producer, token investor, content creator, or simply passionate about AI-generated music,
-                  our Discord server is the heart of the TensorTunes ecosystem. Connect with like-minded individuals, get early access
-                  to new releases, participate in governance decisions, receive exclusive token rewards, and be part of shaping the
-                  future of music and blockchain technology. Join thousands of community members who are already building the next
-                  generation of music streaming.
+                  Whether you're a music producer, token investor, content
+                  creator, or simply passionate about AI-generated music, our
+                  Discord server is the heart of the TensorTunes ecosystem.
+                  Connect with like-minded individuals, get early access to new
+                  releases, participate in governance decisions, receive
+                  exclusive token rewards, and be part of shaping the future of
+                  music and blockchain technology. Join thousands of community
+                  members who are already building the next generation of music
+                  streaming.
                 </p>
               </div>
             </div>
