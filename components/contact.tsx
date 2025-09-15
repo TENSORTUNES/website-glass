@@ -64,20 +64,25 @@ export function Contact() {
 
   return (
     <section id="contact" className={`${oswald.className} py-20 px-4`}>
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
             Get In Touch
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
-            Ready to collaborate or have questions about our AI music
+
+          <p className="flex justify-center text-white/60 mt-6 leading-relaxed">
+            Stay updated with our latest releases, behind-the-scenes content,
+            and AI music production insights.
+          </p>
+          <p className="flex justify-center text-white/60 leading-relaxed">
+            Or are u ready to collaborate or have questions about our AI music
             production? We'd love to hear from you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="glass backdrop-blur backdrop-saturate-300 p-8 md:p-12">
+          {/* <div className="glass backdrop-blur backdrop-saturate-300 p-8 md:p-12">
             <h3 className="text-2xl font-semibold text-white mb-8">
               Send us a message
             </h3>
@@ -148,134 +153,127 @@ export function Contact() {
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
-          </div>
+          </div> */}
 
-          {/* Contact Info & Socials */}
-          <div className="space-y-8">
-            <div className="p-8 glass backdrop-blur backdrop-saturate-300">
-              <h3 className="text-2xl font-semibold text-white mb-6">
-                Contact Information
-              </h3>
+          <div className="space-y-8 p-8 glass backdrop-blur backdrop-saturate-300">
+            <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+              Contact Information
+            </h3>
 
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="glass bg-white/40 p-3 rounded-xl">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-white/80">Email</div>
-                    <div className="text-white">info@tensortunes.com</div>
-                  </div>
+            <div className=" md:flex justify-around space-y-6 ">
+              <div className="flex  gap-4">
+                <div className="glass bg-white/40 p-3 rounded-xl">
+                  <Mail className="w-5 h-5" />
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="glass bg-white/40 p-3 rounded-xl">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-white/80">Phone</div>
-                    <div className="text-white">+1 (555) 123-4567</div>
-                  </div>
+                <div>
+                  <div className="text-white/80">Email</div>
+                  <div className="text-white">info@tensortunes.com</div>
                 </div>
+              </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="glass bg-white/40 p-3 rounded-xl">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-white/80">Location</div>
-                    <div className="text-white">San Francisco, CA</div>
-                  </div>
+              <div className="flex  gap-4">
+                <div className="glass bg-white/40 p-3 rounded-xl">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-white/80">Phone</div>
+                  <div className="text-white">+1 (555) 123-4567</div>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="glass bg-white/40 max-h-min p-3 rounded-xl">
+                  <MapPin className="w-5 h-6" />
+                </div>
+                <div>
+                  <div className="text-white/80">Location</div>
+                  <div className="text-white">Amsterdam, The Netherlands</div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="glass backdrop-blur backdrop-saturate-300 p-8">
-              <h3 className="text-center text-2xl font-semibold text-white mb-6">
-                Follow Us
-              </h3>
+          {/* Contact Info & Socials */}
+          <div className="glass backdrop-blur backdrop-saturate-300 p-8">
+            <h3 className="text-center text-2xl font-semibold text-white mb-6">
+              Follow Us
+            </h3>
 
-              <div className="flex justify-around">
-                <a
-                  href="https://spotify.com/tensortunes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 group"
-                >
-                  <Image
-                    className="rounded-4xl group-hover:scale-110 transition-transform"
-                    width={50}
-                    height={50}
-                    src={Spotify}
-                    alt="Tensor Tunes X account - Love for Music & AI"
-                  />
-                </a>
+            <div className="flex justify-around">
+              <a
+                href="https://spotify.com/tensortunes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 group"
+              >
+                <Image
+                  className="rounded-4xl group-hover:scale-110 transition-transform"
+                  width={50}
+                  height={50}
+                  src={Spotify}
+                  alt="Tensor Tunes X account - Love for Music & AI"
+                />
+              </a>
 
-                <a
-                  href="https://instagram.com/tensortunes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 group"
-                >
-                  <Image
-                    className="rounded-4xl group-hover:scale-110 transition-transform"
-                    width={50}
-                    height={50}
-                    src={Instagram}
-                    alt="Tensor Tunes X account - Love for Music & AI"
-                  />
-                </a>
+              <a
+                href="https://instagram.com/tensortunes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 group"
+              >
+                <Image
+                  className="rounded-4xl group-hover:scale-110 transition-transform"
+                  width={50}
+                  height={50}
+                  src={Instagram}
+                  alt="Tensor Tunes X account - Love for Music & AI"
+                />
+              </a>
 
-                <a
-                  href="https://X.com/tensortunes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 group"
-                >
-                  <Image
-                    className="rounded-4xl group-hover:scale-110 transition-transform"
-                    width={50}
-                    height={50}
-                    src={X}
-                    alt="Tensor Tunes X account - Love for Music & AI"
-                  />
-                </a>
+              <a
+                href="https://X.com/tensortunes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 group"
+              >
+                <Image
+                  className="rounded-4xl group-hover:scale-110 transition-transform"
+                  width={50}
+                  height={50}
+                  src={X}
+                  alt="Tensor Tunes X account - Love for Music & AI"
+                />
+              </a>
 
-                <a
-                  href="https://dexscreener.com/LinkTotensortunes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 group"
-                >
-                  <Image
-                    className="rounded-4xl group-hover:scale-110 transition-transform"
-                    width={50}
-                    height={50}
-                    src={Dexscreener}
-                    alt="Tensor Tunes X account - Love for Music & AI"
-                  />
-                </a>
+              <a
+                href="https://dexscreener.com/LinkTotensortunes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 group"
+              >
+                <Image
+                  className="rounded-4xl group-hover:scale-110 transition-transform"
+                  width={50}
+                  height={50}
+                  src={Dexscreener}
+                  alt="Tensor Tunes X account - Love for Music & AI"
+                />
+              </a>
 
-                <a
-                  href="https://solscan.com/LinkTotensortunes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 group"
-                >
-                  <Image
-                    className="rounded-4xl group-hover:scale-110 transition-transform"
-                    width={50}
-                    height={50}
-                    src={SolanaIcon}
-                    alt="Tensor Tunes X account - Love for Music & AI"
-                  />
-                </a>
-              </div>
-
-              <p className="flex justify-center text-white/60 mt-6 leading-relaxed">
-                Stay updated with our latest releases, behind-the-scenes
-                content, and AI music production insights.
-              </p>
+              <a
+                href="https://solscan.com/LinkTotensortunes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 group"
+              >
+                <Image
+                  className="rounded-4xl group-hover:scale-110 transition-transform"
+                  width={50}
+                  height={50}
+                  src={SolanaIcon}
+                  alt="Tensor Tunes X account - Love for Music & AI"
+                />
+              </a>
             </div>
           </div>
         </div>
