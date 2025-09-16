@@ -27,7 +27,7 @@ export default function Home() {
         <Releases />
         <Community />
 
-        <div className="relative p-8 md:my-80 bg-[linear-gradient(to_bottom,transparent_0,theme(colors.gray.950)_12rem,theme(colors.gray.950)_calc(100%-12rem),transparent_100%)]">
+        <div className="relative p-8 md:my-80 bg-[linear-gradient(to_bottom,transparent_0,theme(colors.gray.450)_12rem,theme(colors.gray.950)_calc(100%-12rem),transparent_100%)]">
           {/* <div className="hidden lg:block absolute left-180 -top-100">
             <HoveringCube size="xs" />
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
           <div>
             <div className="my-25 flex justify-around">
               <div className="flex flex-col xl:flex-row min-w-full">
-                <div className="w-full xl:w-1/2">
+                <div className="w-full xl:w-1/2 glass">
                   <EnhancedTokenChart />
                 </div>
 

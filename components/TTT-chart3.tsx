@@ -45,6 +45,16 @@ interface TokenData {
 const DEXSCREENER_API =
   "https://api.dexscreener.com/latest/dex/pairs/solana/HMvLCFT6Posj5ABL2VjLVokJYbpbqzK8oBKm4sEeRrcC";
 
+// helper to make evenly spaced ticks (every 2 hours over 24h)
+const HOUR = 60 * 60 * 1000;
+const getTicks = (points: ChartPoint[]) => {
+  if (!points.length) return [];
+  const start = points[0].timestamp; // oldest point
+  // snap to exact hour if you want:
+  // const start = Math.floor(points[0].timestamp / HOUR) * HOUR;
+  return Array.from({ length: 13 }, (_, i) => start + i * 2 * HOUR); // 0..24h by 2h
+};
+
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
@@ -151,7 +161,7 @@ const EnhancedTokenChart: FC = () => {
 
   return (
     <div
-      className={`${saira.className}"bg-black bg-gray-950 rounded-lg p-6 py-14 border border-cyan-400/20 shadow-xl`}
+      className={`${saira.className}"rounded-lg p-6 py-14 border border-cyan-400/20 shadow-xl`}
     >
       {tokenData && (
         <div className={`${saira.className} mb-6`}>
@@ -205,7 +215,7 @@ const EnhancedTokenChart: FC = () => {
         </div>
       )}
 
-      <div className={`${saira.className} h-64`}>
+      <div className={`${saira.className} text-white h-64`}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
@@ -215,11 +225,20 @@ const EnhancedTokenChart: FC = () => {
               </linearGradient>
             </defs>
             <XAxis
-              dataKey="time"
+              dataKey="timestamp"
+              type="number"
+              scale="time"
+              domain={["dataMin", "dataMax"]} // or [start, start + 24*HOUR]
+              ticks={getTicks(data)}
+              tickFormatter={(ts: number) =>
+                new Date(ts).toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })
+              }
               axisLine={false}
-              tickLine={false}
-              tick={{ fill: "#6b7280", fontSize: 12 }}
-              interval="preserveStartEnd"
+              minTickGap={8}
             />
             <YAxis
               hide
