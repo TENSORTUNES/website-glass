@@ -47,46 +47,78 @@ const DEXSCREENER_API =
 
 // helper to make evenly spaced ticks (every 2 hours over 24h)
 const HOUR = 60 * 60 * 1000;
-const getTicks = (points: ChartPoint[]) => {
-  if (!points.length) return [];
-  const start = points[0].timestamp; // oldest point
-  // snap to exact hour if you want:
-  // const start = Math.floor(points[0].timestamp / HOUR) * HOUR;
-  return Array.from({ length: 13 }, (_, i) => start + i * 2 * HOUR); // 0..24h by 2h
+
+const build24hData = (currentPrice: number) => {
+  const end = Math.floor(Date.now() / HOUR) * HOUR; // snap to hour
+  const start = end - 23 * HOUR; // 24 points -> 23h span
+  const points: ChartPoint[] = Array.from({ length: 24 }, (_, i) => {
+    const timestamp = start + i * HOUR;
+    // generate your price… (replace with real data when you have it)
+    const basePrice = currentPrice * (1 + (Math.random() - 0.5) * 0.15);
+    return {
+      time: new Date(timestamp).toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+      price: basePrice,
+      timestamp,
+      priceChange: 0,
+    };
+  });
+  return { points, start, end };
 };
 
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-    const price = payload[0].value;
-    const priceChange = data.priceChange || 0;
+const getTicks = (start: number, end: number, step = 2 * HOUR) => {
+  const arr: number[] = [];
+  for (let t = start; t <= end; t += step) arr.push(t);
+  return arr;
+};
 
-    return (
-      <div className="bg-black border border-cyan-400/20 rounded-lg p-3 shadow-lg">
-        <p className="text-cyan-400 text-sm font-medium">{`Time: ${label}`}</p>
+const fmtHHMM = (ms: number, useUTC = false) => {
+  const d = new Date(ms);
+  const h = (useUTC ? d.getUTCHours() : d.getHours())
+    .toString()
+    .padStart(2, "0");
+  const m = (useUTC ? d.getUTCMinutes() : d.getMinutes())
+    .toString()
+    .padStart(2, "0");
+  return `${h}:${m}`;
+};
+
+const CustomTooltip = ({ active, payload }: any) => {
+  if (!active || !payload?.length) return null;
+  const point = payload[0].payload as ChartPoint;
+
+  return (
+    <div className="bg-black border border-cyan-400/20 rounded-lg p-3 shadow-lg">
+      <p className="text-cyan-400 text-sm font-medium">
+        Time: {fmtHHMM(point.timestamp)}{" "}
+        {/* or fmtHHMM(point.timestamp, true) for UTC */}
+      </p>
+      <p className={`${saira.className} text-white text-lg font-bold`}>
+        ${point.price.toFixed(6)}
+      </p>
+      {!!point.priceChange && (
         <p
-          className={`${saira.className} text-white text-lg font-bold`}
-        >{`$${price.toFixed(6)}`}</p>
-        {priceChange !== 0 && (
-          <p
-            className={`text-sm ${
-              priceChange > 0 ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            {priceChange > 0 ? "↗" : "↘"} {priceChange > 0 ? "+" : ""}
-            {priceChange.toFixed(2)}%
-          </p>
-        )}
-      </div>
-    );
-  }
-  return null;
+          className={`text-sm ${
+            point.priceChange > 0 ? "text-green-400" : "text-red-400"
+          }`}
+        >
+          {point.priceChange > 0 ? "↗" : "↘"} {point.priceChange > 0 ? "+" : ""}
+          {point.priceChange.toFixed(2)}%
+        </p>
+      )}
+    </div>
+  );
 };
 
 const EnhancedTokenChart: FC = () => {
   const [data, setData] = useState<ChartPoint[]>([]);
   const [tokenData, setTokenData] = useState<TokenData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [domain, setDomain] = useState<[number, number] | null>(null);
+  const [ticks, setTicks] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -108,27 +140,29 @@ const EnhancedTokenChart: FC = () => {
           setTokenData(tokenInfo);
 
           const now = Date.now();
-          const mockData = Array.from({ length: 24 }, (_, i) => {
-            const timestamp = now - (23 - i) * 60 * 60 * 1000; // 24 hours of hourly data
-            const date = new Date(timestamp);
-            const basePrice = currentPrice * (1 + (Math.random() - 0.5) * 0.15);
-            const prevPrice =
-              i > 0 ? data[i - 1]?.price || basePrice : basePrice;
-            const priceChange = ((basePrice - prevPrice) / prevPrice) * 100;
+          // const mockData = Array.from({ length: 24 }, (_, i) => {
+          //   const timestamp = now - (23 - i) * 60 * 60 * 1000; // 24 hours of hourly data
+          //   const date = new Date(timestamp);
+          //   const basePrice = currentPrice * (1 + (Math.random() - 0.5) * 0.15);
+          //   const prevPrice =
+          //     i > 0 ? data[i - 1]?.price || basePrice : basePrice;
+          //   const priceChange = ((basePrice - prevPrice) / prevPrice) * 100;
 
-            return {
-              time: date.toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              }),
-              price: basePrice,
-              timestamp,
-              priceChange: i > 0 ? priceChange : 0,
-            };
-          });
-
-          setData(mockData);
+          //   return {
+          //     time: date.toLocaleTimeString("en-US", {
+          //       hour: "2-digit",
+          //       minute: "2-digit",
+          //       hour12: false,
+          //     }),
+          //     price: basePrice,
+          //     timestamp,
+          //     priceChange: i > 0 ? priceChange : 0,
+          //   };
+          // });
+          const { points, start, end } = build24hData(currentPrice);
+          setData(points);
+          setDomain([start, end]);
+          setTicks(getTicks(start, end));
         }
         setLoading(false);
       } catch (err) {
@@ -228,8 +262,8 @@ const EnhancedTokenChart: FC = () => {
               dataKey="timestamp"
               type="number"
               scale="time"
-              domain={["dataMin", "dataMax"]} // or [start, start + 24*HOUR]
-              ticks={getTicks(data)}
+              domain={domain ?? ["dataMin", "dataMax"]}
+              ticks={ticks}
               tickFormatter={(ts: number) =>
                 new Date(ts).toLocaleTimeString("en-US", {
                   hour: "2-digit",
@@ -237,14 +271,20 @@ const EnhancedTokenChart: FC = () => {
                   hour12: false,
                 })
               }
+              tick={{ fill: "#ffffff", fontSize: 12 }}
               axisLine={false}
-              minTickGap={8}
+              tickLine={false}
             />
+
             <YAxis
               hide
               domain={["dataMin - dataMin * 0.01", "dataMax + dataMax * 0.01"]}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip
+              content={<CustomTooltip />}
+              labelFormatter={(value) => fmtHHMM(value as number)}
+            />
+
             <Area
               type="monotone"
               dataKey="price"
