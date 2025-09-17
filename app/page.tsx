@@ -41,19 +41,18 @@ export default function Home() {
 
           <div>
             <div className="my-25 flex justify-around">
-              <div className="flex flex-col xl:flex-row min-w-full space-x-10">
-                <div className="w-full xl:w-1/2 glass">
+              <div className="flex flex-col xl:flex-row min-w-full space-x-10 space-y-10">
+                <div className="w-full xl:w-1/2 glass max-h-min">
                   <EnhancedTokenChart />
                 </div>
 
                 <div className="flex justify-center text-center w-full xl:w-1/2 glass">
                   <div className="flex text-center">
-                    <SwapExplanation />
+                    <RaydiumBuyingGuide />
                   </div>
                 </div>
               </div>
             </div>
-            <RaydiumBuyingGuide />
           </div>
         </div>
 
