@@ -64,7 +64,7 @@ export function Contact() {
 
   return (
     <section id="contact" className={`${oswald.className} py-20 px-4`}>
-      <div className="container mx-auto mb-20">
+      <div className="mx-10 mb-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
             Get In Touch
@@ -80,7 +80,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-16">
           {/* Contact Form */}
           {/* <div className="glass backdrop-blur backdrop-saturate-300 p-8 md:p-12">
             <h3 className="text-2xl font-semibold text-white mb-8">
@@ -155,14 +155,14 @@ export function Contact() {
             </form>
           </div> */}
 
-          <div className="space-y-8 p-8 glass backdrop-blur backdrop-saturate-300">
+          <div className="space-y-8 p-8 glass backdrop-blur backdrop-saturate-300 mb-4 xl:mb-0">
             <h3 className="text-2xl font-semibold text-white mb-6 text-center">
               Contact Information
             </h3>
 
             <div className=" md:flex justify-around space-y-6 ">
               <div className="flex  gap-4">
-                <div className="glass bg-white/40 p-3 rounded-xl">
+                <div className="glass bg-white/40 max-h-min p-3 rounded-xl">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -172,7 +172,7 @@ export function Contact() {
               </div>
 
               <div className="flex  gap-4">
-                <div className="glass bg-white/40 p-3 rounded-xl">
+                <div className="glass bg-white/40 max-h-min p-3 rounded-xl">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>

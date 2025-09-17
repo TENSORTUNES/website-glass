@@ -16,35 +16,49 @@ import {
   Shield,
   Copy,
 } from "lucide-react";
+import Image from "next/image";
+import PHANTOM_LOGO from "../public/assets/phantom/Phantom_SVG_Icon.svg";
+import SOLFLARE_LOGO from "../public/assets/solflare/Solflare.png";
+import BACKPACK_LOGO from "../public/assets/backpack/Backpack_logo.png";
+import SOLANA_LOGO from "../public/assets/solana/Solana_logo.png";
+import TTT_LOGO from "../public/assets/TTT/TTT.png";
+import RAYDIUM_LOGO from "../public/assets/raydium/RAYDIUM_logo.svg";
 
 interface BuyingGuideProps {
   className?: string;
 }
 
 export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
-  const contractAddress = "YOUR_CONTRACT_ADDRESS_HERE";
+  const contractAddress = "TENSORTUNESTOKENMINTADDRESS";
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
   };
 
   return (
-    <div className={`max-w-4xl mx-auto p-4 ${className}`}>
-      <div className="text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          How to Buy <span className="text-blue-600">TensorTunesToken</span>
+    <div className={`max-w-4xl mx-auto p-4 xl:p-12 ${className}`}>
+      <div className="mb-8">
+        <h1 className="flex flex-col md:flex-row justify-center gap-5 items-center text-3xl md:text-4xl font-bold mb-6">
+          How to Buy{" "}
+          <span className="flex align-middle items-center">
+            <Image
+              src={TTT_LOGO}
+              alt="TensorTunes token logo on solana ecosystem"
+              width={60}
+            />{" "}
+          </span>
         </h1>
-        <Badge variant="secondary" className="text-lg px-4 py-2">
+        {/* <Badge variant="secondary" className="text-lg px-4 py-2">
           Symbol: TTT
-        </Badge>
+        </Badge> */}
       </div>
 
       <div className="grid gap-6 md:gap-8">
         {/* Step 1 */}
-        <Card className="border-2 hover:border-blue-200 transition-colors">
+        <Card className="border border-white/30 transition-colors bg-black/30">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="w-12 h-12 bg-sky-300 text-white rounded-full flex items-center justify-center font-bold text-xl">
                 1
               </div>
               <div>
@@ -59,27 +73,45 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="text-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-                <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-xs text-gray-500">Phantom Logo</span>
+              <div className="text-center p-4 bg-white/20 rounded-lg hover:bg-white/40 transition-colors">
+                <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                  <Image
+                    className="rounded-2xl"
+                    src={PHANTOM_LOGO}
+                    alt="Phantom Wallet logo (Solana)"
+                    width={50}
+                    height={50}
+                  />
                 </div>
                 <h3 className="font-semibold">Phantom</h3>
                 <p className="text-sm text-muted-foreground">
                   Popular browser extension
                 </p>
               </div>
-              <div className="text-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-                <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-xs text-gray-500">Solflare Logo</span>
+              <div className="text-center p-4 bg-white/20 rounded-lg hover:bg-white/40 transition-colors">
+                <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                  <Image
+                    className="rounded-2xl"
+                    src={SOLFLARE_LOGO}
+                    alt="Phantom Wallet logo (Solana)"
+                    width={50}
+                    height={50}
+                  />
                 </div>
                 <h3 className="font-semibold">Solflare</h3>
                 <p className="text-sm text-muted-foreground">
                   Web & mobile wallet
                 </p>
               </div>
-              <div className="text-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
-                <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-xs text-gray-500">Backpack Logo</span>
+              <div className="text-center p-4 bg-white/20 rounded-lg hover:bg-white/40 transition-colors">
+                <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                  <Image
+                    className="rounded-2xl"
+                    src={BACKPACK_LOGO}
+                    alt="Phantom Wallet logo (Solana)"
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <h3 className="font-semibold">Backpack</h3>
                 <p className="text-sm text-muted-foreground">
@@ -87,7 +119,7 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
                 </p>
               </div>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg">
+            <div className="glass p-4 rounded-lg">
               <p className="text-sm">
                 <Wallet className="inline w-4 h-4 mr-2" />
                 You'll need SOL to pay for transaction fees and to swap for TTT
@@ -98,10 +130,10 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
         </Card>
 
         {/* Step 2 */}
-        <Card className="border-2 hover:border-blue-200 transition-colors">
+        <Card className="border border-white/30 transition-colors bg-black/30">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="w-12 h-12 bg-sky-300 text-white rounded-full flex items-center justify-center font-bold text-xl">
                 2
               </div>
               <div>
@@ -115,9 +147,15 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="flex flex-col sm:flex-row items-center gap-4 p-4 border rounded-lg">
-              <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-500">Raydium Logo</span>
+            <div className="flex flex-col sm:flex-row items-center gap-4 p-4 text-center bg-white/20 rounded-lg hover:bg-white/40 transition-colors">
+              <div className="w-16 h-16 mx-auto flex items-center justify-center">
+                <Image
+                  className="rounded-1xl"
+                  src={RAYDIUM_LOGO}
+                  alt="Phantom Wallet logo (Solana)"
+                  width={70}
+                  height={70}
+                />
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <h3 className="font-semibold text-lg">Raydium.io</h3>
@@ -134,10 +172,10 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
         </Card>
 
         {/* Step 3 */}
-        <Card className="border-2 hover:border-blue-200 transition-colors">
+        <Card className="border border-white/30 transition-colors bg-black/30">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="w-12 h-12 bg-sky-300 text-white rounded-full flex items-center justify-center font-bold text-xl">
                 3
               </div>
               <div>
@@ -151,13 +189,13 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+            <div className="p-4 rounded-lg">
               <h4 className="font-semibold mb-2 flex items-center gap-2">
                 <ArrowRightLeft className="w-4 h-4" />
                 Contract Address
               </h4>
               <div className="flex flex-col sm:flex-row gap-2">
-                <code className="flex-1 bg-white p-2 rounded border text-sm break-all">
+                <code className="flex-1 glass p-2 rounded border text-sm break-all">
                   {contractAddress}
                 </code>
                 <Button
@@ -173,20 +211,32 @@ export function RaydiumBuyingGuide({ className }: BuyingGuideProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 border rounded-lg">
+              <div className="p-4 border border-white/30 rounded-lg">
                 <h4 className="font-semibold mb-2">From (You Pay)</h4>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                    <span className="text-xs">SOL</span>
+                  <div className="w-16 h-16 flex items-center justify-center">
+                    <Image
+                      className="rounded-1xl"
+                      src={SOLANA_LOGO}
+                      alt="Phantom Wallet logo (Solana)"
+                      width={60}
+                      height={60}
+                    />
                   </div>
                   <span className="font-medium">Solana (SOL)</span>
                 </div>
               </div>
-              <div className="p-4 border rounded-lg">
+              <div className="p-4 border border-white/30 rounded-lg">
                 <h4 className="font-semibold mb-2">To (You Receive)</h4>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                    <span className="text-xs font-bold">TTT</span>
+                  <div className="w-16 h-16 flex items-center justify-center">
+                    <Image
+                      className="rounded-1xl"
+                      src={TTT_LOGO}
+                      alt="Phantom Wallet logo (Solana)"
+                      width={60}
+                      height={60}
+                    />
                   </div>
                   <span className="font-medium">TensorTunesToken (TTT)</span>
                 </div>

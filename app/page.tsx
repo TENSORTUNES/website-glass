@@ -10,6 +10,7 @@ import { ParticleBackground } from "@/components/particle-background";
 import EnhancedTokenChart from "@/components/TTT-chart3";
 import { HoveringCube } from "@/components/3d-cube-TT";
 import { RaydiumBuyingGuide } from "@/components/how-to-buy";
+import SwapExplanation from "@/components/swap-explanation";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         <Releases />
         <Community />
 
-        <div className="relative p-8 md:my-80 bg-[linear-gradient(to_bottom,transparent_0,theme(colors.gray.950)_12rem,theme(colors.gray.950)_calc(100%-12rem),transparent_100%)]">
+        <div className="relative p-4 md:my-80 bg-[linear-gradient(to_bottom,transparent_0,theme(colors.gray.450)_12rem,theme(colors.gray.950)_calc(100%-12rem),transparent_100%)]">
           {/* <div className="hidden lg:block absolute left-180 -top-100">
             <HoveringCube size="xs" />
           </div>
@@ -40,28 +41,22 @@ export default function Home() {
 
           <div>
             <div className="my-25 flex justify-around">
-              <div className="flex flex-col xl:flex-row min-w-full">
-                <div className="w-full xl:w-1/2">
+              <div className="flex flex-col xl:flex-row min-w-full space-x-10 space-y-10">
+                <div className="w-full xl:w-1/2 glass max-h-min">
                   <EnhancedTokenChart />
                 </div>
 
-                <div className="flex justify-center text-center">
+                <div className="flex justify-center text-center w-full xl:w-1/2 glass">
                   <div className="flex text-center">
-                    hier komt nog text/uitleg hoe je TTT tokens kunt kopen.
+                    <RaydiumBuyingGuide />
                   </div>
                 </div>
               </div>
-              {/* <div className="flex justify-center text-center">
-                Hier komt nog uitleg over hoe je TTT kunt kopen via Raydium
-              </div> */}
             </div>
-
-            {/* <RaydiumBuyingGuide /> */}
           </div>
         </div>
 
         <Contact />
-        {/* <Newsletter /> */}
       </div>
 
       <Footer />
