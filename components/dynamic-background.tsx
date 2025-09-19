@@ -1,15 +1,24 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 export function DynamicBackground() {
   const [currentVideo, setCurrentVideo] = useState(
-    "/assets/videos/1080p_mainpage_video_loop.mp4"
+    "/assets/videos/contact_v.mp4"
   );
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (observerRef.current) observerRef.current.disconnect();
+
+    // if we're not on the homepage, just show a default video and stop
+    if (pathname !== "/") {
+      setCurrentVideo("/assets/videos/contact_v.mp4");
+      return;
+    }
     // Create a new Intersection Observer
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -85,7 +94,7 @@ export function DynamicBackground() {
         observerRef.current.disconnect();
       }
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <video

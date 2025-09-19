@@ -1,68 +1,42 @@
-"use client"
-
-import { useEffect, useState } from "react"
+"use client";
+import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isHovering, setIsHovering] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [hover, setHover] = useState(false);
 
   useEffect(() => {
-    // Check if loading overlay is present
-    const checkLoading = () => {
-      const loadingOverlay = document.querySelector('[data-loading-overlay]')
-      setIsLoading(!!loadingOverlay)
-    }
+    document.documentElement.classList.add("cursor-ready");
+    const onMove = (e: MouseEvent) =>
+      setPos({ x: e.clientX - 16, y: e.clientY - 16 });
+    document.addEventListener("mousemove", onMove);
 
-    checkLoading()
-
-    // Check periodically for loading state changes
-    const interval = setInterval(checkLoading, 100)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX - 16, y: e.clientY - 16 })
-    }
-
-    const handleMouseEnter = () => setIsHovering(true)
-    const handleMouseLeave = () => setIsHovering(false)
-
-    // Add event listeners for mouse movement
-    document.addEventListener("mousemove", updatePosition)
-
-    // Add hover detection for interactive elements
-    const interactiveElements = document.querySelectorAll(
-      "a, button, [role='button'], input, textarea, select, .cursor-hover",
-    )
-
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter)
-      el.addEventListener("mouseleave", handleMouseLeave)
-    })
+    const enter = () => setHover(true);
+    const leave = () => setHover(false);
+    const interactive = document.querySelectorAll(
+      "a, button, [role='button'], input, textarea, select, .cursor-hover"
+    );
+    interactive.forEach((el) => {
+      el.addEventListener("mouseenter", enter);
+      el.addEventListener("mouseleave", leave);
+    });
 
     return () => {
-      document.removeEventListener("mousemove", updatePosition)
-      interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter)
-        el.removeEventListener("mouseleave", handleMouseLeave)
-      })
-    }
-  }, [])
-
-  // Don't render custom cursor during loading
-  if (isLoading) return null
+      document.documentElement.classList.remove("cursor-ready");
+      document.removeEventListener("mousemove", onMove);
+      interactive.forEach((el) => {
+        el.removeEventListener("mouseenter", enter);
+        el.removeEventListener("mouseleave", leave);
+      });
+    };
+  }, []);
 
   return (
     <div
-      className={`custom-cursor ${isHovering ? "hover" : ""}`}
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-      }}
+      className={`custom-cursor ${hover ? "hover" : ""}`}
+      style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
     >
       <div className="cursor-text">TT</div>
     </div>
-  )
+  );
 }

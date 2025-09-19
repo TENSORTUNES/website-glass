@@ -216,8 +216,19 @@
   }
 
   /* Hide default cursor on all interactive elements */
-  a, button, input, textarea, select, [role="button"], [type="submit"], [type="button"],
+  /* a, button, input, textarea, select, [role="button"], [type="submit"], [type="button"],
   [type="reset"], .cursor-pointer {
+    cursor: none !important;
+  } */
+
+  /* new custom cursor settings */
+  html.cursor-ready,
+  html.cursor-ready a,
+  html.cursor-ready button,
+  html.cursor-ready input,
+  html.cursor-ready textarea,
+  html.cursor-ready select,
+  html.cursor-ready [role="button"] {
     cursor: none !important;
   }
 
