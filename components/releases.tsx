@@ -40,7 +40,7 @@ const featuredRelease = {
 
 export function Releases() {
   return (
-    <section id="releases" className="mt-100 pb-32 py-20 px-4">
+    <section id="releases" className="mt-40 pb-32 py-20 px-4">
       <div
         className="container mx-auto mt-20
       "

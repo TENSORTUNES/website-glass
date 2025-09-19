@@ -1,6 +1,6 @@
 export default function RevenueCards() {
   return (
-    <section id="revenue" className="mb-20 py-20 px-4">
+    <section id="revenue" className="mb-20 py-20 lg:py-0 px-4 min-h-100">
       <div className="container mx-auto max-w-7xl">
         <div
           className={`lg:relative lg:absolute grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 2xl:gap-16 items-stretch`}

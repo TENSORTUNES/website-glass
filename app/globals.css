@@ -558,6 +558,10 @@
           animation: statGlow 2s ease-in-out infinite;
         }
 
+        .stat-glow-2 {
+          animation: statGlow 5s ease-in-out infinite;
+        }
+
         .icon-animate:nth-child(1) {
           animation-delay: 0s;
         }
