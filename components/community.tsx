@@ -2,10 +2,7 @@ import { Users, Music, TrendingUp, Heart, Zap } from "lucide-react";
 
 export function Community() {
   return (
-    <section
-      id="community"
-      className="font-['Saira'] font-light mt-80 py-20 px-4"
-    >
+    <section id="community" className="font-['Saira'] font-light py-20 px-4">
       <div className="mt-5  mb-16">
         {/* Hero Heading */}
         <div className="text-center mb-16">

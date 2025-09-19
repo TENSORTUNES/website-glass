@@ -63,8 +63,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className={`${oswald.className} py-20 px-4`}>
-      <div className="mx-10 mb-20">
+    <section
+      id="contact"
+      className={`${oswald.className} flex justify-center py-20 lg:mb-40`}
+    >
+      <div className="mx-4 mb-20 flex flex-col container justify-center">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
             Get In Touch
@@ -79,7 +82,6 @@ export function Contact() {
             production? We'd love to hear from you.
           </p>
         </div>
-
         <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-16">
           {/* Contact Form */}
           {/* <div className="glass backdrop-blur backdrop-saturate-300 p-8 md:p-12">
