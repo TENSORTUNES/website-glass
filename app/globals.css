@@ -525,4 +525,65 @@
   100% { filter: hue-rotate(480deg) saturate(1.1); }
 }
 
+/*about icons animation */
+ @keyframes iconPulse {
+          0%,
+          70%,
+          100% {
+            transform: scale(1);
+          }
+          35% {
+            transform: scale(1.2);
+          }
+        }
+
+        @keyframes statGlow {
+          0%,
+          100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transform: scale(1);
+          }
+          50% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+              0 0 30px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+          }
+        }
+
+        .icon-animate {
+          animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        .stat-glow {
+          animation: statGlow 2s ease-in-out infinite;
+        }
+
+        .icon-animate:nth-child(1) {
+          animation-delay: 0s;
+        }
+        .icon-animate:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .icon-animate:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        .icon-animate:nth-child(4) {
+          animation-delay: 0.6s;
+        }
+        .icon-animate:nth-child(5) {
+          animation-delay: 0.8s;
+        }
+        .icon-animate:nth-child(6) {
+          animation-delay: 1s;
+        }
+        .icon-animate:nth-child(7) {
+          animation-delay: 1.2s;
+        }
+        .icon-animate:nth-child(8) {
+          animation-delay: 1.4s;
+        }
+        .icon-animate:nth-child(9) {
+          animation-delay: 1.6s;
+        }
+
 }
