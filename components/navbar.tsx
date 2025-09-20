@@ -92,6 +92,12 @@ export function Navbar() {
               Community
             </button>
             <button
+              onClick={() => scrollToSection("tt-token")}
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              TT-Token
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="text-white/80 hover:text-white transition-colors"
             >
@@ -170,6 +176,12 @@ export function Navbar() {
                 className="text-white/80 hover:text-white transition-colors text-left"
               >
                 Community
+              </button>
+              <button
+                onClick={() => scrollToSection("tt-token")}
+                className="text-white/80 hover:text-white transition-colors text-left"
+              >
+                TT-Token
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
