@@ -5,6 +5,7 @@ import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import { DynamicBackground } from "@/components/dynamic-background";
 import LoadingOverlay from "@/components/loading-overlay";
+import { SolanaProviders } from "./providers";
 // import PersistentFallingCoins from "@/components/persistent-falling-coins";
 
 const inter = Inter({
@@ -75,6 +76,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${orbitron.variable} dark`}>
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <script src="https://terminal.jup.ag/main-v3.js"></script>
       </head>
       <body className="antialiased">
         {/* Loading Overlay */}
@@ -91,10 +93,12 @@ export default function RootLayout({
         </div> */}
 
         {/* Content with higher z-index */}
-        <div className="z-999">
-          {children}
-          <CustomCursor />
-        </div>
+        <SolanaProviders>
+          <div className="z-998">
+            {children}
+            <CustomCursor />
+          </div>
+        </SolanaProviders>
       </body>
     </html>
   );

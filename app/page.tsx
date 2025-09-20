@@ -10,6 +10,7 @@ import RevenueCards from "@/components/revenue-cards";
 import ChartsWithBuyingGuide from "@/components/charts-buying-guide";
 
 export default function Home() {
+  console.log(process.env.NEXT_PUBLIC_HELIUS_RPC_ENDPOINT);
   return (
     <main className="relative min-h-screen">
       <div className="aurora-bg" />
@@ -25,6 +26,7 @@ export default function Home() {
         <Releases />
         <Community />
         <ChartsWithBuyingGuide />
+
         <Contact />
       </div>
 
