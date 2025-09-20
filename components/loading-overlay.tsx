@@ -325,7 +325,7 @@ export default function LoadingOverlay() {
       }}
     >
       {/* Falling coins - always visible */}
-      {/* <FallingCoins stopCreating={fadeContent} /> */}
+      <FallingCoins stopCreating={fadeContent} />
 
       {/* Content that fades out */}
       <div

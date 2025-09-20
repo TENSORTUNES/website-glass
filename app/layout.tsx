@@ -77,7 +77,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className="antialiased">
-        {/* <LoadingOverlay /> */}
+        <LoadingOverlay />
 
         <DynamicBackground />
 
