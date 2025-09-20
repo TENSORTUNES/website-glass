@@ -86,6 +86,31 @@ const fmtHHMM = (ms: number, useUTC = false) => {
   return `${h}:${m}`;
 };
 
+const niceTicks = (min: number, max: number, count = 5) => {
+  if (min === max) return [min];
+  const span = max - min;
+  const step = Math.pow(10, Math.floor(Math.log10(span / count)));
+  const err = span / count / step;
+  const mult = err >= 7.5 ? 10 : err >= 3 ? 5 : err >= 1.5 ? 2 : 1;
+  const niceStep = mult * step;
+  const niceMin = Math.floor(min / niceStep) * niceStep;
+  const niceMax = Math.ceil(max / niceStep) * niceStep;
+  const ticks: number[] = [];
+  for (let v = niceMin; v <= niceMax + 1e-12; v += niceStep) ticks.push(v);
+  return ticks;
+};
+
+const formatPrice = (v: number) =>
+  v >= 1 ? `$${v.toFixed(2)}` : `$${v.toFixed(6)}`;
+
+const formatCompact = (v: number) => {
+  const abs = Math.abs(v);
+  if (abs >= 1e9) return `$${(v / 1e9).toFixed(2)}B`;
+  if (abs >= 1e6) return `$${(v / 1e6).toFixed(2)}M`;
+  if (abs >= 1e3) return `$${(v / 1e3).toFixed(2)}K`;
+  return `$${v.toFixed(2)}`;
+};
+
 const CustomTooltip = ({ active, payload }: any) => {
   if (!active || !payload?.length) return null;
   const point = payload[0].payload as ChartPoint;
@@ -119,6 +144,9 @@ const EnhancedTokenChart: FC = () => {
   const [loading, setLoading] = useState(true);
   const [domain, setDomain] = useState<[number, number] | null>(null);
   const [ticks, setTicks] = useState<number[]>([]);
+  const [yDomain, setYDomain] = useState<[number, number] | null>(null);
+  const [yTicks, setYTicks] = useState<number[]>([]);
+  const [supply, setSupply] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -128,6 +156,7 @@ const EnhancedTokenChart: FC = () => {
 
         if (pair) {
           const currentPrice = Number.parseFloat(pair.priceUsd);
+
           const tokenInfo: TokenData = {
             name: pair.baseToken?.name || "Unknown Token",
             symbol: pair.baseToken?.symbol || "UNK",
@@ -140,29 +169,25 @@ const EnhancedTokenChart: FC = () => {
           setTokenData(tokenInfo);
 
           const now = Date.now();
-          // const mockData = Array.from({ length: 24 }, (_, i) => {
-          //   const timestamp = now - (23 - i) * 60 * 60 * 1000; // 24 hours of hourly data
-          //   const date = new Date(timestamp);
-          //   const basePrice = currentPrice * (1 + (Math.random() - 0.5) * 0.15);
-          //   const prevPrice =
-          //     i > 0 ? data[i - 1]?.price || basePrice : basePrice;
-          //   const priceChange = ((basePrice - prevPrice) / prevPrice) * 100;
 
-          //   return {
-          //     time: date.toLocaleTimeString("en-US", {
-          //       hour: "2-digit",
-          //       minute: "2-digit",
-          //       hour12: false,
-          //     }),
-          //     price: basePrice,
-          //     timestamp,
-          //     priceChange: i > 0 ? priceChange : 0,
-          //   };
-          // });
           const { points, start, end } = build24hData(currentPrice);
           setData(points);
+          const prices = points.map((p) => p.price);
+          const yMin = Math.min(...prices);
+          const yMax = Math.max(...prices);
+
+          // pad 3% so the line doesn't touch edges
+          const pad = (yMax - yMin) * 0.03;
+          const yDomain: [number, number] = [yMin - pad, yMax + pad];
           setDomain([start, end]);
           setTicks(getTicks(start, end));
+          setYDomain(yDomain); // <-- add state below
+          setYTicks(niceTicks(...yDomain));
+          const supply =
+            tokenInfo.price > 0 && tokenInfo.marketCap > 0
+              ? tokenInfo.marketCap / tokenInfo.price
+              : null;
+          setSupply(supply);
         }
         setLoading(false);
       } catch (err) {
@@ -271,14 +296,21 @@ const EnhancedTokenChart: FC = () => {
                   hour12: false,
                 })
               }
-              tick={{ fill: "#ffffff", fontSize: 12 }}
+              tick={{ fill: "#ffffff", fontSize: 10 }}
               axisLine={false}
               tickLine={false}
             />
 
             <YAxis
-              hide
-              domain={["dataMin - dataMin * 0.01", "dataMax + dataMax * 0.01"]}
+              yAxisId="price"
+              orientation="left"
+              domain={yDomain ?? ["auto", "auto"]}
+              ticks={yTicks}
+              tickFormatter={formatPrice}
+              tick={{ fill: "#ffffff", fontSize: 12 }}
+              axisLine={true}
+              tickLine={false}
+              width={70}
             />
             <Tooltip
               content={<CustomTooltip />}
@@ -286,11 +318,12 @@ const EnhancedTokenChart: FC = () => {
             />
 
             <Area
+              yAxisId="price"
               type="monotone"
               dataKey="price"
               stroke="#22d3ee"
               fill="url(#tensorFill)"
-              strokeWidth={2}
+              strokeWidth={1}
               dot={false}
             />
           </AreaChart>

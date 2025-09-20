@@ -65,9 +65,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className={`${oswald.className} flex justify-center py-20 lg:mb-40`}
+      className={`${oswald.className} flex justify-center py-20`}
     >
-      <div className="mx-4 mb-20 flex flex-col container justify-center">
+      <div className="mx-4 flex flex-col container justify-center">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-10 mb-6">
             Get In Touch
