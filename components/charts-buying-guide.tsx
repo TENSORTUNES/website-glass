@@ -37,7 +37,7 @@ export default function ChartsWithBuyingGuide() {
                   Tap the TT token below to start trading
                 </div>
                 <div className="text-white/60">
-                  U will be redirected to Raydium.io
+                  You’ll be redirected to Raydium.
                 </div>
               </div>
             </div>
