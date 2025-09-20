@@ -53,7 +53,7 @@ function FallingCoins({ stopCreating }: { stopCreating: boolean }) {
         // Spread coins out more initially to avoid overlap
         const x = (i - 0.5) * 6; // Spread them out: -3, 3
         const y = 12 + i * 3; // Closer to visible area: 12, 15
-        
+
         initialCoins.push({
           id: nextId++,
           x,
@@ -85,7 +85,7 @@ function FallingCoins({ stopCreating }: { stopCreating: boolean }) {
 
     // Create new coin function with systematic top spawning
     const createNewCoin = () => {
-      setCoins(prevCoins => {
+      setCoins((prevCoins) => {
         // Systematic spawning across the top - divide screen into zones
         const screenWidth = 16; // Total width available
         const zones = 5; // 5 spawning zones across the screen
@@ -93,9 +93,12 @@ function FallingCoins({ stopCreating }: { stopCreating: boolean }) {
 
         // Find the least crowded zone
         const zoneCounts = new Array(zones).fill(0);
-        prevCoins.forEach(coin => {
-          if (coin.y > 15) { // Only count coins near the top
-            const zoneIndex = Math.floor((coin.x + screenWidth/2) / zoneWidth);
+        prevCoins.forEach((coin) => {
+          if (coin.y > 15) {
+            // Only count coins near the top
+            const zoneIndex = Math.floor(
+              (coin.x + screenWidth / 2) / zoneWidth
+            );
             if (zoneIndex >= 0 && zoneIndex < zones) {
               zoneCounts[zoneIndex]++;
             }
@@ -113,10 +116,11 @@ function FallingCoins({ stopCreating }: { stopCreating: boolean }) {
         }
 
         // Spawn in the center of the best zone with some randomness
-        const zoneCenter = (bestZone * zoneWidth) - (screenWidth/2) + (zoneWidth/2);
+        const zoneCenter =
+          bestZone * zoneWidth - screenWidth / 2 + zoneWidth / 2;
         const x = zoneCenter + (Math.random() - 0.5) * (zoneWidth * 0.6); // 60% of zone width
         const y = 14 + Math.random() * 2; // Closer: 14-16 range
-        
+
         const newCoin: FallingCoin = {
           id: nextId++,
           x,
@@ -185,7 +189,7 @@ function FallingCoins({ stopCreating }: { stopCreating: boolean }) {
           antialias: true,
           powerPreference: "high-performance",
           toneMapping: 2, // ACESFilmicToneMapping for better color reproduction
-          outputColorSpace: "srgb"
+          outputColorSpace: "srgb",
         }}
         dpr={[1, 1.5]} // Slightly higher pixel ratio for better quality
       >
@@ -317,18 +321,20 @@ export default function LoadingOverlay() {
       ].join(" ")}
       style={{
         cursor: "none",
-        backgroundColor: fadeContent ? "transparent" : "black"
+        backgroundColor: fadeContent ? "transparent" : "black",
       }}
     >
       {/* Falling coins - always visible */}
-      <FallingCoins stopCreating={fadeContent} />
+      {/* <FallingCoins stopCreating={fadeContent} /> */}
 
       {/* Content that fades out */}
-      <div className={[
-        "flex items-center align-center content-center justify-center h-full relative z-10",
-        "transition-opacity ease-out duration-[2000ms]", // slower fade for content
-        fadeContent ? "opacity-0" : "opacity-100",
-      ].join(" ")}>
+      <div
+        className={[
+          "flex items-center align-center content-center justify-center h-full relative z-10",
+          "transition-opacity ease-out duration-[2000ms]", // slower fade for content
+          fadeContent ? "opacity-0" : "opacity-100",
+        ].join(" ")}
+      >
         <div className="text-center align-center content-center relative">
           <div className="w-16 h-16 mx-auto mb-4 relative">
             {/* TT Logo element at center */}

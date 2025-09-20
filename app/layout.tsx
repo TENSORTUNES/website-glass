@@ -77,20 +77,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className="antialiased">
-        {/* Loading Overlay */}
-        <LoadingOverlay />
+        {/* <LoadingOverlay /> */}
 
-        {/* Dynamic Video Background */}
         <DynamicBackground />
 
-        {/* Aurora background effect (from CSS) will be here */}
-
-        {/* Persistent Falling Coins - Disabled */}
-        {/* <div className="fixed inset-0" style={{ zIndex: -1, pointerEvents: 'none', opacity: 0.5 }}>
-          <PersistentFallingCoins />
-        </div> */}
-
-        {/* Content with higher z-index */}
         <div className="z-999">
           {children}
           <CustomCursor />
