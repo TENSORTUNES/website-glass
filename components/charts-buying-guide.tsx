@@ -36,8 +36,25 @@ export default function ChartsWithBuyingGuide() {
                 <div className="text-2xl md:text-3xl ">
                   Tap the TT token below to start trading
                 </div>
-                <div className="text-white/60">
-                  You’ll be redirected to Raydium.
+                <div className="text-xs flex flex-col md:flex-row justify-between mt-1">
+                  <div className="text-white/60">
+                    {/* You’ll be redirected to Raydium. */}
+                  </div>
+
+                  <div className="flex justify-center">
+                    New to crypto?{" "}
+                    <Link
+                      href="/more-info-TT-token"
+                      aria-label="Back to homepage"
+                      className="inline-flex items-center gap-2"
+                    >
+                      <div className="ml-2 flex">
+                        Follow our guide!{" "}
+                        <ExternalLink className="w-4 h-4 ml-1" />
+                      </div>
+                    </Link>
+                    .
+                  </div>
                 </div>
               </div>
             </div>
