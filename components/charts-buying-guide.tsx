@@ -36,7 +36,7 @@ export default function ChartsWithBuyingGuide() {
                 <div className="text-2xl md:text-3xl ">
                   Tap the TT token below to start trading
                 </div>
-                <div className="text-xs flex flex-col md:flex-row justify-between mt-1">
+                <div className="text-s flex flex-col md:flex-row justify-between mt-1">
                   <div className="text-white/60">
                     {/* You’ll be redirected to Raydium. */}
                   </div>

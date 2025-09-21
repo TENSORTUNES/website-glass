@@ -11,7 +11,7 @@ import {
   Users,
   Mic,
 } from "lucide-react";
-import { Oswald, Saira } from "next/font/google";
+import { Bebas_Neue, Oswald, Saira } from "next/font/google";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -25,6 +25,12 @@ const saira = Saira({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const bebasNeu = Bebas_Neue({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
 //checken 2

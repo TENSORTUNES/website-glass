@@ -173,16 +173,6 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="flex  gap-4">
-                <div className="glass bg-white/40 max-h-min p-3 rounded-xl">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-white/80">Phone</div>
-                  <div className="text-white">+1 (555) 123-4567</div>
-                </div>
-              </div>
-
               <div className="flex gap-4">
                 <div className="glass bg-white/40 max-h-min p-3 rounded-xl">
                   <MapPin className="w-5 h-6" />

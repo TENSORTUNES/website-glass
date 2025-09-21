@@ -3,17 +3,21 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Center } from "@react-three/drei";
-import TT_TOKEN from "../public/assets/TTT/TTT.png";
 
 type FloatingCoinProps = {
   href: string;
-  className?: string; // controls the Canvas SIZE (w/h) from outside
+  className?: string;
   modelUrl?: string;
-  rotationSpeed?: number; // radians/sec
-  coinScale?: number; // 3D model scale
-  cameraZ?: number; // camera distance on Z
-  fov?: number; // camera fov
+  coinScale?: number;
+  cameraZ?: number;
+  fov?: number;
   ariaLabel?: string;
+
+  /** New controls for oscillation */
+  yawCenterDeg?: number; // the “front” angle you want visible
+  yawAmplitudeDeg?: number; // how far to swing left/right
+  oscillateHz?: number; // swings per second (0.8 = gentle)
+  tiltDeg?: number; // subtle X tilt to feel 3D
 };
 
 function CoinModel({
@@ -44,26 +48,49 @@ export default function FloatingCoin({
   href,
   className = "",
   modelUrl,
-  rotationSpeed = 0.1,
-  coinScale = 1, // make it big by default
-  cameraZ = 3.6, // move camera back a touch to avoid clipping
-  fov = 60, // a little wider view
+  coinScale = 1,
+  cameraZ = 3.6,
+  fov = 60,
   ariaLabel = "Open token on Raydium Launchlab",
+
+  // Oscillation defaults (tweak these)
+  yawCenterDeg = 180, // adjust until your good side faces front
+  yawAmplitudeDeg = 16, // swing ±16°
+  oscillateHz = 0.2, // ~0.8 cycles per second
+  tiltDeg = 6, // subtle top/bottom tilt for depth
 }: FloatingCoinProps) {
   const [rotation, setRotation] = useState<[number, number, number]>([0, 0, 0]);
 
   useEffect(() => {
+    const deg = (d: number) => (d * Math.PI) / 180;
     let raf = 0;
     let last = performance.now();
+    let t = 0;
+
+    const center = deg(yawCenterDeg);
+    const amp = deg(yawAmplitudeDeg);
+    const omega = 2 * Math.PI * oscillateHz; // radians/sec
+
+    const xTilt = deg(tiltDeg);
+
     const tick = (now: number) => {
       const dt = (now - last) / 1000;
       last = now;
-      setRotation(([x, y, z]) => [x, y + rotationSpeed * dt, z]);
+      t += dt;
+
+      // y oscillates: center ± amplitude
+      const y = center + amp * Math.sin(omega * t);
+
+      // optional subtle x tilt (also oscillate a hair to feel alive)
+      const x = xTilt * 0.85 * Math.sin(omega * t + Math.PI / 2);
+
+      setRotation(([_, __, z]) => [x, y, z]);
       raf = requestAnimationFrame(tick);
     };
+
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [rotationSpeed]);
+  }, [yawCenterDeg, yawAmplitudeDeg, oscillateHz, tiltDeg]);
 
   return (
     <a
@@ -97,7 +124,6 @@ export default function FloatingCoin({
           <directionalLight position={[-3, 2, -4]} intensity={10} />
           <pointLight position={[0, 6, 2]} intensity={1.4} />
 
-          {/* Center ensures the model sits nicely in view */}
           <Center>
             <CoinModel
               position={[0, 0, 0]}

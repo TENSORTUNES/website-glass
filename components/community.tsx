@@ -1,8 +1,19 @@
 import { Users, Music, TrendingUp, Heart, Zap } from "lucide-react";
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export function Community() {
   return (
-    <section id="community" className="font-['Saira'] font-light py-20 px-4">
+    <section
+      id="community"
+      className={`${oswald.className} font-light py-20 px-4`}
+    >
       <div className="mt-5  mb-16">
         {/* Hero Heading */}
         <div className="text-center mb-16">
@@ -23,8 +34,8 @@ export function Community() {
             </h3>
             <p className="text-white/70 leading-relaxed text-sm">
               Our advanced neural networks generate unique tracks across
-              multiple genres 24/7, creating a constantly evolving catalog of
-              fresh sounds. Each track is professionally produced and ready for
+              multiple genres, building a constantly evolving catalog of fresh
+              sounds. Each track is professionally produced and ready for
               streaming platforms, radio play, and commercial use.
             </p>
           </div>

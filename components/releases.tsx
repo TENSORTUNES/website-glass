@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, Tag, ArrowRight } from "lucide-react";
-import { Oswald, Saira, Barriecito, Audiowide } from "next/font/google";
+import {
+  Oswald,
+  Saira,
+  Barriecito,
+  Audiowide,
+  Bebas_Neue,
+} from "next/font/google";
 import { SpotifyBall } from "./3d-spotify-ball";
 
 const oswald = Oswald({
@@ -38,6 +44,12 @@ const featuredRelease = {
   spotifyId: "1gtoJ8uEsPWAIXO9ocHsSJ",
 };
 
+const bebasNeu = Bebas_Neue({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
 export function Releases() {
   return (
     <section id="releases" className="mt-40 pb-32 py-20 px-4">
@@ -48,9 +60,9 @@ export function Releases() {
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2
-            className={`${saira.className} text-4xl md:text-5xl font-bold text-white mb-8`}
+            className={`${bebasNeu.className} text-6xl md:text-5xl font-bold text-white mb-8`}
           >
-            Latest Releases.
+            Latest Releases
           </h2>
         </div>
 
