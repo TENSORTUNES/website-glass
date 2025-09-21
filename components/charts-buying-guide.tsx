@@ -53,7 +53,6 @@ export default function ChartsWithBuyingGuide() {
                         <ExternalLink className="w-4 h-4 ml-1" />
                       </div>
                     </Link>
-                    .
                   </div>
                 </div>
               </div>
