@@ -1,121 +1,114 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export function DynamicBackground() {
+  const [currentVideo, setCurrentVideo] = useState(
+    "/assets/videos/contact_v.mp4"
+  );
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const pathname = usePathname();
-  const currentSrcRef = useRef("/assets/videos/contact_v.mp4");
-
-  // helper to set src + play safely
-  const setVideo = (src: string) => {
-    if (!videoRef.current) return;
-    if (currentSrcRef.current === src) return;
-
-    currentSrcRef.current = src;
-    const v = videoRef.current;
-
-    // swap source without remount
-    v.pause();
-    v.src = src;
-    v.load();
-
-    const tryPlay = () =>
-      v.play().catch(() => {
-        /* ignored: mobile will require a tap */
-      });
-    if (v.readyState >= 2) tryPlay();
-    else {
-      const onCanPlay = () => {
-        v.removeEventListener("canplay", onCanPlay);
-        tryPlay();
-      };
-      v.addEventListener("canplay", onCanPlay, { once: true });
-    }
-  };
-
-  useEffect(() => {
-    // one-time user interaction fallback for strict mobiles
-    const onFirstTouch = () => {
-      videoRef.current?.play().catch(() => {});
-      window.removeEventListener("touchstart", onFirstTouch);
-    };
-    window.addEventListener("touchstart", onFirstTouch, { passive: true });
-    return () => window.removeEventListener("touchstart", onFirstTouch);
-  }, []);
 
   useEffect(() => {
     if (observerRef.current) observerRef.current.disconnect();
 
+    // if we're not on the homepage, just show a default video and stop
     if (pathname !== "/") {
-      setVideo("/assets/videos/contact_v.mp4");
+      setCurrentVideo("/assets/videos/contact_v.mp4");
       return;
     }
-
+    // Create a new Intersection Observer
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        let mostVisible: string | null = null;
-        let highest = 0;
-        for (const e of entries) {
-          if (e.intersectionRatio > highest) {
-            highest = e.intersectionRatio;
-            mostVisible = e.target.id;
+        let mostVisibleSection: string | null = null;
+        let highestRatio = 0;
+
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > highestRatio) {
+            highestRatio = entry.intersectionRatio;
+            mostVisibleSection = entry.target.id;
           }
-        }
-        if (highest > 0.2 && mostVisible) {
-          switch (mostVisible) {
+        });
+
+        // Debug logging
+        // console.log('Intersection Observer:', {
+        //   mostVisibleSection,
+        //   highestRatio,
+        //   entries: entries.map(e => ({ id: e.target.id, ratio: e.intersectionRatio }))
+        // })
+
+        // Only change video if a section is significantly visible - reduced threshold
+        if (highestRatio > 0.2 && mostVisibleSection) {
+          // console.log("Switching video for section:", mostVisibleSection);
+          switch (mostVisibleSection) {
             case "hero":
-              setVideo("/assets/videos/contact_v.mp4");
+              setCurrentVideo("/assets/videos/contact_v.mp4");
               break;
             case "about":
-              setVideo("/assets/videos/bv_1.mp4");
+              setCurrentVideo("/assets/videos/bv_1.mp4");
               break;
             case "releases":
-              setVideo("/assets/videos/bv_2.mp4");
+              setCurrentVideo("/assets/videos/bv_2.mp4");
               break;
             case "community":
-              setVideo("/assets/videos/bv_3.mp4");
+              setCurrentVideo("/assets/videos/bv_3.mp4");
               break;
             case "contact":
-              setVideo("/assets/videos/1080p_mainpage_video_loop.mp4");
+              setCurrentVideo("/assets/videos/1080p_mainpage_video_loop.mp4");
               break;
             default:
-              setVideo("/assets/videos/contact_v.mp4");
+              setCurrentVideo("/assets/videos/contact_v.mp4");
           }
         }
       },
-      { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1], rootMargin: "-10% 0px -10% 0px" }
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+        rootMargin: "-10% 0px -10% 0px",
+      }
     );
 
-    const ids = ["hero", "about", "releases", "community", "contact"];
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observerRef.current!.observe(el);
-    });
+    // Observe all sections
+    const observeSections = () => {
+      const sections = ["hero", "about", "releases", "community", "contact"];
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section && observerRef.current) {
+          observerRef.current.observe(section);
+        }
+      });
+    };
 
-    return () => observerRef.current?.disconnect();
+    // Wait for DOM to be ready
+    if (typeof window !== "undefined") {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", observeSections);
+      } else {
+        observeSections();
+      }
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
   }, [pathname]);
 
   return (
     <video
+      key={currentVideo}
       ref={videoRef}
       className="fixed top-0 left-0 w-full h-full object-cover"
-      muted
       autoPlay
       loop
+      muted
       playsInline
-      // Safari quirks
-      webkit-playsinline="true"
-      preload="auto"
-      // optional poster for faster first paint
-      // poster="/assets/videos/poster.jpg"
       style={{ opacity: 0.7, zIndex: -1 }}
-      src={currentSrcRef.current}
-      // safety: retry play on visibility changes
-      onLoadedMetadata={() => videoRef.current?.play().catch(() => {})}
-      onSuspend={() => videoRef.current?.play().catch(() => {})}
-    />
+    >
+      <source src={currentVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
