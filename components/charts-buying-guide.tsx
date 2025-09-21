@@ -1,7 +1,4 @@
-import Image from "next/image";
-import { RaydiumBuyingGuide } from "./how-to-buy";
 import EnhancedTokenChart from "./TTT-chart3";
-import TT_TOKEN from "../public/assets/TTT/TTT.png";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
@@ -36,21 +33,19 @@ export default function ChartsWithBuyingGuide() {
                 <div className="text-2xl md:text-3xl ">
                   Tap the TT token below to start trading
                 </div>
-                <div className="text-s flex flex-col md:flex-row justify-between mt-1">
-                  <div className="text-white/60">
-                    {/* You’ll be redirected to Raydium. */}
-                  </div>
-
-                  <div className="flex justify-center">
-                    New to crypto?{" "}
+                <div className="text-s flex flex-col md:flex-row justify-end mt-1">
+                  <div className="mt-1">New to crypto? </div>
+                  <div className="mt-1 md:mt-0">
                     <Link
                       href="/more-info-TT-token"
                       aria-label="Back to homepage"
                       className="inline-flex items-center gap-2"
                     >
-                      <div className="ml-2 flex">
-                        Follow our guide!{" "}
-                        <ExternalLink className="w-4 h-4 ml-1" />
+                      <div>
+                        <Button className="ml-2 flex" size={"sm"}>
+                          Follow our guide!{" "}
+                          <ExternalLink className="w-4 h-4 ml-1" />
+                        </Button>
                       </div>
                     </Link>
                   </div>
