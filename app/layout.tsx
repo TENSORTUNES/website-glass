@@ -20,6 +20,9 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
   title: "TENSORTUNES - AI-Powered Record Label",
   description:
     "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
@@ -34,23 +37,14 @@ export const metadata: Metadata = {
       "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
     url: "https://tensortunes.com",
     siteName: "TENSORTUNES",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TENSORTUNES - AI-Powered Record Label",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "TENSORTUNES - AI-Powered Record Label",
     description:
       "Where algorithms meet symphony. AI-powered record label pioneering the future of sound.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { useGLTF, Center } from "@react-three/drei";
 
 type FloatingCoinProps = {
-  href: string;
+  href?: string;
   className?: string;
   modelUrl?: string;
   coinScale?: number;

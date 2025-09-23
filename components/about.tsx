@@ -37,7 +37,7 @@ const bebasNeu = Bebas_Neue({
 
 export function About() {
   return (
-    <section id="about" className="mt-80 mb-20 px-4">
+    <section className="mt-80 mb-20 px-4">
       <div className="container mx-auto mt-16 max-w-7xl">
         <div className="h-auto">
           {/* Main Heading */}
