@@ -37,7 +37,7 @@ export function CopyToClipboard({ text, className }: CopyToClipboardProps) {
       onClick={copyToClipboard}
       variant="outline"
       size="sm"
-      className={`hover:scale-102 transition-transform ${className}`}
+      className={`flex hover:scale-102 transition-transform ${className}`}
     >
       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
       {copied ? "Copied!" : "Copy"}

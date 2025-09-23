@@ -19,11 +19,15 @@ export default function Home() {
 
       <div className="space-y-32">
         <Hero />
+
+        <div id="about" />
         <About />
         <RevenueCards />
         {/* <RevenuePostIt /> */}
         <Releases />
         <Community />
+        <div id="tt-token" />
+        <div className="h-[1px]" />
         <ChartsWithBuyingGuide />
         <Contact />
       </div>

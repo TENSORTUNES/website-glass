@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-  font-family: 'Curved Square';
-  src: url('/assets/fonts/Curved Square.otf') format('opentype'),
-    url('/assets/fonts/Curved Square.ttf') format('truetype');
+  font-family: 'Curved_Square';
+  src: url('/assets/fonts/Curved_Square.otf') format('opentype'),
+    url('/assets/fonts/Curved_Square.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -70,7 +70,7 @@
   --smashed-pumpkin: #ff6c3d;
   --medium-orchid: #b549ea;
   --font-orbitron: "Orbitron", sans-serif;
-  --font-curved-square: 'Curved Square', sans-serif;
+  --font-curved-square: 'Curved_Square', sans-serif;
   --font-a4speed: 'A4SPEED', sans-serif;
 }
 
