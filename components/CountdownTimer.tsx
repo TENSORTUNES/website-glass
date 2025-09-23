@@ -152,12 +152,6 @@ export default function CountdownTimer({
         <span className="text-white/50 font-semibold">:</span>
         <Box value={seconds} label="Seconds" />
       </div>
-      <div>
-        <FloatingCoin
-          className="h-[55vh] lg:h-[55vh] w-full" // ← bigger field: half the screen wide, tall
-          coinScale={1.4} // ← big coin
-        />
-      </div>
     </div>
   );
 }

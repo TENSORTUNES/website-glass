@@ -6,7 +6,7 @@ import FloatingCoin from "./floating-TT-coin";
 import { SUSE, Saira, Oswald } from "next/font/google";
 import TapToken from "./tap-token";
 import CountdownTimer from "./CountdownTimer";
-import { getCountdown, hasLaunched, parseTargetDate } from "@/utils/Launch";
+import { getCountdown, parseTargetDate } from "@/utils/Launch";
 
 const susu = SUSE({
   weight: "800",
@@ -51,6 +51,12 @@ export default function ChartsWithBuyingGuide() {
       ) : (
         <div className="container mt-20">
           <CountdownTimer target={parseTargetDate(TARGET)} />
+          <div>
+            <FloatingCoin
+              className="h-[55vh] lg:h-[55vh] w-full" // ← bigger field: half the screen wide, tall
+              coinScale={1.4} // ← big coin
+            />
+          </div>
         </div>
       )}
     </div>
