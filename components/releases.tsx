@@ -7,7 +7,7 @@ import {
   Audiowide,
   Bebas_Neue,
 } from "next/font/google";
-import { SpotifyBall } from "./3d-spotify-ball";
+import Link from "next/link";
 
 const oswald = Oswald({
   weight: ["300"],
@@ -41,7 +41,7 @@ const featuredRelease = {
   releaseDate: "2024",
   genre: ["AI Music"],
   cover: "/placeholder.svg",
-  spotifyId: "1gtoJ8uEsPWAIXO9ocHsSJ",
+  spotifyId: "2oVtDZf7Xk3gLY7qN78asX",
 };
 
 const bebasNeu = Bebas_Neue({
@@ -52,56 +52,70 @@ const bebasNeu = Bebas_Neue({
 
 export function Releases() {
   return (
-    <section id="releases" className="mt-40 pb-32 py-20 px-4">
-      <div
-        className="container mx-auto mt-20
-      "
-      >
-        {/* Main Heading */}
-        <div className="text-center mb-16">
+    <section id="releases" className="mt-60 pb-32 py-20 px-4">
+      <div className="container mx-auto mt-20 space-y-10">
+        <div className="flex justify-between text-center">
           <h2
-            className={`${bebasNeu.className} text-6xl md:text-5xl font-bold text-white mb-8`}
+            className={`${bebasNeu.className} text-6xl md:text-5xl font-bold text-white`}
           >
             Latest Releases
           </h2>
-        </div>
-
-        {/* <SpotifyBall /> */}
-
-        {/* Combined Content Container */}
-        <div className="glass backdrop-blur backdrop-saturate-300 p-8 mb-16 max-w-4xl mx-auto">
-          {/* Spotify Widget */}
-          <div className="mb-8">
-            <iframe
-              src={`https://open.spotify.com/embed/track/${featuredRelease.spotifyId}?utm_source=generator&theme=0`}
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              className="rounded-xl"
-            />
-          </div>
-
-          {/* View All Releases Button */}
-          <div className="text-center mb-8">
-            <Button
+          <div className="text-center">
+            {/* <Button
               size="lg"
-              variant="outline"
-              className="glass-hover border-white/20 text-white hover:bg-white/10 bg-transparent"
+              className="glass-hover glass border-white/20 text-white hover:bg-white/10 bg-transparent"
             >
-              View All Releases
-            </Button>
-          </div>
-
-          {/* Bottom Description */}
-          <div className="border-t border-white/20 pt-6 text-center">
-            {/* <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Discover our latest AI-generated compositions that are reshaping
-              the music industry one algorithm at a time.
-            </p> */}
+              <Link
+                target="_blank"
+                href={
+                  "https://open.spotify.com/artist/28XVaGe1qmC6HFjQJxB5dd?si=b2hNTAsOQi-FlGF3pNc_Sw"
+                }
+              >
+                View All Releases
+              </Link>
+            </Button> */}
+            <div className="hidden lg:block">
+              <Link
+                href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+                target="_blank"
+                className="p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
+              >
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 168 168"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m83.996 0.277c-46.249 0-83.743 37.493-83.743 83.742 0 46.251 37.494 83.741 83.743 83.741 46.254 0 83.744-37.49 83.744-83.741 0-46.246-37.49-83.738-83.745-83.738l0.001-0.004zm38.404 120.78c-1.5 2.46-4.72 3.24-7.18 1.73-19.662-12.01-44.414-14.73-73.564-8.07-2.809 0.64-5.609-1.12-6.249-3.93-0.643-2.81 1.11-5.61 3.926-6.25 31.9-7.291 59.263-4.15 81.337 9.34 2.46 1.51 3.24 4.72 1.73 7.18zm10.25-22.805c-1.89 3.075-5.91 4.045-8.98 2.155-22.51-13.839-56.823-17.846-83.448-9.764-3.453 1.043-7.1-0.903-8.148-4.35-1.04-3.453 0.907-7.093 4.354-8.143 30.413-9.228 68.222-4.758 94.072 11.127 3.07 1.89 4.04 5.91 2.15 8.976v-0.001zm0.88-23.744c-26.99-16.031-71.52-17.505-97.289-9.684-4.138 1.255-8.514-1.081-9.768-5.219-1.254-4.14 1.08-8.513 5.221-9.771 29.581-8.98 78.756-7.245 109.83 11.202 3.73 2.209 4.95 7.016 2.74 10.733-2.2 3.722-7.02 4.949-10.73 2.739z"
+                    fill="#1ED760"
+                  />
+                </svg>
+                View all releases
+              </Link>
+            </div>
           </div>
         </div>
+
+        {/* <iframe
+          data-testid="embed-iframe"
+          src="https://open.spotify.com/embed/album/2oVtDZf7Xk3gLY7qN78asX?utm_source=generator"
+          width="100%"
+          height="500"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe> */}
+
+        <iframe
+          data-testid="embed-iframe"
+          src="https://open.spotify.com/embed/artist/28XVaGe1qmC6HFjQJxB5dd?utm_source=generator"
+          width="100%"
+          height={375}
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
       </div>
     </section>
   );
