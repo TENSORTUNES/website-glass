@@ -16,7 +16,7 @@ const bebasNeu = Bebas_Neue({
 });
 
 export function Hero() {
-  const TARGET = "10-10-2025";
+  const TARGET = "01-11-2025";
 
   const { launched: isLive, msRemaining } = getCountdown(TARGET);
   return (
@@ -26,6 +26,16 @@ export function Hero() {
           <h4 className={`${oswald.className} text-5xl`}>TensorTunes Token</h4>
         </div>
         <CountdownTimer target={parseTargetDate(TARGET)} />
+      </div>
+      <div className="md:hidden flex justify-center mx-auto">
+        <div className="md:hidden flex flex-col text-center top-40 absolute">
+          <div className="flex text-center justify-center mb-5">
+            <h4 className={`${oswald.className} text-5xl`}>
+              TensorTunes Token
+            </h4>
+          </div>
+          <CountdownTimer target={parseTargetDate(TARGET)} />
+        </div>
       </div>
       <div className="absolute bottom-0 sm:ml-10 lg:ml-20 md:mb-20 flex">
         <h1
