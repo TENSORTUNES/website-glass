@@ -54,7 +54,7 @@ export function Releases() {
   return (
     <section id="releases" className="mt-60 pb-32 py-20 px-4">
       <div className="container mx-auto mt-20 space-y-10">
-        <div className="flex justify-between text-center">
+        <div className="flex flex-col md:flex-row justify-between text-center">
           <h2
             className={`${bebasNeu.className} text-6xl md:text-5xl font-bold text-white`}
           >
@@ -74,11 +74,11 @@ export function Releases() {
                 View All Releases
               </Link>
             </Button> */}
-            <div className="hidden lg:block">
+            <div className="mt-4 md:mt-0">
               <Link
                 href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
                 target="_blank"
-                className="p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
+                className="justify-center p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
               >
                 <svg
                   className="w-5 h-5"
