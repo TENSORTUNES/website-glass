@@ -109,7 +109,7 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+              href="https://open.spotify.com/artist/28XVaGe1qmC6HFjQJxB5dd?si=bBuY5wHcRP2tBCWjxrt28g"
               target="_blank"
               className="p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
             >
@@ -191,7 +191,7 @@ export function Navbar() {
                 Contact
               </button>
               <Link
-                href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+                href="https://open.spotify.com/artist/28XVaGe1qmC6HFjQJxB5dd?si=bBuY5wHcRP2tBCWjxrt28g"
                 target="_blank"
                 className="text-white flex items-center gap-2 w-full"
               >

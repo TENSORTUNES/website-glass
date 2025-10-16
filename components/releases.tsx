@@ -76,7 +76,7 @@ export function Releases() {
             </Button> */}
             <div className="mt-4 md:mt-0">
               <Link
-                href="https://open.spotify.com/album/26onVc4T1OtPqHRvdZOWTb?si=Or_DnVUGQ1CYc6VeHMwAFA"
+                href="https://open.spotify.com/artist/28XVaGe1qmC6HFjQJxB5dd?si=bBuY5wHcRP2tBCWjxrt28g"
                 target="_blank"
                 className="justify-center p-2 rounded-lg neon-glow bg-green-700 hover:bg-green-500 text-white flex items-center gap-2"
               >
@@ -107,7 +107,7 @@ export function Releases() {
           loading="lazy"
         ></iframe> */}
 
-        <iframe
+        {/* <iframe
           data-testid="embed-iframe"
           src="https://open.spotify.com/embed/artist/28XVaGe1qmC6HFjQJxB5dd?utm_source=generator"
           width="100%"
@@ -115,7 +115,18 @@ export function Releases() {
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-        />
+        /> */}
+
+        <iframe
+          data-testid="embed-iframe"
+          src="https://open.spotify.com/embed/track/7AwTZe31CrAVKhrVTwY6LL?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
   );
