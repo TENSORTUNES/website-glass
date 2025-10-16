@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex px-4">
       {/* BIG SCREENS COUNTER */}
-      {!isLive && (
+      {/* {!isLive && (
         <div className="hidden min-[933px]:block md:absolute md:top-40 md:right-20  lg:absolute lg:top-70 lg:right-50">
           <div className="flex text-center justify-center mb-5">
             <h4 className={`${oswald.className} text-5xl`}>
@@ -31,9 +31,9 @@ export function Hero() {
           </div>
           <CountdownTimer target={parseTargetDate(TARGET)} />
         </div>
-      )}
+      )} */}
       {/* NON-MOBILE COUNTER */}
-      {!isLive && (
+      {/* {!isLive && (
         <div className="hidden scale-70 min-[640px]:max-[933px]:block absolute top-30 right-0">
           <div className="flex text-center justify-center mb-5">
             <h4 className={`${oswald.className} text-5xl`}>
@@ -42,9 +42,9 @@ export function Hero() {
           </div>
           <CountdownTimer target={parseTargetDate(TARGET)} />
         </div>
-      )}
+      )} */}
       {/* MOBILE COUNTER */}
-      {!isLive && (
+      {/* {!isLive && (
         <div className="sm:hidden flex justify-center mx-auto">
           <div className="md:hidden flex flex-col text-center top-30 absolute">
             <div className="flex text-center justify-center mb-5">
@@ -55,7 +55,7 @@ export function Hero() {
             <CountdownTimer target={parseTargetDate(TARGET)} />
           </div>
         </div>
-      )}
+      )} */}
 
       {/* LARGE SCREEN CREATE/PRODUCE */}
       <div className="hidden min-[933px]:block absolute scale-90 bottom-0 ml-20 md:mb-10 flex">
