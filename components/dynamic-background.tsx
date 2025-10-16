@@ -16,7 +16,7 @@ export function DynamicBackground() {
 
     // if we're not on the homepage, just show a default video and stop
     if (pathname !== "/") {
-      setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO2.mp4");
+      setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO3.mp4");
       return;
     }
     // Create a new Intersection Observer
@@ -44,7 +44,7 @@ export function DynamicBackground() {
           // console.log("Switching video for section:", mostVisibleSection);
           switch (mostVisibleSection) {
             case "hero":
-              setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO2.mp4");
+              setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO3.mp4");
               break;
             case "revenue":
               setCurrentVideo("/assets/videos/bv_1.mp4");
@@ -59,7 +59,7 @@ export function DynamicBackground() {
               setCurrentVideo("/assets/videos/contact_v.mp4");
               break;
             default:
-              setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO2.mp4");
+              setCurrentVideo("/assets/videos/TENSORTUNES_WHITE_VIDEO3.mp4");
           }
         }
       },
