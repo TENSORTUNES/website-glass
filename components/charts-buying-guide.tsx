@@ -28,7 +28,7 @@ const oswald = Oswald({
 });
 
 export default function ChartsWithBuyingGuide() {
-  const TARGET = "01-11-2025";
+  const TARGET = "01-12-2025";
 
   const { launched: isLive, msRemaining } = getCountdown(TARGET);
 
