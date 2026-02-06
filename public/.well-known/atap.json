@@ -1,0 +1,24 @@
+{
+  "atap_version": "1.0",
+  "business": {
+    "name": "TENSORTUNES",
+    "description": "AI-Powered Record Label - Where algorithms meet symphony. Pioneering the future of sound through artificial intelligence.",
+    "languages": ["en"]
+  },
+  "endpoint": {
+    "url": "https://api.atap.ai/v1/chat",
+    "tenant_id": "tensortunes"
+  },
+  "capabilities": [
+    "faq",
+    "events",
+    "product-search"
+  ],
+  "rate_limit": "30/minute",
+  "privacy": {
+    "user_data_collected": false,
+    "read_only": true,
+    "policy_url": "https://tensortunes.com/privacy"
+  },
+  "spec": "https://atap.ai/spec/v1"
+}
