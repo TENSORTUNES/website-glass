@@ -1,0 +1,83 @@
+{
+  "name": "TensorTunes",
+  "description": "AI-powered music label. Query real-time information about AI-generated music releases, TensorTunesToken (TTT), streaming statistics, community, and music production technology.",
+  "url": "https://api.atap.ai/v1/a2a/tensortunes",
+  "version": "1.0.0",
+  "provider": {
+    "organization": "TensorTunes",
+    "url": "https://tensortunes.com"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "skills": [
+    {
+      "id": "get_releases",
+      "name": "Get Music Releases",
+      "description": "Returns latest TensorTunes AI-generated music releases on Spotify and other platforms",
+      "tags": ["music", "releases", "spotify", "AI music", "tracks", "catalog"],
+      "examples": [
+        "What are TensorTunes' latest releases?",
+        "Show me new TensorTunes tracks",
+        "What genres does TensorTunes produce?",
+        "How many tracks has TensorTunes released?"
+      ],
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "get_token_info",
+      "name": "Get TT Token Information",
+      "description": "Returns TensorTunesToken (TTT) price, supply, buyback statistics, and tokenomics model",
+      "tags": ["crypto", "token", "TTT", "solana", "web3", "tokenomics", "buyback"],
+      "examples": [
+        "What is the TTT token price?",
+        "How does the TensorTunes token work?",
+        "What percentage of revenue is reinvested into TTT?",
+        "Where can I buy TTT?"
+      ],
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "get_streaming_stats",
+      "name": "Get Streaming Statistics",
+      "description": "Returns current streaming metrics, play counts, monthly listeners, and growth data",
+      "tags": ["streaming", "spotify", "stats", "metrics", "plays", "listeners"],
+      "examples": [
+        "How many streams does TensorTunes have?",
+        "What are TensorTunes' monthly listeners?",
+        "Is TensorTunes growing?"
+      ],
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "general_inquiry",
+      "name": "General TensorTunes Inquiry",
+      "description": "Answer any question about TensorTunes including mission, AI technology, community, Discord, partnerships, and contact information",
+      "tags": ["about", "info", "community", "discord", "contact", "AI", "technology"],
+      "examples": [
+        "What is TensorTunes?",
+        "How does TensorTunes use AI to make music?",
+        "How can I join the TensorTunes community?",
+        "What AI models does TensorTunes use?",
+        "How can I collaborate with TensorTunes?"
+      ],
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ],
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "authentication": {
+    "schemes": []
+  },
+  "x-discovery": {
+    "llms_txt": "https://tensortunes.com/llms.txt",
+    "atap": "https://tensortunes.com/.well-known/atap.json",
+    "simple_query": "https://api.atap.ai/v1/chat?tenant=tensortunes&q={query}"
+  }
+}

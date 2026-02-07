@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+
+# AI Crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemaps
+Sitemap: https://tensortunes.com/sitemap.xml
+
+# AI Discovery Files (informational, for agents that parse robots.txt comments)
+# A2A Agent Card: https://tensortunes.com/.well-known/agent-card.json
+# ATAP Service: https://tensortunes.com/.well-known/atap.json
+# LLMs.txt: https://tensortunes.com/llms.txt
+# AI Plugin: https://tensortunes.com/.well-known/ai-plugin.json
+# Query API: https://api.atap.ai/v1/chat?tenant=tensortunes

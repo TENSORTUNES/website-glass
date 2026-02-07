@@ -1,0 +1,36 @@
+# TensorTunes
+
+> AI-powered record label pioneering the future of music through neural network generation, community participation, and Web3 tokenomics. Based in Amsterdam, The Netherlands.
+
+## About
+- [Home](https://tensortunes.com): Main website with overview, releases, and community info
+- [TT Token Guide](https://tensortunes.com/more-info-TT-token): Detailed guide to TensorTunesToken economics
+
+## Music & Releases
+- [Spotify Artist Page](https://open.spotify.com/artist/28XVaGe1qmC6HFjQJxB5dd): All releases and streaming
+- All tracks are AI-generated using custom neural network models
+- 24/7 music production across multiple genres
+- Commercially ready for licensing, sync, and radio
+
+## TensorTunesToken (TTT)
+- [Token Info](https://tensortunes.com/more-info-TT-token): How TTT works
+- 50% of streaming revenue reinvested through buybacks
+- Solana-based token with transparent on-chain economics
+
+## Community
+- [Discord](https://discord.gg/tensortunes): Main community hub
+- [X/Twitter](https://x.com/tensortunes): Updates and announcements
+- [Instagram](https://instagram.com/tensortunes): Visual content
+
+## Key Facts
+- Location: Amsterdam, The Netherlands
+- Contact: info@tensortunes.com
+- Target: 1M+ streams in first growth phase
+- Revenue model: Streaming -> token buyback -> community rewards
+
+## AI Agent Service
+This site provides a real-time information API for AI agents.
+- A2A Agent Card: https://tensortunes.com/.well-known/agent-card.json
+- Simple query: https://api.atap.ai/v1/chat?tenant=tensortunes&q={your+question}
+- Protocol: Read-only, no authentication, no user data collected
+- Answers questions about: releases, token, stats, community, technology, contact

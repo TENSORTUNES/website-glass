@@ -1,0 +1,10 @@
+Contact: mailto:security@tensortunes.com
+Contact: mailto:info@tensortunes.com
+Preferred-Languages: en, nl
+Canonical: https://tensortunes.com/.well-known/security.txt
+Expires: 2027-02-07T00:00:00.000Z
+
+# AI Service Information
+# This site exposes an AI agent discovery card at:
+# https://tensortunes.com/.well-known/agent-card.json
+# The AI service is read-only and collects no user data.

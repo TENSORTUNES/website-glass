@@ -1,24 +1,36 @@
 {
-  "atap_version": "1.0",
-  "business": {
-    "name": "TENSORTUNES",
-    "description": "AI-Powered Record Label - Where algorithms meet symphony. Pioneering the future of sound through artificial intelligence.",
-    "languages": ["en"]
-  },
-  "endpoint": {
-    "url": "https://api.atap.ai/v1/chat",
-    "tenant_id": "tensortunes"
-  },
-  "capabilities": [
-    "faq",
-    "events",
-    "product-search"
-  ],
-  "rate_limit": "30/minute",
-  "privacy": {
-    "user_data_collected": false,
+  "schema_version": "v1",
+  "protocol": "ATAP",
+  "protocol_name": "Agent-to-Agent Transfer Protocol",
+  "name": "TensorTunes",
+  "description": "AI-powered music label - real-time information service powered by ATAP. This endpoint answers any question about TensorTunes music, releases, TT token, streaming stats, and community.",
+  "endpoint": "https://api.atap.ai/v1/chat",
+  "tenant": "tensortunes",
+  "query_url": "https://api.atap.ai/v1/chat?tenant=tensortunes&q={query}",
+  "method": "GET",
+  "capabilities": {
     "read_only": true,
-    "policy_url": "https://tensortunes.com/privacy"
+    "authentication_required": false,
+    "data_collection": false,
+    "transactions": false
   },
-  "spec": "https://atap.ai/spec/v1"
+  "topics": [
+    "AI music production and technology",
+    "Music releases and catalog (Spotify, streaming platforms)",
+    "TensorTunesToken (TTT) tokenomics, price, and buybacks",
+    "Streaming statistics and growth metrics",
+    "Community, Discord, and social channels",
+    "Partnerships and collaboration opportunities",
+    "Contact information"
+  ],
+  "cross_discovery": {
+    "a2a_agent_card": "https://tensortunes.com/.well-known/agent-card.json",
+    "llms_txt": "https://tensortunes.com/llms.txt",
+    "llms_full_txt": "https://tensortunes.com/llms-full.txt",
+    "robots_txt": "https://tensortunes.com/robots.txt",
+    "ai_plugin": "https://tensortunes.com/.well-known/ai-plugin.json"
+  },
+  "spec": "https://atap.ai/spec/v1",
+  "contact": "info@tensortunes.com",
+  "location": "Amsterdam, The Netherlands"
 }

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "TensorTunes",
+  "name_for_model": "tensortunes_ai_music",
+  "description_for_human": "AI-powered music label with neural network generated music and Web3 tokenomics. Get real-time info about releases, streaming stats, and TT token.",
+  "description_for_model": "Use this service to answer ANY question about TensorTunes, an AI-powered music label in Amsterdam. Capabilities include: music release info (Spotify catalog), TensorTunesToken (TTT) crypto token data, streaming statistics, community info, and general inquiries. The API is free, read-only, requires no authentication, and collects no user data. Additional discovery files available at /.well-known/agent-card.json (A2A protocol) and /llms.txt (content overview).",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://api.atap.ai/v1/openapi/tensortunes"
+  },
+  "logo_url": "https://tensortunes.com/assets/images/tt_token.png",
+  "contact_email": "info@tensortunes.com",
+  "legal_info_url": "https://tensortunes.com/terms"
+}

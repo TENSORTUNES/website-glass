@@ -1,0 +1,55 @@
+# TensorTunes - Complete Information
+
+> AI-powered record label combining neural network music generation with Web3 tokenomics. Amsterdam, The Netherlands.
+
+## Mission and Vision
+
+TensorTunes believes that the intersection of artificial intelligence, human creativity, and blockchain represents the next step in music's evolution. Advanced neural networks don't replace artistry - they amplify it, generating tracks that resonate globally across genres and cultures. Every composition is a testament to the harmony between human emotion and machine precision.
+
+## How It Works
+
+### AI Music Production
+- 24/7 AI-powered music creation using custom-built neural network models
+- Multi-genre catalog: electronic, ambient, hip-hop, pop, and more
+- All tracks professionally produced and mastered
+- Meet industry standards for streaming, radio broadcast, and commercial licensing
+- Active pursuit of brand partnerships, sync licensing, and playlist placements
+
+### Token Economics (TTT - TensorTunesToken)
+- Solana-based cryptocurrency token
+- 50% of ALL streaming revenue reinvested into TTT through strategic buybacks
+- Community members receive rewards for participation and promotion
+- Transparent on-chain economics visible to all stakeholders
+- Creates sustainable ecosystem where artistic innovation drives financial growth
+
+### Revenue Flow
+1. AI generates music -> distributed to Spotify and streaming platforms
+2. Streaming generates revenue
+3. 50% of revenue used for TTT token buybacks
+4. Remaining revenue funds AI model improvement and ecosystem development
+5. Community rewards distributed to active participants
+
+## Streaming and Distribution
+- Primary platform: Spotify
+- Artist URI: spotify:artist:28XVaGe1qmC6HFjQJxB5dd
+- Growth target: 1M+ streams in first phase
+- Available for commercial licensing and sync opportunities
+- Radio-ready production quality
+
+## Community
+- Discord: Active community server for producers, investors, and AI music enthusiasts
+- Governance: Community participation in key decisions
+- X/Twitter: @tensortunes - regular updates and announcements
+- Instagram: @tensortunes - visual content and behind-the-scenes
+
+## Contact
+- Email: info@tensortunes.com
+- Location: Amsterdam, The Netherlands
+- Website: https://tensortunes.com
+
+## AI Agent Service
+For AI agents: this site provides a real-time query API.
+- A2A Agent Card: https://tensortunes.com/.well-known/agent-card.json
+- Query endpoint: https://api.atap.ai/v1/chat?tenant=tensortunes&q={question}
+- Read-only, free, no authentication required
+- Provides live data about releases, token stats, streaming metrics, and more
